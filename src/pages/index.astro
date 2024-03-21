@@ -1,0 +1,94 @@
+---
+
+// Classes
+import AnimateClass from '../classes/animateClass'
+
+// Components
+import Layout from '../layouts/Layout.astro';
+import WhiteButton from '../components/buttons/WhiteButton';
+import WhiteBorderButton from '../components/buttons/WhiteBorderButton';
+import BlackWhiteContainerWithImage from '../sections/index/BlackWhiteContainerWithImage';
+
+// Types
+import type { SectionRow } from "../sections/index/BlackWhiteContainerWithImage";
+
+const sectionRows:SectionRow[] = [
+	{
+		title:'Solar Panels',
+		subtitle:'Innovative Technology',
+		description:`
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aut ratione sint natus molestias.
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aut ratione sint natus molestias.
+		`,
+		classImage:'first-row-image'
+	},
+	{
+		title:'Wind Turbines',
+		subtitle:'Clean Energy',
+		description:`
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aut ratione sint natus molestias.
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aut ratione sint natus molestias.
+		`,
+		classImage:'second-row-image'
+	},
+	{
+		title:'Hydroelectric Power',
+		subtitle:'Renewable Energy',
+		description:`
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aut ratione sint natus molestias.
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aut ratione sint natus molestias.
+		`,
+		classImage:'third-row-image'
+	}
+]
+
+---
+
+<Layout title="Welcome to Mi Energia MX.">
+
+	<div class="h-screen bg-white flex flex-col justify-center items-center bg-image header-bg-image">
+
+		<div class={`text-white text-center flex flex-col gap-4 ${AnimateClass.fadeInUp}`}>
+
+			<div class="text-center">
+
+				<h1 class="text-3xl font-semibold">Welcome to Mi Energia MX</h1>
+
+				<h2 class="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elite.</h2>
+
+			</div>
+
+			<div class="flex gap-4 justify-center">
+
+				<a href="/fronius">
+					<WhiteButton>Conocer más</WhiteButton>
+				</a>
+
+				<a href="/sobre-nosotros">
+					<WhiteBorderButton>Sobre Nosotros</WhiteBorderButton>
+				</a>
+				
+			</div>
+
+		</div>
+
+	</div>
+
+	<BlackWhiteContainerWithImage 
+		sectionRows={sectionRows} 
+		client:load
+	/>
+
+	<section class="h-96 bg-gray-800 flex flex-col items-center p-6">
+
+		<div class="flex flex-col text-center text-white">
+			
+			<h4 class="text-1xl">Design</h4>
+
+			<h3 class="text-2xl font-semibold">Sleek and Durable</h3>
+
+		</div>
+
+	</section>
+	
+</Layout>

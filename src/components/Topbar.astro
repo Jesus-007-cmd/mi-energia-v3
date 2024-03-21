@@ -1,0 +1,54 @@
+---
+
+// Components
+import BlackButton from './buttons/BlackButton';
+import YellowButton from './buttons/YellowButton';
+
+const headerButtons = [
+  { label: 'Inicio', url: '/' },
+  { label: 'Sobre Nosotros', url: '/sobre-nosotros' },
+  { label: 'Fronius', url: '/fronius' },
+];
+
+export type HeaderButton = {
+  label: string;
+  url: string;
+};
+
+---
+
+<nav class="p-4 px-4 md:px-8 bg-gray-800 flex justify-between items-center gap-4">
+
+  <a href="/">
+
+    <img src='/images/logo-white.png' class="h-8"/>
+
+  </a>
+
+  <div class="flex gap-4">
+
+    <div class="hidden md:flex gap-4">
+
+      { headerButtons.map((button) => (
+
+        <a class="text-white" href={button.url}>
+          
+          <BlackButton>{button.label}</BlackButton>
+  
+        </a> 
+  
+      ))}
+
+    </div>
+
+    <a href="/contactanos">
+
+      <YellowButton>Contáctanos</YellowButton>
+
+    </a>
+
+  </div>
+
+  <div class="hidden md:block"/>
+
+</nav>

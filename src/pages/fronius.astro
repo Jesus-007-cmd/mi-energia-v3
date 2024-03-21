@@ -1,0 +1,54 @@
+---
+
+// Components
+import Layout from "../layouts/Layout.astro";
+
+// Sections
+import BlackWhiteContainerWithImage from "../sections/index/BlackWhiteContainerWithImage";
+
+// Types
+import type { SectionRow } from "../sections/index/BlackWhiteContainerWithImage";
+
+const sectionRows:SectionRow[] = [
+	{
+		title:'Solar Panels',
+		subtitle:'Innovative Technology',
+		description:`
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aut ratione sint natus molestias.
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aut ratione sint natus molestias.
+		`,
+		classImage:'first-row-image'
+	},
+	{
+		title:'Wind Turbines',
+		subtitle:'Clean Energy',
+		description:`
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aut ratione sint natus molestias.
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aut ratione sint natus molestias.
+		`,
+		classImage:'second-row-image'
+	},
+	{
+		title:'Hydroelectric Power',
+		subtitle:'Renewable Energy',
+		description:`
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aut ratione sint natus molestias.
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aut ratione sint natus molestias.
+		`,
+		classImage:'third-row-image'
+	}
+]
+
+---
+
+<Layout title="Fronius">
+
+  <section class="h-screen bg-blue-500 flex items-center justify-center">
+
+    <span>imagen</span>
+
+  </section>
+
+  <BlackWhiteContainerWithImage sectionRows={sectionRows} />
+  
+</Layout>
