@@ -7,8 +7,7 @@ import YellowButton from '../../components/buttons/YellowButton';
 
 // Sections
 import OurLocationMap from '../sobre-nosotros/OurLocationMap';
-
-const inputStyle = 'border border-gray-300 rounded-md p-2 mb-4 bg-white';
+import ClassNameClass from '../../classes/classNameClass';
 
 export default function EmailFormContainer () {
 
@@ -116,22 +115,22 @@ function EmailForm () {
 
         <div className='flex flex-col gap-1'>
           <label>Nombre</label>
-          <input type='text' className={inputStyle}/>
+          <input type='text' className={ClassNameClass.whiteInputStyle}/>
         </div>
 
         <div className='flex flex-col gap-1'>
           <label>Correo</label>
-          <input type='email' className={inputStyle}/>
+          <input type='email' className={ClassNameClass.whiteInputStyle}/>
         </div>
 
         <div className='flex flex-col gap-1'>
           <label>Asunto</label>
-          <input type='text' className={inputStyle}/>
+          <input type='text' className={ClassNameClass.whiteInputStyle}/>
         </div>
 
         <div className='flex flex-col gap-1'>
           <label>Mensaje</label>
-          <textarea className={inputStyle}></textarea>
+          <textarea className={ClassNameClass.whiteInputStyle}></textarea>
         </div> 
 
       </div>

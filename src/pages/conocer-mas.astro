@@ -1,0 +1,55 @@
+---
+// Components
+import Layout from '../layouts/Layout.astro';
+
+const providerList:ProviderTeamData[] = [
+  { name : 'Fronius', image: '/images/fronius.png' },
+  { name : 'Aluminext', image: '/images/aluminext.png' },
+  { name : 'Fide', image: '/images/fide.png' },
+  { name : 'ECO 586', image: '/images/eco586.png' },
+  { name : 'Icatey', image: '/images/icatey.png' }
+];
+
+type ProviderTeamData = {
+  name: string;
+  image: string;
+}
+
+---
+
+<Layout title='Conocer Más'>
+
+  <section class="h-96 w-screen bg-white flex flex-col justify-center items-center p-6">
+
+    <h1 class="text-2xl font-semibold">Conocer Más</h1>
+
+    <p class="w-1/2 text-center">
+      Recupera tu inversión de manera rápida al eliminar o reducir tus costos de energía eléctrica mediante la generación de tu propia energía. 
+      Los paneles solares no necesitan mantenimiento frecuente, aunque se recomienda una inspección anual para garantizar su óptimo funcionamiento.
+    </p>
+
+  </section>
+
+  <section class="w-screen bg-gray-800 flex flex-col p-6 text-white">
+
+    <h1 class="text-2xl font-semibold text-center">Beneficios</h1>
+
+    <div class="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3">
+
+      {providerList.map((row) => (
+
+        <div class="text-center font-medium">
+  
+          <h3>{row.name}</h3>
+          
+        </div>
+  
+      ))}
+
+    </div>
+
+    <div></div>
+
+  </section>
+
+</Layout>

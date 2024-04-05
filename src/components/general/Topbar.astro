@@ -1,8 +1,9 @@
 ---
 
 // Components
-import BlackButton from './buttons/BlackButton';
-import YellowButton from './buttons/YellowButton';
+import BlackButton from '../buttons/BlackButton';
+import YellowButton from '../buttons/YellowButton';
+import ChatbotBox from './ChatbotBox';
 
 const headerButtons = [
   { label: 'Inicio', url: '/' },
@@ -49,6 +50,6 @@ export type HeaderButton = {
 
   </div>
 
-  <div class="hidden md:block"/>
+  <ChatbotBox client:load/> 
 
 </nav>

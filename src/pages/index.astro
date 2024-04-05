@@ -6,11 +6,11 @@ import AnimateClass from '../classes/animateClass'
 // Components
 import Layout from '../layouts/Layout.astro';
 import WhiteButton from '../components/buttons/WhiteButton';
-import WhiteBorderButton from '../components/buttons/WhiteBorderButton';
 import BlackWhiteContainerWithImage from '../sections/index/BlackWhiteContainerWithImage.astro';
 
 // Types
 import type { SectionRow } from "../sections/index/BlackWhiteContainerWithImage.astro";
+import WhiteBorderButton from '../components/buttons/WhiteBorderButton';
 
 const sectionRows:SectionRow[] = [
 	{
@@ -60,12 +60,12 @@ const sectionRows:SectionRow[] = [
 
 			<div class="flex gap-4 justify-center">
 
-				<a href="/fronius">
-					<WhiteButton>Conocer más</WhiteButton>
+				<a href="/sobre-nosotros">
+					<WhiteBorderButton>Sobre nosotros</WhiteBorderButton>
 				</a>
 
-				<a href="/sobre-nosotros">
-					<WhiteBorderButton>Sobre Nosotros</WhiteBorderButton>
+				<a href="/conocer-mas">
+					<WhiteButton>Conocer más</WhiteButton>
 				</a>
 				
 			</div>
@@ -74,10 +74,7 @@ const sectionRows:SectionRow[] = [
 
 	</div>
 
-	<BlackWhiteContainerWithImage 
-		sectionRows={sectionRows} 
-		client:load
-	/>
+	<BlackWhiteContainerWithImage sectionRows={sectionRows} />
 
 	<section class="h-96 bg-gray-800 flex flex-col items-center p-6">
 

@@ -62,7 +62,7 @@ export default function OurLocationMap (props:Props) {
 
             <div className="h-[3px] bg-gray-800 w-12 mb-3"/>
 
-            <h5 className="font-medium">{row.title}</h5>
+            <h5 className="font-semibold text-lg">{row.title}</h5>
 
             <p className="mb-2">{row.description}</p>
 
