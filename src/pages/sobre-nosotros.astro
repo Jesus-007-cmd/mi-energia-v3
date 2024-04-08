@@ -11,7 +11,6 @@ const certificacionesList:CertificacionData[] = [
   { title:'Certificación 2', description:'Lorem ipsum dolor sit amet consectetur.' },
   { title:'Certificación 3', description:'Lorem ipsum dolor sit amet consectetur.' },
   { title:'Certificación 4', description:'Lorem ipsum dolor sit amet consectetur.' },
-  { title:'Certificación 5', description:'Lorem ipsum dolor sit amet consectetur.' },
 ];
 
 // Types
@@ -30,17 +29,17 @@ const sobreNosotrosParagraph = `
 
 <Layout title='Sobre Nosotros'>
 
-  <section class="h-96 w-screen bg-white flex flex-col justify-center items-center p-6">
+  <section class="md:h-96 w-screen bg-white flex flex-col justify-center items-center p-6">
 
     <h2 class="text-2xl font-semibold">Sobre Nosotros</h2>
 
-    <p class="w-1/2 text-center">{sobreNosotrosParagraph}</p>
+    <p class="md:w-1/2 text-center">{sobreNosotrosParagraph}</p>
 
   </section>
 
-  <section class="grid grid-cols-2 text-center">
+  <section class="grid grid-cols-1 md:grid-cols-2 text-center">
 
-    <div class="p-6 bg-gray-100">
+    <div class="p-6 bg-gray-100 order-2 md:order-1">
 
       <h2 class="text-lg font-semibold">Nuestra Misión</h2>
 
@@ -51,7 +50,7 @@ const sobreNosotrosParagraph = `
 
     </div>
 
-    <div class="p-6 bg-gray-800 text-white">
+    <div class="p-6 bg-gray-800 text-white order-1 md:order-2">
 
       <h2 class="text-lg font-semibold">Nuestra Visión</h2>
 
@@ -96,7 +95,7 @@ const sobreNosotrosParagraph = `
 
     </div>
 
-    <div class="bg-blue-500 min-h-96 h-full flex items-center justify-center">
+    <div class="bg-blue-500 min-h-96 md:min-h-full h-full flex items-center justify-center">
 
       <span>imagen</span>
 
@@ -108,23 +107,24 @@ const sobreNosotrosParagraph = `
 
     <div class="flex flex-col bg-white p-6 gap-4">
 
-      <div class="flex justify-between items-center">
+      <div>
 
-        <div>
+        <div class="flex justify-between items-center mb-4 md:mb-0">
 
           <h4 class="font-semibold text-xl">Ubicaciones</h4>
 
-          <p class="w-3/4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Assumenda inventore neque quas vel quo eveniet, totam blanditiis nulla earum? Magnam nulla 
-            tenetur voluptate neque nihil nobis quidem quasi sit! Dignissimos!
-          </p>
+          <BlackButton>Lorem</BlackButton>
 
         </div>
 
-        <BlackButton>Lorem</BlackButton>
+        <p class="md:w-1/2">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Assumenda inventore neque quas vel quo eveniet, totam blanditiis nulla earum? Magnam nulla 
+          tenetur voluptate neque nihil nobis quidem quasi sit! Dignissimos!
+        </p>
 
       </div>
+
 
     </div>
 

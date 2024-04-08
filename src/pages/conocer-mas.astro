@@ -3,11 +3,14 @@
 import Layout from '../layouts/Layout.astro';
 
 const providerList:ProviderTeamData[] = [
-  { name : 'Fronius', image: '/images/fronius.png' },
-  { name : 'Aluminext', image: '/images/aluminext.png' },
-  { name : 'Fide', image: '/images/fide.png' },
-  { name : 'ECO 586', image: '/images/eco586.png' },
-  { name : 'Icatey', image: '/images/icatey.png' }
+  { name : 'Fronius', image: '/images/logos/fronius-logo.png' },
+  { name : 'Aluminext', image: '/images/logos/aluminext-logo.png' },
+  { name : 'Icatey', image: '/images/logos/icatey-logo.png' },
+  { name : 'Fronius', image: '/images/logos/fronius-logo.png' },
+  { name : 'Aluminext', image: '/images/logos/aluminext-logo.png' },
+  { name : 'Icatey', image: '/images/logos/icatey-logo.png' },
+  { name : 'Fronius', image: '/images/logos/fronius-logo.png' },
+  { name : 'Aluminext', image: '/images/logos/aluminext-logo.png' },
 ];
 
 type ProviderTeamData = {
@@ -19,7 +22,7 @@ type ProviderTeamData = {
 
 <Layout title='Conocer Más'>
 
-  <section class="h-96 w-screen bg-white flex flex-col justify-center items-center p-6">
+  <section class="h-96 w-screen bg-gray-700 text-white flex flex-col justify-center items-center p-6">
 
     <h1 class="text-2xl font-semibold">Conocer Más</h1>
 
@@ -30,16 +33,22 @@ type ProviderTeamData = {
 
   </section>
 
-  <section class="w-screen bg-gray-800 flex flex-col p-6 text-white">
+  <section class="w-screen bg-white flex flex-col p-6 text-gray-800">
 
-    <h1 class="text-2xl font-semibold text-center">Beneficios</h1>
+    <h1 class="text-2xl font-semibold text-center">Proveedores</h1>
 
-    <div class="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3">
+    <div class="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 
       {providerList.map((row) => (
 
-        <div class="text-center font-medium">
+        <div class="flex flex-col text-center justify-center font-medium gap-2">
   
+          <img 
+            src={row.image} 
+            alt={row.name} 
+            class="w-40 mx-auto justify-self-center" 
+          />
+
           <h3>{row.name}</h3>
           
         </div>
