@@ -4,6 +4,7 @@
 import Layout from '../layouts/Layout.astro';
 import BlackButton from '../components/buttons/BlackButton';
 import OurLocationMap from '../sections/sobre-nosotros/OurLocationMap';
+import WhiteBorderButton from '../components/buttons/WhiteBorderButton';
 
 // Data
 const certificacionesList:CertificacionData[] = [
@@ -31,17 +32,25 @@ const sobreNosotrosParagraph = `
 
   <section class="md:h-96 w-screen bg-white flex flex-col justify-center items-center p-6">
 
-    <h2 class="text-2xl font-semibold">Sobre Nosotros</h2>
+    <h2 class="text-xl font-semibold">Sobre Nosotros</h2>
 
     <p class="md:w-1/2 text-center">{sobreNosotrosParagraph}</p>
 
   </section>
 
-  <section class="grid grid-cols-1 md:grid-cols-2 text-center">
+  <div class="bg-blue-600 h-screen flex items-center justify-between flex-col p-6">
 
-    <div class="p-6 bg-gray-100 order-2 md:order-1">
+    <h2 class="text-xl font-semibold text-white">Título X</h2>
 
-      <h2 class="text-lg font-semibold">Nuestra Misión</h2>
+    <WhiteBorderButton>Conócenos</WhiteBorderButton>
+
+  </div>
+
+  <section class="grid grid-cols-1 md:grid-cols-2 text-center h-96">
+
+    <div class="p-6 bg-gray-100 order-2 md:order-1 h-full flex flex-col justify-center">
+
+      <h2 class="text-xl font-semibold">Nuestra Misión</h2>
 
       <p>
         Contribuir con nuestros clientes en la gestión inteligente de la energía eléctrica, 
@@ -50,9 +59,9 @@ const sobreNosotrosParagraph = `
 
     </div>
 
-    <div class="p-6 bg-gray-800 text-white order-1 md:order-2">
+    <div class="p-6 bg-gray-800 text-white order-1 md:order-2 h-full flex flex-col justify-center">
 
-      <h2 class="text-lg font-semibold">Nuestra Visión</h2>
+      <h2 class="text-xl font-semibold">Nuestra Visión</h2>
 
       <p>
         Nuestro objetivo es ser la principal empresa de gestión de recursos energéticos en México, reconocida por la calidad profesional de nuestro equipo y la confiabilidad de los equipos que ofrecemos. 
@@ -63,11 +72,19 @@ const sobreNosotrosParagraph = `
 
   </section>
 
-  <section class="flex flex-col md:grid md:grid-cols-2">
+  <section>
 
-    <div class="flex flex-col p-6 bg-gray-800 text-white text-center">
+    <div class="bg-blue-600 h-screen flex items-center justify-between flex-col p-6">
 
-      <h4 class="text-xl font-semibold ">Certificaciones</h4>
+      <h2 class="text-xl text-white font-semibold">Título X</h2>
+
+      <WhiteBorderButton>Conócenos</WhiteBorderButton>
+
+    </div>
+
+    <div class="flex flex-col p-6 bg-gray-800 text-white text-center min-h-96 justify-center">
+
+      <h4 class="text-xl font-semibold">Certificaciones</h4>
 
       <p class="mb-6">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
@@ -83,7 +100,7 @@ const sobreNosotrosParagraph = `
 
             <div class="h-[3px] bg-white w-12 mb-3"/>
 
-            <h5 class="font-semibold text-lg">{row.title}</h5>
+            <h5 class="font-medium text-lg">{row.title}</h5>
 
             <p>{row.description}</p>
 
@@ -92,12 +109,6 @@ const sobreNosotrosParagraph = `
         ))}
 
       </ul>
-
-    </div>
-
-    <div class="bg-blue-500 min-h-96 md:min-h-full h-full flex items-center justify-center">
-
-      <span>imagen</span>
 
     </div>
 
@@ -111,7 +122,7 @@ const sobreNosotrosParagraph = `
 
         <div class="flex justify-between items-center mb-4 md:mb-0">
 
-          <h4 class="font-semibold text-xl">Ubicaciones</h4>
+          <h4 class="font-semibold text-xl">Servicios Realizados</h4>
 
           <BlackButton>Lorem</BlackButton>
 
@@ -128,7 +139,7 @@ const sobreNosotrosParagraph = `
 
     </div>
 
-    <OurLocationMap/>
+    <OurLocationMap client:load/>
 
   </section>
 

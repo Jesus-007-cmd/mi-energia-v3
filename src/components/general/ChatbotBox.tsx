@@ -5,7 +5,6 @@ import React, { useState } from 'react';
 import ClassNameClass from '../../classes/classNameClass';
 
 // Components
-import YellowButton from '../buttons/YellowButton';
 import PurpleButton from '../buttons/PurpleButton';
 
 export default function ChatbotBox() {
@@ -39,7 +38,7 @@ export default function ChatbotBox() {
 
     <React.Fragment>
 
-      <YellowButton onClick={toggleChatbox}>{isShowingChatbox ? 'Cerrar Chat' : 'Abrir Chat'}</YellowButton>
+      <PurpleButton onClick={toggleChatbox}>{isShowingChatbox ? 'Cerrar Chat' : 'Abrir Chat'}</PurpleButton>
       {isShowingChatbox && <Box/>}
 
     </React.Fragment>

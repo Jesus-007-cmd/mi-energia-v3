@@ -22,11 +22,11 @@ export default function EmailFormContainer () {
 
     <div className='flex flex-col'>
 
-      <div className='h-96 p-6 bg-blue-500 flex flex-col items-center justify-center text-white gap-4'>
+      <div className='h-96 p-6 bg-blue-600 flex flex-col items-center justify-center text-white gap-4'>
 
         <div className='flex flex-col gap-2 text-center md:w-1/2'>
 
-          <h4 className="text-lg font-medium text-center">Contáctanos</h4>
+          <h4 className="text-xl font-semibold text-center">Contáctanos</h4>
 
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
@@ -38,12 +38,10 @@ export default function EmailFormContainer () {
 
         <div className='flex flex-wrap gap-4 justify-center'>
 
-          {networkList.map((row) => (
+          {networkList.map((row, key) => (
 
-            <a href={row.link}>
-
+            <a href={row.link} key={key}>
               <BlueButton>{row.name}</BlueButton>
-
             </a>
 
           ))}
@@ -85,11 +83,11 @@ function ServicioOptionsContainer () {
 
     <div className='grid grid-cols-2 gap-4 cursor-pointer'>
 
-      {options.map((option, row) => (
+      {options.map((option, key) => (
 
-        <button className='h-20 bg-gray-200 hover:bg-gray-300 border border-gray-300' onClick={() => toggleOption(row)}>
+        <button key={key} className='h-20 bg-gray-100 hover:bg-gray-300 border border-gray-300' onClick={() => toggleOption(key)}>
 
-          <h4 className='text-purple-800 font-medium'>{option.name}</h4>
+          <h4 className='text-purple-800 font-medium text-lg'>{option.name}</h4>
 
         </button>
 
@@ -107,7 +105,7 @@ function EmailForm () {
 
     <div className='flex flex-col p-6 gap-4 bg-gray-50 text-center'>
 
-      <h4 className='font-medium text-lg'>Servicio en el que estoy interesado</h4>
+      <h4 className='font-semibold text-xl'>Servicio en el que estoy interesado</h4>
 
       <ServicioOptionsContainer/>
 
@@ -151,7 +149,7 @@ function LocationContainer () {
 
     <div className='flex flex-col p-6 gap-4'>
 
-      <h3 className='text-lg font-medium text-center'>Ubicación </h3>
+      <h3 className='text-xl font-semibold text-center'>Servicios Realizados</h3>
 
       <OurLocationMap gridsAtMd='md:grid-cols-2' gridsAtLg='lg:grid-cols-2'/>
 

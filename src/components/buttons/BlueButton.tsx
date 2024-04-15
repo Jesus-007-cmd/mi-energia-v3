@@ -6,9 +6,9 @@
 }
 
 const buttonClass = `
-  inline-flex justify-center items-center gap-x-3 text-center bg-blue-600 py-2 px-4 
+  inline-flex justify-center items-center gap-x-3 text-center bg-blue-700 py-2 px-4 
   border border-transparent text-white text-sm font-medium rounded-full
-  hover:bg-blue-700 transition duration-300 ease-in-out
+  hover:bg-blue-800 transition duration-300 ease-in-out
 `;
 
 export default function BlueButton (props:Props) {
