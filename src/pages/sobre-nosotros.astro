@@ -1,10 +1,12 @@
 ---
 
+// Classes
+import ButtonClass from '../classes/ButtonClass';
+
 // Components
 import Layout from '../layouts/Layout.astro';
-import BlackButton from '../components/buttons/BlackButton';
-import OurLocationMap from '../sections/sobre-nosotros/OurLocationMap';
-import WhiteBorderButton from '../components/buttons/WhiteBorderButton';
+import CustomButton from '../components/forms/CustomButton';
+import OurLocationMap from '../sections/data/OurLocationMap';
 
 // Data
 const certificacionesList:CertificacionData[] = [
@@ -30,7 +32,7 @@ const sobreNosotrosParagraph = `
 
 <Layout title='Sobre Nosotros'>
 
-  <section class="md:h-96 w-screen bg-white flex flex-col justify-center items-center p-6">
+  <section class="md:h-96 w-screen bg-gray-800 flex flex-col justify-center items-center p-6 text-white">
 
     <h2 class="text-xl font-semibold">Sobre Nosotros</h2>
 
@@ -42,7 +44,7 @@ const sobreNosotrosParagraph = `
 
     <h2 class="text-xl font-semibold text-white">Título X</h2>
 
-    <WhiteBorderButton>Conócenos</WhiteBorderButton>
+    <CustomButton buttonClass={ButtonClass.WhiteBorderButtonClass}>Conócenos</CustomButton>
 
   </div>
 
@@ -78,7 +80,7 @@ const sobreNosotrosParagraph = `
 
       <h2 class="text-xl text-white font-semibold">Título X</h2>
 
-      <WhiteBorderButton>Conócenos</WhiteBorderButton>
+      <CustomButton buttonClass={ButtonClass.WhiteBorderButtonClass}>Conócenos</CustomButton>
 
     </div>
 
@@ -124,7 +126,7 @@ const sobreNosotrosParagraph = `
 
           <h4 class="font-semibold text-xl">Servicios Realizados</h4>
 
-          <BlackButton>Lorem</BlackButton>
+          <CustomButton buttonClass={ButtonClass.BlackButtonClass}>Lorem</CustomButton>
 
         </div>
 

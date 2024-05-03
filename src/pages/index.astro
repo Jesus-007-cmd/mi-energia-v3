@@ -1,46 +1,65 @@
 ---
-
 // Classes
-import AnimateClass from '../classes/animateClass'
+import ButtonClass from '../classes/ButtonClass';
 
 // Components
 import Layout from '../layouts/Layout.astro';
-import WhiteButton from '../components/buttons/WhiteButton';
-import BlackWhiteContainerWithImage from '../sections/index/BlackWhiteContainerWithImage.astro';
+import CustomButton from '../components/forms/CustomButton';
+import BlackWhiteContainerWithImage from '../sections/data/BlackWhiteContainerWithImage.astro';
 
 // Types
-import type { SectionRow } from "../sections/index/BlackWhiteContainerWithImage.astro";
-import WhiteBorderButton from '../components/buttons/WhiteBorderButton';
+import type { SectionRow } from "../sections/data/BlackWhiteContainerWithImage.astro";
 
 const sectionRows:SectionRow[] = [
 	{
-		title:'Solar Panels',
-		subtitle:'Innovative Technology',
+		subtitle:'Sobre Nosotros',
+		title:'Mi Energía MX',
 		description:`
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aut ratione sint natus molestias.
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aut ratione sint natus molestias.
+		En Mi Energía MX estamos enfocándonos en brindarles calidad y el buen servicio, utilizando los 
+		mejores productos del mercado. Queremos ayudarte a impulsar la transición energética y descarbonización 
+			de México a través de soluciones energéticas altamente rentables y eficientes que agregan valor a nuestros 
+			clientes reduciendo sus gastos fijos y huella de carbono. Más de 30 años de experiencia en servicios de 
+			construcción nos respaldan.
 		`,
 		classImage:'first-row-image'
 	},
 	{
-		title:'Wind Turbines',
-		subtitle:'Clean Energy',
+		subtitle:'Sobre Nosotros',
+		title:'Beneficios',
 		description:`
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aut ratione sint natus molestias.
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aut ratione sint natus molestias.
+			Recupera tu inversión de manera rápida al eliminar o reducir tus costos de energía eléctrica mediante la generación de tu propia energía. 
+			Los paneles solares no necesitan mantenimiento frecuente, aunque se recomienda una inspección anual para garantizar su óptimo funcionamiento.
 		`,
 		classImage:'second-row-image'
 	},
 	{
-		title:'Hydroelectric Power',
-		subtitle:'Renewable Energy',
+		subtitle:'Sobre Nosotros',
+		title:'Certificaciones',
 		description:`
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aut ratione sint natus molestias.
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor aut ratione sint natus molestias.
 		`,
 		classImage:'third-row-image'
 	}
-]
+];
+
+const socialNetworks = [
+	{
+		name:'Facebook',
+		url:'https://www.facebook.com/mienergiamx/?locale=es_LA',
+		icon:'logo-facebook.svg'
+	},
+	{
+		name:'Instagram',
+		url:'https://www.instagram.com/mienergiamx/',
+		icon:'logo-instagram.svg'
+	},
+	{
+		name:'LinkedIn',
+		url:'https://mx.linkedin.com/company/mi-energ%C3%ADa-mx',
+		icon:'logo-linkedin.svg'
+	}
+];
 
 ---
 
@@ -50,16 +69,16 @@ const sectionRows:SectionRow[] = [
 
 		<div class='text-white text-center flex flex-col gap-4 h-full justify-between'>
 
-			<h1 class="text-3xl font-semibold">Welcome to Mi Energia MX</h1>
+			<h1 class="text-3xl font-semibold"></h1>
 
 			<div class="flex gap-4 justify-center">
 
 				<a href="/sobre-nosotros">
-					<WhiteBorderButton>Sobre nosotros</WhiteBorderButton>
+					<CustomButton buttonClass={ButtonClass.WhiteBorderButtonClass}>Sobre nosotros</CustomButton>
 				</a>
 
 				<a href="/conocer-mas">
-					<WhiteButton>Conocer más</WhiteButton>
+					<CustomButton buttonClass={ButtonClass.WhiteButtonClass}>Conocer más</CustomButton>
 				</a>
 				
 			</div>
@@ -70,13 +89,31 @@ const sectionRows:SectionRow[] = [
 
 	<BlackWhiteContainerWithImage sectionRows={sectionRows} />
 
-	<section class="h-96 bg-gray-800 flex flex-col items-center p-6">
+	<section class="bg-gray-800 flex flex-col items-center p-6">
 
-		<div class="flex flex-col text-center text-white">
-			
-			<h4 class="text-1xl">Design</h4>
+		<div class="flex flex-col text-center text-white gap-8">
 
-			<h3 class="text-2xl font-semibold">Sleek and Durable</h3>
+			<h3 class="text-2xl font-semibold">Nuestras Redes</h3>
+
+			<div class="flex flex-row gap-12">
+
+				{socialNetworks.map((row) => (
+
+					<a 
+						class="flex flex-col p-2 hover:bg-gray-700 cursor-pointer hover:rounded-md" 
+						href={row.url}
+						target="_blank"
+					>
+
+						<img src={`/icons/${row.icon}`} alt={row.name} class="w-8 h-8 mx-auto invert" />
+	
+						<h3 class="text-lg">{row.name}</h3>
+	
+					</a>
+	
+				))}
+
+			</div>
 
 		</div>
 

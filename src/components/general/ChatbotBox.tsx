@@ -2,10 +2,11 @@
 import React, { useState } from 'react';
 
 // Class
-import ClassNameClass from '../../classes/classNameClass';
+import ButtonClass from '../../classes/ButtonClass';
+import InputClass from '../../classes/InputClass';
 
 // Components
-import PurpleButton from '../buttons/PurpleButton';
+import CustomButton from '../forms/CustomButton';
 
 export default function ChatbotBox() {
 
@@ -22,12 +23,17 @@ export default function ChatbotBox() {
       <h3 className='text-white text-lg font-semibold mb-2'>Hola, ¿En qué puedo ayudarte?</h3>
 
       <div className='flex flex-col gap-1'>
+
         <label className='text-white'>Mensaje</label>
-        <textarea className={ClassNameClass.bigWhiteInputStyle}/>
+
+        <textarea className={InputClass.bigWhiteInputStyle}/>
+
       </div>
     
       <div>
-        <PurpleButton>Enviar</PurpleButton>
+
+        <CustomButton buttonClass={ButtonClass.BlueButtonClass}>Enviar</CustomButton>
+        
       </div>
 
     </div>
@@ -38,7 +44,11 @@ export default function ChatbotBox() {
 
     <React.Fragment>
 
-      <PurpleButton onClick={toggleChatbox}>{isShowingChatbox ? 'Cerrar Chat' : 'Abrir Chat'}</PurpleButton>
+      <CustomButton 
+        onClick={toggleChatbox}
+        buttonClass={ButtonClass.TransparentButtonsClass('group-hover:text-gray-800')}
+      >{isShowingChatbox ? 'Cerrar Chat' : 'Abrir Chat'}</CustomButton>
+
       {isShowingChatbox && <Box/>}
 
     </React.Fragment>

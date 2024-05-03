@@ -2,14 +2,13 @@
 
 // Components
 import ChatbotBox from './ChatbotBox';
-import BlackButton from '../buttons/BlackButton';
-import YellowButton from '../buttons/YellowButton';
+import CustomButton from '../forms/CustomButton';
+import ButtonClass from '../../classes/ButtonClass';
 
 const headerButtons = [
-  { label: 'Inicio', url: '/' },
   { label: 'Sobre Nosotros', url: '/sobre-nosotros' },
-  { label: 'Fronius', url: '/fronius' },
-  { label: 'Blink', url: '/blink' },
+  { label: 'Servicios', url: '/fronius' },
+  { label: 'Financiamientos', url: '/blink' },
 ];
 
 export type HeaderButton = {
@@ -19,7 +18,7 @@ export type HeaderButton = {
 
 ---
 
-<nav class="p-4 px-4 md:px-8 bg-gray-900 flex justify-between items-center gap-4">
+<nav class="group p-4 px-4 md:px-8 flex justify-between items-center gap-4 fixed hover:bg-white transition w-full duration-100 ease-in-out">
 
   <a href="/">
 
@@ -31,11 +30,16 @@ export type HeaderButton = {
 
     <div class="hidden md:flex gap-4">
 
-      { headerButtons.map((button) => (
+      { 
+        
+        headerButtons.map((button) => (
 
         <a class="text-white" href={button.url}>
           
-          <BlackButton>{button.label}</BlackButton>
+          <CustomButton 
+            buttonClass={ButtonClass.TransparentButtonsClass('group-hover:text-gray-800')} 
+            client:load
+          >{button.label}</CustomButton>
   
         </a> 
   
@@ -45,7 +49,7 @@ export type HeaderButton = {
 
     <a href="/contactanos">
 
-      <YellowButton>Contáctanos</YellowButton>
+      <CustomButton buttonClass={ButtonClass.TransparentButtonsClass('group-hover:text-gray-800')}>Contáctanos</CustomButton>
 
     </a>
 
