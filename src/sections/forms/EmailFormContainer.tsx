@@ -24,11 +24,11 @@ export default function EmailFormContainer () {
 
     <div className='flex flex-col'>
 
-      <div className='h-96 p-6 bg-blue-600 flex flex-col items-center justify-center text-white gap-4'>
+      <div className='p-6 pt-20 bg-blue-600 flex flex-col items-center justify-center text-white gap-4 h-96'>
 
         <div className='flex flex-col gap-2 text-center md:w-1/2'>
 
-          <h4 className="text-xl font-semibold text-center">Contáctanos</h4>
+          <h4 className="text-2xl font-semibold text-center">Contáctanos</h4>
 
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. 
