@@ -6,8 +6,8 @@ export default function SelectFinanciamientoButtons () {
   const [ selectedOptions, setSelectedOption ] = useState(0);
 
   const financiamientoList:FinanciamientoButton[] = [
-    { title:'Empresas', url:'images/general-logo/logo-business.svg' },
-    { title:'Casas', url:'images/general-logo/logo-home.svg' },
+    { title:'Empresas', url:'/images/general-logo/logo-business.svg' },
+    { title:'Casas', url:'/images/general-logo/logo-home.svg' },
   ];
 
   const problemListForCompanies:ProblemData[] = [
