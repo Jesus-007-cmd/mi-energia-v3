@@ -8,20 +8,6 @@ import Layout from '../layouts/Layout.astro';
 import CustomButton from '../components/forms/CustomButton';
 import OurLocationMap from '../sections/data/OurLocationMap';
 
-// Data
-const certificacionesList:CertificacionData[] = [
-  { title:'Certificación 1', description:'Lorem ipsum dolor sit amet consectetur.' },
-  { title:'Certificación 2', description:'Lorem ipsum dolor sit amet consectetur.' },
-  { title:'Certificación 3', description:'Lorem ipsum dolor sit amet consectetur.' },
-  { title:'Certificación 4', description:'Lorem ipsum dolor sit amet consectetur.' },
-];
-
-// Types
-type CertificacionData = {
-  title: string;
-  description: string;
-}
-
 const sobreNosotrosParagraph = `
   En Mi Energía MX estamos enfocándonos en brindarles calidad y el buen servicio, utilizando los mejores productos del mercado. 
   Queremos ayudarte a impulsar la transición energética y descarbonización de México a través de soluciones energéticas altamente 
@@ -83,65 +69,6 @@ const sobreNosotrosParagraph = `
       <CustomButton buttonClass={ButtonClass.WhiteBorderButtonClass}>Conócenos</CustomButton>
 
     </div>
-
-    <div class="flex flex-col p-6 bg-gray-800 text-white text-center min-h-96 justify-center">
-
-      <h4 class="text-xl font-semibold">Certificaciones</h4>
-
-      <p class="mb-6">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-        Tenetur quas facilis rem! Odit provident quisquam repudiandae voluptate eum a alias quae mollitia nisi. 
-        Unde tenetur aut rem animi repellendus debitis.
-      </p>
-
-      <ul class="flex flex-col md:grid md:grid-cols-2 gap-4">
-
-        {certificacionesList.map((row) => (
-
-          <li class="flex flex-col items-center">
-
-            <div class="h-[3px] bg-white w-12 mb-3"/>
-
-            <h5 class="font-medium text-lg">{row.title}</h5>
-
-            <p>{row.description}</p>
-
-          </li> 
-          
-        ))}
-
-      </ul>
-
-    </div>
-
-  </section>
-
-  <section class="flex flex-col">
-
-    <div class="flex flex-col bg-white p-6 gap-4">
-
-      <div>
-
-        <div class="flex justify-between items-center mb-4 md:mb-0">
-
-          <h4 class="font-semibold text-xl">Servicios Realizados</h4>
-
-          <CustomButton buttonClass={ButtonClass.BlackButtonClass}>Lorem</CustomButton>
-
-        </div>
-
-        <p class="md:w-1/2">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-          Assumenda inventore neque quas vel quo eveniet, totam blanditiis nulla earum? Magnam nulla 
-          tenetur voluptate neque nihil nobis quidem quasi sit! Dignissimos!
-        </p>
-
-      </div>
-
-
-    </div>
-
-    <OurLocationMap client:load/>
 
   </section>
 

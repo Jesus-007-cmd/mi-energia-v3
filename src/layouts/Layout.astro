@@ -4,7 +4,7 @@
 import { ViewTransitions } from 'astro:transitions';
 
 // Components
-import Topbar from '../components/custom/Topbar.astro';
+import Topbar from '../components/custom/Topbar';
 
 interface Props {
 	title: string;
@@ -48,7 +48,7 @@ const { title } = Astro.props;
 
 	<body>
 
-		<Topbar/>
+		<Topbar client:load/>
 
 		<main>
 
