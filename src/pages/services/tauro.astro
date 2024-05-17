@@ -1,0 +1,93 @@
+---
+// Modules
+import { YouTube } from 'astro-embed';
+
+// Components
+import Layout from '../../layouts/Layout.astro';
+
+const tauroList = [
+  'Instalación rápida y mantenimiento eficiente',
+  'Electrónica conductora protegida por la active cooling technology',
+  'La carcasa de doble pared garantiza una compensación de temperatura óptima',
+  'Alto rendimiento estable incluso a temperaturas ambiente de hasta 50°C'
+]
+
+---
+
+<Layout title="Blink">
+
+  <section class="h-screen bg-blue-600">
+
+  </section>
+
+  <section class="p-6 bg-gray-800 text-white flex flex-col">
+
+    <h3 class="text-2xl font-semibold">Fronius Tauro</h3>
+
+    <div class="w-3/4">
+
+      <p>Este inversor es sostenible en todo, gracias a su desarrollo y producción sostenible de Austria, su diseño innovador es de doble pared y enfriamiento activo.</p>
+
+      <p>Esto hace que Fronius Tauro sea particularmente robusto y resistente a daños, y significa que solo es necesario reemplazar piezas individuales durante el servicio en el sitio, lo que ahorra tiempo y recursos.</p>
+
+    </div>
+
+  </section>
+
+  <section class="flex flex-col">
+
+    <YouTube 
+      id="https://www.youtube.com/watch?v=RXIJN1L9Cck&ab_channel=FroniusSolarEnergy"
+      class="w-full max-w-full"
+      title="Fronius Tauro"
+      poster="https://uvpower.com.au/wp-content/uploads/2022/02/Fronius-Solar-Inverter-1.jpg"
+    />
+
+  </section>
+ 
+  <section class="p-6 flex flex-col gap-6">
+
+    <div class="text-center">
+
+      <h3 class="font-semibold text-2xl">El inversor robusto Fronius Tauro impresiona por sus mínimos costos de funcionamiento del sistema.</h3>
+
+      <p>Para los proyectos hace que las instalaciones fotovoltaicas comerciales a gran escala sean rentables.</p>
+
+    </div>
+
+    <ul class="pl-6 text-center flex flex-col items-center">
+
+      {tauroList.map((item) => <li>{item}</li>)}
+
+    </ul>
+
+    <div class='grid grid-cols-1 md:grid-cols-2 items-center'>
+
+      <img 
+        src="https://www.fronius.com/~/protected-media/imported-media/16/08/m-160823.webp" 
+        alt="Fronius Tauro"
+      />
+
+      <div class="flex flex-col p-6 items-center">
+
+        <div class="flex flex-col items-center">
+
+          <h4 class="font-semibold text-lg">Fronius Tauro ECO 208-220</h4>
+
+          <ul class="flex flex-col items-center">
+
+            <li>Rango de Potencia: 50 kW</li>
+
+            <li>Ideal para países con clase de tensión 208 - 220V</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</Layout>

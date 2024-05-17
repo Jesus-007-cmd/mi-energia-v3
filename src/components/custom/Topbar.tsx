@@ -1,5 +1,5 @@
 // Modules
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 // Components
 import ChatbotBox from './ChatbotBox';
@@ -10,8 +10,8 @@ import ButtonClass from '../../classes/ButtonClass';
 
 export default function Topbar () {
 
-  const [ isMouseInTopBar, setIsMouseInTopBar ] = useState(true);
-  const [ isMouseInServiceButton, setIsMouseInServiceButton ] = useState(true);
+  const [ isMouseInTopBar, setIsMouseInTopBar ] = useState(false);
+  const [ isMouseInServiceButton, setIsMouseInServiceButton ] = useState(false);
 
   const headerButtons = [
     { label:'Nosotros', url: '/sobre-nosotros' },
@@ -36,7 +36,7 @@ export default function Topbar () {
 
     <div className='flex group' onMouseEnter={toggleIsMouseInTopBar} onMouseLeave={toggleIsMouseInTopBar}>
 
-      <nav className="px-4 md:px-8 h-20 flex justify-between items-center gap-4 group-hover:bg-white transition w-full duration-500 ease-in-out absolute">
+      <nav className="px-4 md:px-8 h-20 flex justify-between items-center gap-4 group-hover:bg-white transition w-full duration-500 ease-in-out absolute z-10">
 
         <a href="/">
 
@@ -110,13 +110,18 @@ export default function Topbar () {
 function ServicesOptions () {
 
   const servicesList = [
-    { img:'/images/screens/home/logos-certificaciones/img7.png', label:'Fronius', url: '/fronius' },
-    { img:'/images/screens/home/logos-certificaciones/img12.png', label:'Blink', url: '/blink' },
+    { img:'/images/screens/home/logos-certificaciones/img7.png', label:'Fronius', url: '/services/fronius' },
+    { img:'/images/screens/home/logos-certificaciones/img12.png', label:'Tauro', url: '/services/tauro' },
   ];
 
   return (
 
-    <div className='flex flex-col p-6 absolute top-20 w-full group-hover:bg-white group-hover:transition group-hover:duration-500 group-hover:ease-in-out items-center justify-center gap-6 text-center'>
+    <div 
+      className={`
+        flex flex-col p-6 top-20 absolute w-full bg-white items-center justify-center gap-6 
+        text-center duration-500 hover:opacity-100 transition ease-in-out
+      `
+    }>
 
       <h6>Nuestros Servicios</h6>
 

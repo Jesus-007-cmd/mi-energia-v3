@@ -1,0 +1,149 @@
+---
+
+// Components
+import Layout from "../../layouts/Layout.astro";
+
+const whyFronius = [
+	{
+		title: "Experiencia líder",
+		description: `
+			Con casi 30 años en el mercado, Fronius es la marca líder de inversores fotovoltaicos. 
+			Confía en nuestros expertos para diseñar un sistema fotovoltaico adaptado a tus necesidades.
+		`,
+		icon:'/images/general-logo/icon-people.svg'
+	},
+	{
+		title: "Rentabilidad garantizada",
+		description: `
+			Con Fronius, tu empresa invierte en un sistema cuyo costo siempre será menor al valor de la energía que produce, 
+			asegurando un retorno de inversión óptimo.`,
+		icon:'/images/general-logo/icon-barchart.svg'
+	},
+	{
+		title: "Servicio excepcional",
+		description: `
+			Con un monitoreo remoto constante y una extensa red nacional de socios FSP, 
+			nuestros tiempos de respuesta en caso de fallas son inigualables, garantizando el funcionamiento continuo de tu sistema fotovoltaico.
+		`,
+		icon:'/images/general-logo/icon-diamond.svg'
+	},
+];
+
+---
+
+<Layout title="Fronius">
+
+  <section class="h-screen bg-blue-600 flex items-center justify-center text-white text-2xl font-medium">
+
+    <span>imagen</span>
+
+  </section>
+
+	<section>
+
+		<div class="p-6 bg-white text-gray-900 flex flex-col gap-6 text-center">
+
+			<h3 class="text-2xl font-semibold">¿Por qué elegir Fronius?</h3>
+
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+				{whyFronius.map((row) => 
+
+					<div class="text-center p-6 flex flex-col items-center">
+
+						<img src={row.icon} class="w-10 h-10 mb-4"/>
+
+						<p class="text-xl font-medium">{row.title}</p>
+
+						<p>{row.description}</p>
+
+					</div>
+			
+				)}
+
+			</div>
+
+		</div>
+
+	</section>
+
+	<section class="grid grid-cols-1 md:grid-cols-2">
+
+		<div class="bg-gray-800 p-6 flex flex-col justify-center gap-1 text-white">
+
+			<div>
+
+				<h3 class="text-sm font-light">Beneficios</h3>
+
+				<h3 class="text-2xl font-semibold">Baja tus costos</h3>
+
+			</div>
+
+			<div>
+
+				<p>
+					Con un proyecto fotovoltaico de Fronius, tu empresa puede reducir significativamente los costos de energía al aprovechar el abundante recurso de la radiación solar.
+				</p>
+
+			</div>
+
+		</div>
+
+		<img src="https://www.fronius.com/~/protected-media/international/solar-energy-2-0/residential-endcustomers/product-pages/gen24-vielseitigkeit-169.jpg?26658">
+
+		</img>
+
+	</section>
+
+	<section class="grid grid-cols-1 md:grid-cols-2">
+
+		<img src="https://mexicoindustry.com/admin/images/notas/2024/04/stam-consolida-su-liderazgo-con-el-apoyo-de-la-tecnologia-fronius-22671.jpg">
+
+		<div class="p-6 bg-white flex flex-col justify-center gap-3">
+
+			<div>
+
+				<h3 class="text-sm font-light">Beneficios</h3>
+
+				<h3 class="text-2xl font-semibold">Diseñado por el lider del mercado fotovoltaico</h3>
+
+			</div>
+
+			<table class="table-auto border border-collapse">
+
+				<tbody>
+					
+					<tr>
+
+						<td class="p-3 border text-red-600 font-medium">Justo a su medida</th>
+
+						<td class="p-3 border">Dimensionamos nuestro sistema mediante un análisis exhaustivo de sus necesidades energéticas, instalaciones e historial de pagos electrónicos para asegurar ahorros óptimos.</th>
+
+					</tr>
+
+					<tr>
+
+						<td class="p-3 border text-red-600 font-medium">Operación y mantenimiento</td>
+
+						<td class="p-3 border">Optimiza tu empresa con nuestro paquete de operación y mantenimiento. Nos encargamos del funcionamiento mientras generas ahorros con energía solar.</td>
+
+					</tr>
+
+					<tr>
+
+						<td class="p-3 border text-red-600 font-medium">Monitoreo 24h</td>
+
+						<td class="p-3 border">Se realiza un monitoreo las 24 horas a través de Fronius Solar Web para asegurar el funcionamiento óptimo del sistema. Sin preocupaciones por fallos, con tiempos de respuesta excelentes.</td>
+
+					</tr>
+
+				</thead>
+
+			</table>
+
+		</div>
+
+	</section>
+  
+</Layout>
+
