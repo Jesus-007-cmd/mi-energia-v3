@@ -34,20 +34,25 @@ export default function Topbar () {
 
   return (
 
-    <div className='flex group' onMouseEnter={toggleIsMouseInTopBar} onMouseLeave={toggleIsMouseInTopBar}>
+    <div className='flex text-center group/main-container' onMouseEnter={toggleIsMouseInTopBar} onMouseLeave={toggleIsMouseInTopBar}>
 
-      <nav className="px-4 md:px-8 h-20 flex justify-between items-center gap-4 group-hover:bg-white transition w-full duration-500 ease-in-out absolute z-10">
+      <nav
+        className={`
+          px-4 md:px-8 h-20 flex justify-between items-center gap-4 absolute z-10 w-full 
+          transition duration-500 ease-in-out group-hover/main-container:bg-white
+        `}
+      >
 
         <a href="/">
 
           <img
             src='/images/mi-energia-logo/logo1.png'
-            className="h-10 hidden group-hover:block"
+            className="h-10 hidden group-hover/main-container:block"
           />
 
           <img 
             src='/images/mi-energia-logo/logo2.png' 
-            className="h-10 group-hover:hidden"
+            className="h-10 group-hover/main-container:hidden"
           />
 
         </a>
@@ -62,18 +67,24 @@ export default function Topbar () {
               
                 ? 
                 
-                <CustomButton 
-                  key={key}
-                  buttonClass={ButtonClass.TransparentButtonsClass('group-hover:text-gray-800')} 
-                  onEnter={toggleIsMouseInServiceButton}
-                >{button.label}</CustomButton>
+                <div className='group/service-container'>
+
+                  <CustomButton 
+                    key={key}
+                    buttonClass={ButtonClass.TransparentButtonsClass('group-hover/main-container:text-gray-800')} 
+                    onEnter={toggleIsMouseInServiceButton}
+                  >{button.label}</CustomButton>
+
+                  {isMouseInServiceButton && <ServicesOptions/>}
+
+                </div>
 
                 :
 
                 <a className="text-white" href={button.url} key={key}>
                 
                   <CustomButton 
-                    buttonClass={ButtonClass.TransparentButtonsClass('group-hover:text-gray-800')} 
+                    buttonClass={ButtonClass.TransparentButtonsClass('group-hover/main-container:text-gray-800')} 
                     onEnter={toggleIsMouseInAnyOtherButton}
                   >{button.label}</CustomButton>
           
@@ -88,7 +99,7 @@ export default function Topbar () {
           <a href="/contactanos">
 
             <CustomButton 
-              buttonClass={ButtonClass.TransparentButtonsClass('group-hover:text-gray-800')}
+              buttonClass={ButtonClass.TransparentButtonsClass('group-hover/main-container:text-gray-800')}
             >Contáctanos</CustomButton>
 
           </a>
@@ -98,8 +109,6 @@ export default function Topbar () {
         <ChatbotBox/> 
 
       </nav>
-
-      {(isMouseInServiceButton) && <ServicesOptions/>}
 
     </div>
 
@@ -118,10 +127,10 @@ function ServicesOptions () {
 
     <div 
       className={`
-        flex flex-col p-6 top-20 absolute w-full bg-white items-center justify-center gap-6 
-        text-center duration-500 hover:opacity-100 transition ease-in-out
-      `
-    }>
+        flex flex-col p-6 top-20 absolute left-0 w-full items-center justify-center gap-6 text-center bg-white
+        animate__animated animate__fadeIn animate__faster
+      `}
+    >
 
       <h6>Nuestros Servicios</h6>
 

@@ -1,0 +1,116 @@
+---
+// Components
+import Layout from "../layouts/Layout.astro";
+
+const energiaSolarList = [
+  'Genera y utiliza tu propia energía solar durante el día.',
+  'Almacena el exceso de energía para usarla cuando lo necesites, incluso en momentos cuando no hay sol.',
+];
+
+const ventajasSistemasAlmacenamiento = [
+  'Reducción de costos: Aprovecha al máximo tu energía solar y reduce el consumo de la red pública, ahorrando en costos.',
+  'Mayor independencia: Con una unidad de almacenamiento, libérate de los incrementos en los costos de energía.',
+  'Alimentación asegurada: En caso de cortes de energía, accede a tu propia electricidad almacenada para mantener el suministro principal.',
+];
+
+const reduzcaCostosList = [
+  'Ahorra en costos de energía desde el primer día.',
+  'Independízate de los aumentos en los costos de energía al invertir en una instalación solar.',
+  'La instalación se amortiza en menos de 10 años.',
+];
+
+const inversionAltaCalidadList = [
+  'Inversores inteligentes de Fronius optimizan el uso de energía solar.',
+  'Más de 75 años de experiencia en la industria energética.',
+  'Fabricación en Austria, enfocada en la sostenibilidad.',
+  'Red de socios capacitados para asesoramiento y soporte personalizado.',
+];
+
+const monitoreoList = [
+  'Supervisa tu consumo y rendimiento energético en tiempo real.',
+  'Garantiza la funcionalidad y reduce el período de amortización.',
+  'Identifica y optimiza el consumo de energía.',
+  'Mantén tu instalación actualizada y ahorra dinero con extensiones individuales.',
+  'Extiende la garantía sin cargo.',
+];
+
+---
+
+<Layout title="Sistemas Fotovoltaicos">
+
+  <section class="h-screen w-full bg-slate-700 text-white">
+
+  </section>
+
+  <section class="bg-white text-gray-800 p-6">
+
+    <h3 class="text-xl font-semibold">Energía solar, incluso cuando no hay sol</h3>
+
+    <ul>
+      {energiaSolarList.map((item) => <li>{item}</li>)}
+    </ul> 
+
+  </section>
+
+  <section class="bg-gray-800 text-white p-6">
+
+    <h3 class="text-xl font-semibold">Ventajas de los sistemas de almacenamiento de energía</h3>
+
+    <ul>
+      {ventajasSistemasAlmacenamiento.map((item) => <li>{item}</li>)}
+    </ul>
+
+  </section>
+
+  <section class="bg-white text-gray-800 p-6">
+
+    <h3 class="text-xl font-semibold">Reduzca los costos de energía con la tecnología fotovoltaica</h3>
+
+    <ul>
+      {reduzcaCostosList.map((item) => <li>{item}</li>)}
+    </ul>
+
+  </section>
+
+  <section class="bg-gray-800 text-white p-6">
+
+    <h3 class="text-xl font-semibold">Use energía solar, incluso de noche</h3>
+
+    <p>La energía solar se produce durante el día, pero la demanda es mayor por la mañana y por la noche.</p>
+    <p>Posterga el consumo de energía costosa de la red pública y utiliza la energía solar disponible o almacenarla para su uso posterior.</p>
+
+  </section>
+
+  <section class="bg-white text-gray-800 p-6">
+
+    <h3 class="text-xl font-semibold">Suministro de energía de respaldo en caso de apagón</h3>
+
+    <p>La mayoría de las instalaciones fotovoltaicas suelen apagarse durante apagones.</p>
+
+    <p>Con un inversor con función de respaldo y almacenamiento de energía, seguirás teniendo electricidad durante un apagón.</p>
+
+  </section>
+
+  <section class="bg-gray-800 text-white p-6">
+
+    <h3 class="text-xl font-semibold">Inversión de alta calidad que vale la pena</h3>
+
+    <ul>
+      {inversionAltaCalidadList.map((item) => <li>{item}</li>)}
+    </ul>
+
+  </section>
+
+  <section class="bg-white text-gray-800 p-6">
+
+    <h3 class="text-xl font-semibold">Monitoreo en su instalación fotovoltaica en todo momento</h3>
+
+    <p>Con la herramienta de monitoreo gratuita Fronius Solar.web, puede supervisar el consumo y rendimiento energético en todo momento:</p>
+
+    <ul>
+      {monitoreoList.map((item) => <li>{item}</li>)}
+    </ul>
+
+  </section>
+
+</Layout>
