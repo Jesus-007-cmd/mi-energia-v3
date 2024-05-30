@@ -1,0 +1,93 @@
+// Data
+import { networkList, type NetworkData } from "../../data/data";
+
+export const footerSections:FooterLink[] = [
+  { label:'Inicio', url:'/' },
+  { label:'Nosotros', url:'/sobre-nosotros' },
+  { label:'Fronius', url:'/services/fronius' },
+  { label:'Tauro', url:'/services/tauro' },
+  { label:'Contáctanos', url:'/contactanos' },
+];
+
+export default function Footer () {
+
+  return (
+
+    <div className="flex flex-col">
+
+      <div className='p-6 bg-neutral-700 flex flex-col gap-4'>
+
+        <div className="flex flex-row items-center gap-4">
+
+          <img className="h-10" src="/images/mi-energia-logo/logo2.png"/>
+
+          <div className="grid grid-cols-2 w-full justify-items-center text-white text-center items-center">
+
+            <div className="flex flex-col gap-1">
+
+              <span className="font-medium">Contáctanos</span>
+
+              <ul className="flex gap-4">
+
+                {networkList.map((row) => 
+
+                  <li className='text-white cursor-pointer rounded hover:bg-gray-800 p-2'>
+
+                    <img className="h-6 invert" src={row.logo} />
+
+                  </li>
+                )}
+
+              </ul>            
+
+            </div>
+
+            <div className="flex flex-col">
+
+              <span className="font-medium">Locación</span>
+
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+
+            </div>
+
+          </div>
+
+          <img className="h-16" src="/images/mi-energia-logo/fronius-logo.jpeg"/>
+
+        </div>
+
+      </div>
+
+      <div className="px-6 py-4 bg-neutral-800 text-center text-white flex justify-center">
+
+        <ul className="flex gap-4">
+          {footerSections.map((section, index) => <FooterLink key={index} {...section} />)}
+        </ul>
+
+      </div>
+
+    </div>
+
+  )
+
+}
+
+function FooterLink (props:FooterLink | NetworkData) {
+
+  return (
+
+    <li className='text-white cursor-pointer hover:bg-gray-700 py-1 px-3 rounded'>
+
+      <a href={props.url}>{props.label}</a>
+
+    </li>
+
+  );
+
+}
+
+
+export type FooterLink = {
+  label:string,
+  url:string,
+}

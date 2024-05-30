@@ -78,7 +78,7 @@ export default function SelectFinanciamientoButtons () {
 
     <React.Fragment>
 
-      <section className="h-screen bg-blue-600 flex flex-col items-center text-white gap-6 text-center p-6 pt-20 justify-center">
+      <section className="h-screen bg-gray-700 flex flex-col items-center text-white gap-6 text-center p-6 pt-20 justify-center">
 
         <div className="flex flex-col items-center">
 
@@ -119,7 +119,7 @@ export default function SelectFinanciamientoButtons () {
 
       </section>
 
-      <section className="p-6 flex flex-col text-white bg-gray-800 min-h-96 justify-center">
+      <section className="p-6 flex flex-col text-white bg-neutral-800 min-h-96 justify-center">
 
         <div className="gap-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
 

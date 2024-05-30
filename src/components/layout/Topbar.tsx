@@ -2,7 +2,7 @@
 import { useState } from 'react';
 
 // Components
-import ChatbotBox from './ChatbotBox';
+import ChatbotBox from '../custom/ChatbotBox';
 import CustomButton from '../forms/CustomButton';
 
 // Classes
@@ -67,10 +67,9 @@ export default function Topbar () {
               
                 ? 
                 
-                <div className='group/service-container'>
+                <div className='group/service-container' key={key}>
 
-                  <CustomButton 
-                    key={key}
+                  <CustomButton
                     buttonClass={ButtonClass.TransparentButtonsClass('group-hover/main-container:text-gray-800')} 
                     onEnter={toggleIsMouseInServiceButton}
                   >{button.label}</CustomButton>

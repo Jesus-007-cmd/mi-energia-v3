@@ -8,23 +8,19 @@ import InputClass from '../../classes/InputClass';
 // Components
 import CustomButton from '../../components/forms/CustomButton';
 
+// Data
+import { networkList } from '../../data/data';
+
 // Sections
 import OurLocationMap from '../data/OurLocationMap';
 
 export default function EmailFormContainer () {
-
-  const networkList = [
-    { name: 'Facebook', link: 'https://www.facebook.com' },
-    { name: 'Instagram', link: 'https://www.instagram.com' },
-    { name: 'Twitter', link: 'https://www.twitter.com' },
-    { name: 'LinkedIn', link: 'https://www.linkedin.com' }
-  ];
   
   return (
 
     <div className='flex flex-col'>
 
-      <div className='p-6 pt-20 bg-blue-600 flex flex-col items-center justify-center text-white gap-4 h-96'>
+      <div className='p-6 pt-20 bg-gray-700 flex flex-col items-center justify-center text-white gap-4 h-96'>
 
         <div className='flex flex-col gap-2 text-center md:w-1/2'>
 
@@ -42,8 +38,8 @@ export default function EmailFormContainer () {
 
           {networkList.map((row, key) => (
 
-            <a href={row.link} key={key}>
-              <CustomButton buttonClass={ButtonClass.BlueButtonClass}>{row.name}</CustomButton>
+            <a href={row.url} key={key}>
+              <CustomButton buttonClass={ButtonClass.BlueButtonClass}>{row.label}</CustomButton>
             </a>
 
           ))}

@@ -6,61 +6,22 @@ import { YouTube } from 'astro-embed';
 import Layout from '../../layouts/Layout.astro';
 
 const tauroList = [
-  'Instalación rápida y mantenimiento eficiente',
-  'Electrónica conductora protegida por la active cooling technology',
-  'La carcasa de doble pared garantiza una compensación de temperatura óptima',
-  'Alto rendimiento estable incluso a temperaturas ambiente de hasta 50°C'
-];
-
-const externalAndInternalDesing = [
-	{ 
-    title:'Vista Interna', 
-    description:`
-      Lorem ipsum dolor sit amet consectetur. At vitae nulla ultrices vel proin interdum ultrices metus. Scelerisque nunc eu arcu egestas id phasellus pellentesque etiam. Ornare arcu est nibh massa id massa. Mauris commodo sollicitudin sed vivamus cras cursus elementum.
-      Lorem ipsum dolor sit amet consectetur. At vitae nulla ultrices vel proin interdum ultrices metus. Scelerisque nunc eu arcu egestas id phasellus pellentesque etiam. Ornare arcu est nibh massa id massa. Mauris commodo sollicitudin sed vivamus cras cursus elementum.
-    `, 
-    img:'' 
-  },
-	{ 
-    title:'Vista Externa', 
-    description:`
-      Lorem ipsum dolor sit amet consectetur. At vitae nulla ultrices vel proin interdum ultrices metus. Scelerisque nunc eu arcu egestas id phasellus pellentesque etiam. Ornare arcu est nibh massa id massa. Mauris commodo sollicitudin sed vivamus cras cursus elementum.
-      Lorem ipsum dolor sit amet consectetur. At vitae nulla ultrices vel proin interdum ultrices metus. Scelerisque nunc eu arcu egestas id phasellus pellentesque etiam. Ornare arcu est nibh massa id massa. Mauris commodo sollicitudin sed vivamus cras cursus elementum.
-    `, 
-    img:'' 
-  },
+  '• Instalación rápida y mantenimiento eficiente',
+  '• Electrónica conductora protegida por la active cooling technology',
+  '• La carcasa de doble pared garantiza una compensación de temperatura óptima',
+  '• Alto rendimiento estable incluso a temperaturas ambiente de hasta 50°C'
 ];
 
 const diseñoRobustoList = [
-  'Electrónica conductora protegida por enfriamiento activo',
-  'La carcasa de doble pared garantiza una compensación de temperatura óptima',
-  'Alto rendimiento estable a temperaturas ambiente de hasta 50°C'
+  '• Electrónica conductora protegida por enfriamiento activo',
+  '• La carcasa de doble pared garantiza una compensación de temperatura óptima',
+  '• Alto rendimiento estable a temperaturas ambiente de hasta 50°C'
 ];
 
 const extremadamenteRentableList = [
   'Instalación rápida y mantenimiento eficiente',
   'El cambio de la caja de potencia (27kg) puede hacerlo fácilmente una persona',
   'Manejo eficiente en casos de servicio y soporte en línea específico con Fronius Solar, SOS',
-];
-
-const froniusSolarWebList = [
-  'Test de funcionalidad: Recupere datos del sistema en tiempo real en cualquier momento en Solar.web',
-  'Análisis del rendimiento y consumo: Con Fronius, determina rápidamente la viabilidad de integrar componentes adicionales, como sistemas de almacenamiento de baterías o un Ohmpilot.',
-  'Fastest service on the market: Solar.web te apoya en ofrecerle a tus clientes el mejor servicio del mercado.',
-  'Maximum flexibility: Accede desde una computadora o cuando estés fuera desde la aplicación de tu celular.',
-];
-
-const descubreFronius = [
-  'Red global: Con más de 4,000 socios en 100+ países.',
-  'Soporte experto: Asistencia eficaz y prioritaria, con herramientas inteligentes y conocimientos de Fronius.',
-  'Compromiso total: Todos trabajamos al máximo para ayudar a nuestros clientes en su revolución energética personal.',
-];
-
-const diferencialesFronius = [
-  'Amplia experiencia en soluciones de energías renovables: Fotovoltaicas, almacenamiento, electromovilidad y más.',
-  'Consultores competentes para la transición energética.',
-  'Excelente servicio posventa para el mantenimiento y revisión de instalaciones.',
-  'Fronius Solutions Partners certificados que cumplen criterios de calidad definidos.',
 ];
 
 ---
@@ -71,7 +32,7 @@ const diferencialesFronius = [
 
   </section>
 
-  <section class="p-6 bg-gray-800 text-white flex flex-col">
+  <section class="p-6 bg-stone-900 text-white flex flex-col text-center items-center">
 
     <h3 class="text-xl font-semibold">Fronius Tauro</h3>
 
@@ -98,30 +59,23 @@ const diferencialesFronius = [
  
   <section class="p-6 flex flex-col gap-6">
 
-    <div class="text-center">
+    <div class='grid grid-cols-1 lg:grid-cols-2 items-center'>
 
-      <h3 class="font-semibold text-xl">El inversor robusto Fronius Tauro impresiona por sus mínimos costos de funcionamiento del sistema.</h3>
+      <div class="flex flex-col">
 
-      <p>Para los proyectos hace que las instalaciones fotovoltaicas comerciales a gran escala sean rentables.</p>
+        <div class="flex justify-center">
 
-    </div>
+          <img 
+            src="/images/screens/services/tauro/tauro-exterior.webp" 
+            alt="Fronius Tauro"
+            class="h-[340px]"
+          />
 
-    <ul class="pl-6 text-center flex flex-col items-center">
-
-      {tauroList.map((item) => <li>{item}</li>)}
-
-    </ul>
-
-    <div class='grid grid-cols-1 md:grid-cols-2 items-center'>
-
-      <img 
-        src="https://www.fronius.com/~/protected-media/imported-media/16/08/m-160823.webp" 
-        alt="Fronius Tauro"
-      />
-
-      <div class="flex flex-col p-6 items-center">
+        </div>
 
         <div class="flex flex-col items-center">
+
+          <div class="w-1/4 bg-neutral-800 h-[2px] mb-4"/>
 
           <h4 class="font-semibold text-xl">Fronius Tauro ECO 208-220</h4>
 
@@ -137,84 +91,67 @@ const diferencialesFronius = [
 
       </div>
 
-    </div>
+      <div class="flex flex-col p-6 text-center lg:text-left gap-2">
 
-  </section>
+        <div>
 
-  <section class="bg-gray-800 text-white gap-6 grid grid-cols-1 md:grid-cols-2 p-6">
-
-    {externalAndInternalDesing.map((row) => (
-
-      <div>
-
-        <h3 class="text-xl font-semibold">{row.title}</h3>
-
-        <p>{row.description}</p>
+          <h3 class="font-semibold text-xl">El inversor robusto Fronius Tauro impresiona por sus mínimos costos de funcionamiento del sistema.</h3>
+    
+          <p>Para los proyectos hace que las instalaciones fotovoltaicas comerciales a gran escala sean rentables.</p>
+    
+        </div>
+    
+        <ul class="flex flex-col">
+    
+          {tauroList.map((item) => <li>{item}</li>)}
+    
+        </ul>
 
       </div>
 
+    </div>
 
-    ))}
-
-	</section>
-
-  <section class="p-6 bg-white">
-
-    <h3 class="text-xl font-semibold">Diseño robusto para una larga vida útil</h3>
-
-    <p>La luz solar directa y las altas temperaturas no son un problema para el robusto Fronius Tauro, ofrece plena potencia sin restricciones incluso</p>
-
-    <ul>
-      {diseñoRobustoList.map((item) => <li>{item}</li>)}
-    </ul>
 
   </section>
 
-  <section class="p-6 bg-gray-800 text-white">
+  <section class="p-6 bg-neutral-800 text-white grid grid-cols-1 lg:grid-cols-2 gap-6">
 
-    <h3 class="text-xl font-semibold">Extremadamente Rentable</h3>
+    <div class="flex flex-col items-center text-center">
 
-    <ul>
-      {extremadamenteRentableList.map((item) => <li>{item}</li>)}
-    </ul>
+      <div class="flex justify-center">
 
-  </section>
+        <img 
+          src="/images/screens/services/tauro/tauro-interior.png" 
+          class="h-[340px] mb-2"
+        />
 
-  <section class="p-6 bg-white">
+      </div>
 
-    <h3 class="text-xl font-semibold">Monitoreo del sistema fotovoltaico con Fronius Solar.web</h3>
+      <div class="w-1/4 bg-white h-[2px] mb-2"/>
 
-    <p>
-      Con Fronius Solar.web no solo es una herramienta de monitoreo profesional, 
-      también ofrece un análisis comprensivo de funciones permitiendo la optimización 
-      en curso del sistema fotovoltaico.
-    </p>
+      <h3 class="text-xl font-semibold">Extremadamente rentable</h3>
 
-    <h4>Sus ventajas:</h4>
+      <ul>
+        {extremadamenteRentableList.map((item) => <li>{item}</li>)}
+      </ul>
 
-    <ul>
-      {froniusSolarWebList.map((item) => <li>{item}</li>)}
-    </ul>
+    </div>
 
-  </section>
+    <div class="flex flex-col justify-center text-center lg:text-left gap-2 p-6">
 
-  <section class="p-6 bg-gray-800 text-white">
+      <div>
 
-    <h3 class="text-xl font-semibold">Descubre Fronius</h3>
+        <h3 class="text-xl font-semibold">Diseño robusto para una larga vida útil</h3>
 
-    <ul>
-      {descubreFronius.map((item) => <li>{item}</li>)}
-    </ul>
+        <p>La luz solar directa y las altas temperaturas no son un problema para el robusto Fronius Tauro, ofrece plena potencia sin restricciones incluso</p>
 
-  </section>
+      </div>
 
-  <section class="p-6 bg-white">
+      <ul>
+        {diseñoRobustoList.map((item) => <li>{item}</li>)}
+      </ul>
 
-    <h3 class="text-xl font-semibold">¿Qué diferencia a un Fronius Solutions Partner?</h3>
-
-    <ul>
-      {diferencialesFronius.map((item) => <li>{item}</li>)}
-    </ul>
+    </div>
 
   </section>
 

@@ -6,7 +6,7 @@ import { twMerge } from 'tailwind-merge';
 // Components
 
 function firstConcat (isOdd:boolean) {
-  return twMerge(clsx('h-96 p-6 flex flex-col justify-center', (isOdd) ? 'md:order-1 bg-gray-800 text-white' : 'md:order-2 bg-white text-gray-800'));
+  return twMerge(clsx('h-96 p-6 flex flex-col justify-center', (isOdd) ? 'md:order-1 bg-neutral-800 text-white' : 'md:order-2 bg-white text-neutral-800'));
 }
 
 function secondConcat (isOdd:boolean, classImage:string) {
