@@ -118,8 +118,10 @@ export default function Topbar () {
 function ServicesOptions () {
 
   const servicesList = [
-    { img:'/images/screens/home/logos-certificaciones/img7.png', label:'Fronius', url: '/services/fronius' },
-    { img:'/images/screens/home/logos-certificaciones/img12.png', label:'Tauro', url: '/services/tauro' },
+    { label:'Electromovilidad', url: '/electromovilidad' },
+    { label:'Iluminarias', url: '/electromovilidad' },
+    { label:'Baterías e Inversores', url: '/electromovilidad' },
+    { label:'Sistemas Fotovoltaícos', url: '/electromovilidad' },
   ];
 
   return (
@@ -131,21 +133,17 @@ function ServicesOptions () {
       `}
     >
 
-      <h6>Nuestros Servicios</h6>
-
       <div className='flex gap-12'>
 
         {servicesList.map((service, key) => (
 
-          <a 
-            className='flex flex-col items-center p-6 hover:bg-gray-100 rounded cursor-pointer gap-4' 
-            key={key}
-            href={service.url}
-          >
+          <a key={key} href={service.url}>
 
-            <img src={service.img} className='h-20'/>
+            <CustomButton buttonClass={ButtonClass.TransparentButtonsClass()}>
 
-            <span className='font-medium text-gray-800'>{service.label}</span>
+              <span className='font-medium text-gray-800'>{service.label}</span>
+
+            </CustomButton>
                   
           </a>
 

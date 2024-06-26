@@ -2,14 +2,13 @@
 
 // Components
 import Layout from "../layouts/Layout.astro";
-
-// Sections
-import SelectFinanciamientoButtons from "../sections/screens/financiamiento/SelectFinanciamientoButtons";
+import SelectHouseOrCompanySection from "../sections/screens/financiamiento/SelectHouseOrCompanySection";
 
 ---
 
 <Layout title="Financiamiento">
 
-  <SelectFinanciamientoButtons client:only/>
+  <SelectHouseOrCompanySection client:load/>
 
 </Layout>
+
