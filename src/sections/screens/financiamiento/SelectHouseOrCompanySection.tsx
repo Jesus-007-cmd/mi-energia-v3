@@ -34,6 +34,18 @@ export default function SelectHouseOrCompanySection () {
     ? houseMainImage 
     : companyMainImage;
 
+  const beneficiosList4 = [
+    'No se requiere un capital inicial por parte de la empresa',
+    'Facturación de cada mes por concepto de renta',
+    'Al término puede existir un valor de venta residual o renovación del contrato',
+  ];
+  
+  const houseContainerStyle = {
+    backgroundImage: 'url(/images/screens/financiamiento/img8.jpg)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  }
+
   return (
 
     <section>
@@ -57,6 +69,46 @@ export default function SelectHouseOrCompanySection () {
       </div>
 
       {isShowingHouseSection ? <HouseSection/> : <CompanySection/>}
+
+      <div className='h-screen' style={houseContainerStyle}/>
+
+      <div className="grid grid-cols-1 md:grid-cols-2">
+
+        <div className="flex flex-col p-6 bg-neutral-800 text-white">
+
+          <h3 className="text-2xl font-semibold">Arrendamiento</h3>
+
+          <p>
+            Este instrumento te permite como arrendador contar con los beneficios de un sistema 
+            solar sin inversión inicial y gozando de las deducciones fiscales que ofrece el esquema. 
+            El arrendador mantiene la propiedad del sistema fotovoltaico hasta el término del plazo.
+          </p>
+
+          <ul className="list-disc pl-6">
+            {beneficiosList4.map((beneficio) => <li>{beneficio}</li>)}
+          </ul>
+
+        </div>
+
+        <div className="flex flex-col p-6 ">
+
+          <h3 className="text-2xl font-semibold">PPA (Power Purchase Agreement)</h3>
+
+          <p>
+            Si aún no estás preparado para invertir en energía solar, 
+            podemos instalar un sistema fotovoltaico en tus instalaciones a coste 0.
+          </p>
+
+          <p>
+            Nosotros nos encargamos de la operación y mantenimiento, permitiendo que tu 
+            empresa se beneficie de energía limpia y logre un mayor nivel de sostenibilidad.
+            En este esquema se paga una renta mensual relacionado con la energía solar 
+            generada pero a un precio más bajo que la energía que ofrece el suministrador local.
+          </p>
+
+        </div>
+
+      </div>
 
     </section>
 

@@ -28,6 +28,22 @@ const { sectionRows } = Astro.props;
 
 ---
 
+<style>
+
+	.first-row-image {
+		background-image: url('/images/screens/home/img2.jpg');
+	}
+
+	.second-row-image {
+		background-image: url('/images/screens/home/img3.jpg');
+	}
+
+	.third-row-image {
+		background-image: url('/images/screens/home/img4.jpg');
+	}
+
+</style>
+
 <section class='flex flex-col'>
 
   {sectionRows.map((row, key) => (

@@ -171,7 +171,7 @@ export default function OurLocationMap (props:Props) {
 
   return (
 
-    <div className='flex flex-col gap-6'>
+    <div className='flex flex-col gap-6 bg-neutral-200'>
 
       {
         isLoaded && 
@@ -182,13 +182,16 @@ export default function OurLocationMap (props:Props) {
         >{markers.map((row, index) => <MarkerF key={index} position={row.position}/>)}</GoogleMap>
       }
 
-      <div className={twMerge(clsx(`flex flex-col md:grid ${gridsAtMd} ${gridsAtLg} bg-white gap-6`))}>
+      <div className={twMerge(clsx(`flex flex-col md:grid ${gridsAtMd} ${gridsAtLg} bg-neutral-200 gap-6`))}>
 
         {locationList.map((row, key) => (
 
-          <div className='flex flex-col items-center justify-center shadow text-center p-6' key={key}>
+          <div className='flex flex-col items-center justify-center shadow text-center p-6 bg-white' key={key}>
+            
             <span className='font-medium text-xl'>{row.amount}</span>
+
             <span className='text-lg'>{row.description}</span>
+
           </div>
 
         ))}

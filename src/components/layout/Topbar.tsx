@@ -118,10 +118,10 @@ export default function Topbar () {
 function ServicesOptions () {
 
   const servicesList = [
-    { label:'Electromovilidad', url: '/electromovilidad' },
-    { label:'Iluminarias', url: '/electromovilidad' },
-    { label:'Baterías e Inversores', url: '/electromovilidad' },
-    { label:'Sistemas Fotovoltaícos', url: '/electromovilidad' },
+    { label:'Electromovilidad', url: '/fronius' },
+    { label:'Iluminarias', url: '/fronius' },
+    { label:'Baterías e Inversores', url: '/fronius' },
+    { label:'Sistemas Fotovoltaícos', url: '/fronius' },
   ];
 
   return (

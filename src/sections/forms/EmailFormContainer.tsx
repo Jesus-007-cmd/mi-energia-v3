@@ -145,7 +145,7 @@ function LocationContainer () {
 
   return (
 
-    <div className='flex flex-col p-6 gap-4'>
+    <div className='flex flex-col p-6 gap-4 bg-neutral-200'>
 
       <h3 className='text-xl font-semibold text-center'>Servicios Realizados</h3>
 

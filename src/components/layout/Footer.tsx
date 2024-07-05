@@ -15,7 +15,7 @@ export default function Footer () {
 
     <div className="flex flex-col">
 
-      <div className='p-6 bg-neutral-700 flex flex-col gap-4'>
+      <div className='p-6 md:px-20 lg:px-40 bg-neutral-700 flex flex-col gap-4'>
 
         <div className="flex flex-row items-center gap-4">
 
@@ -25,7 +25,7 @@ export default function Footer () {
 
             <div className="flex flex-col gap-1">
 
-              <span className="font-medium">Contáctanos</span>
+              <span className="text-xl font-medium">Contáctanos</span>
 
               <ul className="flex gap-4">
 
@@ -33,7 +33,7 @@ export default function Footer () {
 
                   <li className='text-white cursor-pointer rounded hover:bg-neutral-800 p-2'>
 
-                    <img className="h-6 invert" src={row.logo} />
+                    <img className="h-8 invert" src={row.logo} />
 
                   </li>
                 )}

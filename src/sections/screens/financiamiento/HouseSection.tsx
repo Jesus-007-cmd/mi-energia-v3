@@ -17,9 +17,9 @@ export default function HouseSection () {
 
     <div>
     
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="p-6 px-20 grid grid-cols-1 md:grid-cols-2 bg-neutral-800 gap-12">
 
-        <div className="flex flex-col p-6 gap-1 bg-neutral-800 text-white">
+        <div className="flex flex-col gap-1 text-white justify-center">
 
           <div>
             <h3 className="text-sm">Financiamiento</h3>
@@ -38,23 +38,21 @@ export default function HouseSection () {
 
         </div>
 
-        <div className="h-full w-full p-6 flex justify-center items-center">
-
-          <img src='/images/screens/financiamiento/img2.png' className="h-16"/>
-
-        </div>
+        <img 
+          className="rounded"
+          src='/images/screens/financiamiento/img2.png'
+        />
 
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="p-6 px-20 grid grid-cols-1 md:grid-cols-2 gap-12">
 
-        <div className="h-full w-full p-6 flex justify-center items-center order-2 md:order-1">
+        <img 
+          src='/images/screens/financiamiento/img3.png' 
+          className="order-2 md:order-1 rounded"
+        />
 
-          <img src='/images/screens/financiamiento/img3.png' className="h-16"/>
-
-        </div>
-
-        <div className="flex flex-col p-6 gap-1 bg-neutral-800 text-white order-1 md:order-2">
+        <div className="flex flex-col p-6 gap-1 order-1 md:order-2 justify-center">
 
           <p>
             Logra el mejoramiento sustentable en tu vivienda mediante la aplicación de Ecotecnologías que contribuyan a reducir el consumo y gasto de electricidad.
