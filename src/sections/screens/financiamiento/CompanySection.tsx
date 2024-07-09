@@ -21,7 +21,7 @@ export default function CompanySection () {
 
     <div className="flex flex-col">
 
-      <div className="p-6 px-20 grid grid-cols-1 md:grid-cols-2 bg-neutral-800 gap-12">
+      <div className="p-6 md:px-20 lg:px-40 grid grid-cols-1 md:grid-cols-2 bg-neutral-800 gap-12">
 
         <div className="flex flex-col text-white gap-1 justify-center">
 
@@ -49,7 +49,7 @@ export default function CompanySection () {
 
       </div>
 
-      <div className="p-6 px-20 grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="p-6 md:px-20 lg:px-40 grid grid-cols-1 md:grid-cols-2 gap-12">
 
         <img 
           className="rounded"
@@ -75,7 +75,7 @@ export default function CompanySection () {
 
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 p-6 px-20 bg-neutral-800 gap-12">
+      <div className="p-6 md:px-20 lg:px-40 grid grid-cols-1 md:grid-cols-2 bg-neutral-800 gap-12">
 
         <div className="flex flex-col p-6 text-white gap-1 justify-center">
 
@@ -94,7 +94,7 @@ export default function CompanySection () {
         </div>
 
         <img 
-          className="rounded "
+          className="rounded"
           src='/images/screens/financiamiento/img9.jpg'
         />
 

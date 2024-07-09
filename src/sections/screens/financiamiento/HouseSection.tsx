@@ -17,7 +17,7 @@ export default function HouseSection () {
 
     <div>
     
-      <div className="p-6 px-20 grid grid-cols-1 md:grid-cols-2 bg-neutral-800 gap-12">
+      <div className="p-6 md:px-20 lg:px-40 grid grid-cols-1 md:grid-cols-2 bg-neutral-800 gap-12">
 
         <div className="flex flex-col gap-1 text-white justify-center">
 
@@ -45,7 +45,7 @@ export default function HouseSection () {
 
       </div>
 
-      <div className="p-6 px-20 grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="p-6 md:px-20 lg:px-40 grid grid-cols-1 md:grid-cols-2 gap-12">
 
         <img 
           src='/images/screens/financiamiento/img3.png' 
