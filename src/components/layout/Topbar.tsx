@@ -119,7 +119,7 @@ function ServicesOptions () {
 
   const servicesList = [
     { label:'Electromovilidad', url: '/fronius' },
-    { label:'Iluminarias', url: '/fronius' },
+    { label:'Iluminarias', url: '/iluminarias' },
     { label:'Baterías e Inversores', url: '/fronius' },
     { label:'Sistemas Fotovoltaícos', url: '/fronius' },
   ];

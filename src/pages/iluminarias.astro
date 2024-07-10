@@ -1,0 +1,116 @@
+---
+// Components
+import Layout from "../layouts/Layout.astro";
+
+const itemList = [
+  { 
+    title:'Luminarias para alumbrado público', 
+    img:'/images/screens/iluminarias/img1.png', 
+    texture:'' 
+  },
+  { 
+    title:'Luminarias solares', 
+    img:'/images/screens/iluminarias/img2.png', 
+    texture:'' 
+  },
+  { 
+    title:'Proyectores LED', 
+    img:'/images/screens/iluminarias/img3.png', 
+    texture:'' 
+  },
+  { 
+    title:'Campanas insutriales LED', 
+    img:'/images/screens/iluminarias/img4.png', 
+    texture:'' 
+  },
+];
+
+const imageList = [
+  '/images/screens/iluminarias/img5.jpg',
+  '/images/screens/iluminarias/img6.jpg',
+  '/images/screens/iluminarias/img7.jpg',
+  '/images/screens/iluminarias/img8.jpg',
+]
+
+---
+
+<Layout title="Iluminiarias">
+
+  <div class="h-screen bg-gray-700"/>
+
+  <section class="flex flex-col lg:grid lg:grid-cols-2">
+
+    <div class="p-6 flex flex-col justify-center">
+
+      <h3 class="text-xl font-semibold">
+        Potentes proyectos de iluminación exterior profesional, duraderos y confiables con alta eficiencia energética.
+      </h3>
+    
+      <p>
+        Nuestra gama de luminarias para alumbrado integran materiales altamente
+        duraderos, lentes ópticos especializados para vialidades en general y supresor de
+        sobretensiones; características que aseguran autosuficiencia y la máxima eficacia lumínica en el mercado.
+      </p>
+
+    </div>
+
+    <div class="bg-blue-700 lg:h-80"/>
+
+  </section>
+
+  <section class=" bg-neutral-600 text-center text-white">
+
+    <div class="p-6">
+
+      <h3 class="text-xl font-medium">
+        Ideales para vialidades, parques, jardines, túneles, aeropuertos, canchas deportivas, naves industriales, entre otros.
+      </h3>
+  
+      <p>
+        Cumplimos con la certificación de todas las normas nacionales e internacionales y contamos con amplias garantías directamente de fábrica.
+      </p>
+
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4">
+
+      {itemList.map((row, index) => 
+
+        <div class={`p-6 flex flex-col gap-4 ${index % 2 === 0 ? 'bg-neutral-700' : 'bg-neutral-800'}`}>
+
+          <h4 class="text-lg font-medium">{row.title}</h4>
+
+          <img src={row.img} alt={row.title} class="h-44 mx-auto"/>
+
+        </div>
+
+      )}
+
+    </div>
+
+  </section>
+
+  <section class="text-center flex flex-col">
+
+    <div class="p-6">
+
+      <h3 class="text-xl font-medium">
+        Realizamos proyectos personalizados para cada aplicación, garantizando óptimos resultados.
+      </h3>
+  
+      <p>
+        Nuestra Área de Proyectos se especializa en estudios y diagnósticos energéticos de ahorro de energía en el sistema de iluminación, 
+        cumpliendo los niveles de luminosidad recomendados por la Secretaría Del Trabajo y Previsión Social.
+      </p>
+
+    </div>
+
+    <div class="grid grid-cols-2">
+
+      {imageList.map((row) => <img src={row}/>)}
+
+    </div>
+
+  </section>
+
+</Layout>

@@ -19,11 +19,11 @@ export default function CompanySection () {
 
   return (
 
-    <div className="flex flex-col">
+    <section className="flex flex-col">
 
-      <div className="p-6 md:px-20 lg:px-40 grid grid-cols-1 md:grid-cols-2 bg-neutral-800 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 bg-neutral-800">
 
-        <div className="flex flex-col text-white gap-1 justify-center">
+        <div className="flex flex-col text-white gap-1 justify-center p-6">
 
           <div className="flex flex-col">
             <h3 className="text-sm">Crédito</h3>
@@ -42,21 +42,15 @@ export default function CompanySection () {
 
         </div>
 
-        <img 
-          className="rounded"
-          src='/images/screens/financiamiento/img2.png'
-        />
+        <img src='/images/screens/financiamiento/img2.png'/>
 
       </div>
 
-      <div className="p-6 md:px-20 lg:px-40 grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 bg-neutral-800">
 
-        <img 
-          className="rounded"
-          src='/images/screens/financiamiento/img3.png'
-        />
+        <img src='/images/screens/financiamiento/img3.png'/>
 
-        <div className="flex flex-col gap-1 order-1 md:order-2 justify-center">
+        <div className="flex flex-col gap-1 order-1 md:order-2 justify-center p-6 text-white">
 
           <div className="flex flex-col">
             <h3 className="text-sm">Crédito</h3>
@@ -75,7 +69,7 @@ export default function CompanySection () {
 
       </div>
 
-      <div className="p-6 md:px-20 lg:px-40 grid grid-cols-1 md:grid-cols-2 bg-neutral-800 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 bg-neutral-800">
 
         <div className="flex flex-col p-6 text-white gap-1 justify-center">
 
@@ -93,14 +87,11 @@ export default function CompanySection () {
 
         </div>
 
-        <img 
-          className="rounded"
-          src='/images/screens/financiamiento/img9.jpg'
-        />
+        <img src='/images/screens/financiamiento/img9.jpg'/>
 
       </div>
 
-    </div>
+    </section>
 
   );
 

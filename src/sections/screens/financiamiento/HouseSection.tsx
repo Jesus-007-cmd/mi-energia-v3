@@ -15,11 +15,11 @@ export default function HouseSection () {
 
   return (
 
-    <div>
+    <section>
     
-      <div className="p-6 md:px-20 lg:px-40 grid grid-cols-1 md:grid-cols-2 bg-neutral-800 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 bg-neutral-800 items-center">
 
-        <div className="flex flex-col gap-1 text-white justify-center">
+        <div className="flex flex-col gap-1 text-white justify-center p-6">
 
           <div>
             <h3 className="text-sm">Financiamiento</h3>
@@ -38,18 +38,15 @@ export default function HouseSection () {
 
         </div>
 
-        <img 
-          className="rounded"
-          src='/images/screens/financiamiento/img2.png'
-        />
+        <img src='/images/screens/financiamiento/img2.png'/>
 
       </div>
 
-      <div className="p-6 md:px-20 lg:px-40 grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center">
 
         <img 
           src='/images/screens/financiamiento/img3.png' 
-          className="order-2 md:order-1 rounded"
+          className="order-2 md:order-1"
         />
 
         <div className="flex flex-col p-6 gap-1 order-1 md:order-2 justify-center">
@@ -66,7 +63,7 @@ export default function HouseSection () {
 
       </div>
 
-    </div>
+    </section>
 
   )
 
