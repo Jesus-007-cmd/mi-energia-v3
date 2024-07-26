@@ -17,7 +17,7 @@ export default function Footer () {
 
       <div className='p-6 md:px-20 lg:px-40 bg-neutral-700 flex flex-col gap-4'>
 
-        <div className="flex flex-row items-center gap-4">
+        <div className="flex flex-col lg:flex-row items-center gap-4">
 
           <img className="h-10" src="/images/mi-energia-logo/logo2.png"/>
 
@@ -52,7 +52,7 @@ export default function Footer () {
 
       <div className="px-6 py-4 bg-neutral-800 text-center text-white flex justify-center">
 
-        <ul className="flex gap-4">
+        <ul className="flex flex-col lg:flex-row gap-4">
 
           {footerSections.map((section, index) => <FooterLink key={index} {...section} />)}
           

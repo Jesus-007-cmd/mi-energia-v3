@@ -5,6 +5,7 @@ import ButtonClass from '../classes/ButtonClass';
 // Components
 import Layout from '../layouts/Layout.astro';
 import CustomButton from '../components/forms/CustomButton';
+import OurLocationMap from '../sections/data/OurLocationMap';
 import BlackWhiteContainerWithImage from '../sections/data/BlackWhiteContainerWithImage.astro';
 
 // Types
@@ -52,7 +53,7 @@ const socialNetworks = [
 	}
 ];
 
-const certificates = [5, 2, 4, 1, 7, 10, 11, 13];
+const certificates = [1, 2, 3, 4, 5, 6, 7, 8];
 
 ---
 
@@ -90,36 +91,40 @@ const certificates = [5, 2, 4, 1, 7, 10, 11, 13];
 
 	<BlackWhiteContainerWithImage sectionRows={sectionRows} />
 
-	<section class="bg-white flex flex-col p-6 text-center text-gray-800 gap-6">
+	<section class="bg-neutral-700 text-white flex flex-col items-center gap-6 p-6 md:p-12 md:px-20 lg:px-40 xl:px-60">
+
+		<p class="text-lg text-center font-medium">
+			Formamos parte de Ingeniería y Desarrollo de Yucatán S.A. de C.V. (IDY), 
+			empresa constructora y de servicios de ingeniería con más de 30 años de experiencia 
+			en la industria de la construcción (fundación 1991).
+		</p>
+
+		<img 
+			class="w-40"
+			src="/images/screens/home/logos-certificaciones/img9.png"
+		/>
+
+	</section>
+
+	<section class="bg-neutral-100 gap-6 flex flex-col text-center p-6 md:p-12 md:px-20 lg:px-40">
 
 		<div class="flex flex-col text-center items-center gap-1">
-
 			<h3 class="text-2xl font-semibold">Nuestros Certificados y Distintivos</h3>
-
-			<p class="sm:w-3/4">
-				En Mi Energía MX nos enorgullecemos de contar con altos estándares de calidad y compromiso ambiental. Nuestros certificados y distintivos respaldan nuestro compromiso con la excelencia y la sostenibilidad. 
+			<p>
+				En Mi Energía MX nos enorgullecemos de contar con altos estándares de calidad y compromiso ambiental. 
+				Nuestros certificados y distintivos respaldan nuestro compromiso con la excelencia y la sostenibilidad. 
 			</p>
-
 		</div>
 
 		<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 items-center justify-items-center">
-
 			{certificates.map((certificate) => (
-
-				<img
-					src={`/images/screens/home/logos-certificaciones/img${certificate}.png`} 
-					class="w-32"
-				/>
-
+				<img src={`/images/screens/home/logos-certificaciones/img${certificate}.png`}/>
 			))}
-
 		</div>
 
 	</section>
 
-	<section class="p-6 flex flex-col gap-6 bg-gray-200 text-gray-800e">
-
-		<h3 class="text-2xl font-semibold text-center">Cliente Ideal</h3>
+	<section class="p-6 items-center gap-6 md:gap-12 md:p-20 grid grid-cols-1 md:grid-cols-2">
 
 		<img 
 			src="/images/screens/home/img5.png" 
@@ -127,9 +132,32 @@ const certificates = [5, 2, 4, 1, 7, 10, 11, 13];
 			class="sm:h-[500px] mx-auto"
 		/>
 
+		<div class="flex flex-col">
+
+			<p>
+				Mi Energía MX proporciona una amplia gama de servicios energéticos y servicios de activos energéticos.
+				Nuestro objetivo es desarrollar un portafolio integral de soluciones 
+				que aceleren e impulsen la transición energética y la descarbonización en México. 
+			</p>
+
+			<p>
+				Nos comprometemos a colaborar con Empresa Socialmente Responsable para mejorar la sostenibilidad y 
+				cumplir con los objetivos de desarrollo sostenible de la ONU.
+			</p>
+
+		</div>
+
 	</section>
 
-	<section class="bg-white text-gray-800 flex flex-col items-center p-6">
+	<section class="bg-neutral-700 text-white flex flex-col gap-4 p-6 md:px-20 lg:px-40 xl:px-60">
+
+		<h2 class="text-2xl font-semibold text-center">Plantas de sitios trabajados</h2>
+
+		<OurLocationMap client:load/>
+		
+	</section>
+
+	<section class="bg-neutral-100 flex flex-col items-center p-6">
 
 		<div class="flex flex-col text-center text-gap-8">
 
@@ -158,5 +186,5 @@ const certificates = [5, 2, 4, 1, 7, 10, 11, 13];
 		</div>
 
 	</section>
-	
+
 </Layout>

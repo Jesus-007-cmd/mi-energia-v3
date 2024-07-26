@@ -1,0 +1,83 @@
+---
+// Components
+import Layout from "../layouts/Layout.astro";
+
+const monitoreoList = [
+  'Supervisa tu consumo y rendimiento energético en tiempo real.',
+  'Garantiza la funcionalidad y reduce el período de amortización.',
+  'Identifica y optimiza el consumo de energía.',
+  'Mantén tu instalación actualizada y ahorra dinero con extensiones individuales.',
+  'Extiende la garantía sin cargo.'
+];
+
+---
+
+<Layout title="Monitoreo">
+
+  <div class="h-screen bg-gray-700"/>
+
+  <section class="p-6 lg:px-40 text-center flex flex-col gap-4 bg-gray-50">
+
+    <div>
+
+      <h3 class="text-2xl font-medium">Monitoreo en su instalación fotovoltaica en todo momento</h3>
+
+      <p>Con la herramienta de monitoreo gratuita Fronius Solar.web puede supervisar el consumo y rendimiento energético en todo momento:</p>
+
+    </div>
+
+    <div class="grid grid-cols-5 gap-4">
+
+      {monitoreoList.map((row) => 
+
+        <div class="flex flex-col border rounded p-6 bg-white items-center justify-center">
+          <p>{row}</p>
+        </div>
+  
+      )}
+
+    </div>
+
+  </section>
+
+  <section class="grid grid-cols-2">
+
+    <div class="flex items-center bg-neutral-700">
+      <h3 class="text-lg font-medium p-6 text-center text-white">
+        Desde una propiedad de alquiler hasta una fábrica, obtén una herramienta que te permita visualizar, entender, medir y controlar tu consumo energético.
+      </h3>
+    </div>
+
+    <img src="/images/screens/monitoreo/img1.jpg"/>
+
+  </section>
+
+  <section class="p-6 lg:px-40 flex flex-col gap-4 bg-gray-50 text-center">
+
+    <h3 class="text-2xl font-medium">Las ventajas de los sistemas de monitoreo de energía y consumo eléctrico:</h3>
+
+    <div class="grid grid-cols-2 gap-4">
+
+      <img src="/images/screens/monitoreo/img2.jpg" class="border rounded">
+
+      <div class="grid grid-cols-2 gap-4">
+
+        <div class="p-6 rounded border bg-white">
+          Determina formas de reducir el uso de energía. Reducir derroches innecesarios y recortar las facturas
+        </div>
+    
+        <div class="p-6 rounded border bg-white row-span-2 flex items-center">
+          <p>Accede a datos en tiempo real sobre el uso de la energía. Realiza un seguimiento a lo largo de un periodo de tiempo.</p>
+        </div>
+    
+        <div class="p-6 rounded border bg-white">
+          Programa alertas automáticos de fallos de equipos y reportes.
+        </div>
+  
+      </div>
+
+    </div>
+
+  </section>
+
+</Layout>

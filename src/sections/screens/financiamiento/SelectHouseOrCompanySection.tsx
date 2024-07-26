@@ -39,12 +39,6 @@ export default function SelectHouseOrCompanySection () {
     'Facturación de cada mes por concepto de renta',
     'Al término puede existir un valor de venta residual o renovación del contrato',
   ];
-  
-  const houseContainerStyle = {
-    backgroundImage: 'url(/images/screens/financiamiento/img8.jpg)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  }
 
   return (
 
@@ -70,11 +64,9 @@ export default function SelectHouseOrCompanySection () {
 
       {isShowingHouseSection ? <HouseSection/> : <CompanySection/>}
 
-      <div className='h-screen' style={houseContainerStyle}/>
+      {!isShowingHouseSection && <div className="p-6 gap-6 bg-neutral-600 text-white grid grid-cols-1 md:grid-cols-2 ">
 
-      <div className="grid grid-cols-1 md:grid-cols-2">
-
-        <div className="flex flex-col p-6 bg-neutral-800 text-white">
+        <div className='p-6 flex flex-col rounded border'>
 
           <h3 className="text-2xl font-semibold">Arrendamiento</h3>
 
@@ -90,7 +82,7 @@ export default function SelectHouseOrCompanySection () {
 
         </div>
 
-        <div className="flex flex-col p-6 ">
+        <div className="flex flex-col p-6 rounded border">
 
           <h3 className="text-2xl font-semibold">PPA (Power Purchase Agreement)</h3>
 
@@ -108,7 +100,7 @@ export default function SelectHouseOrCompanySection () {
 
         </div>
 
-      </div>
+      </div>}
 
     </section>
 

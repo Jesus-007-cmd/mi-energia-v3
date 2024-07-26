@@ -31,7 +31,7 @@ export default function CustomButton (props:CustomButtonProps) {
       onMouseLeave={onExit}
       type={type} 
       disabled={disabled}
-    >{props.children} </button>
+    >{props.children}</button>
 
   )
   

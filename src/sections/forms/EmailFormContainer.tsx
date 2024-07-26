@@ -11,9 +11,6 @@ import CustomButton from '../../components/forms/CustomButton';
 // Data
 import { networkList } from '../../data/data';
 
-// Sections
-import OurLocationMap from '../data/OurLocationMap';
-
 export default function EmailFormContainer () {
   
   return (
@@ -148,8 +145,6 @@ function LocationContainer () {
     <div className='flex flex-col p-6 gap-4 bg-neutral-200'>
 
       <h3 className='text-xl font-semibold text-center'>Servicios Realizados</h3>
-
-      <OurLocationMap gridsAtMd='md:grid-cols-2' gridsAtLg='lg:grid-cols-2'/>
 
     </div>
 

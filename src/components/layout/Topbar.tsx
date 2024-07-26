@@ -2,7 +2,6 @@
 import { useState } from 'react';
 
 // Components
-import ChatbotBox from '../custom/ChatbotBox';
 import CustomButton from '../forms/CustomButton';
 
 // Classes
@@ -14,11 +13,18 @@ export default function Topbar () {
   const [ isMouseInServiceButton, setIsMouseInServiceButton ] = useState(false);
 
   const headerButtons = [
-    { label:'Nosotros', url: '/sobre-nosotros' },
     { label:'Servicios' },
     { label:'Financiamiento', url: '/financiamiento' },
+    { label:'Contáctanos', url: '/contactanos' },
   ];
 
+  // Styles
+  const navStyle = `
+    px-4 md:px-8 h-20 flex justify-between items-center gap-4 absolute z-10 w-full 
+    transition duration-500 ease-in-out group-hover/main-container:bg-white
+  `;
+
+  // Toggle
   function toggleIsMouseInTopBar () {
     if (isMouseInServiceButton) setIsMouseInServiceButton(false);
     setIsMouseInTopBar(!isMouseInTopBar);
@@ -36,12 +42,7 @@ export default function Topbar () {
 
     <div className='flex text-center group/main-container' onMouseEnter={toggleIsMouseInTopBar} onMouseLeave={toggleIsMouseInTopBar}>
 
-      <nav
-        className={`
-          px-4 md:px-8 h-20 flex justify-between items-center gap-4 absolute z-10 w-full 
-          transition duration-500 ease-in-out group-hover/main-container:bg-white
-        `}
-      >
+      <nav className={navStyle}>
 
         <a href="/">
 
@@ -95,17 +96,9 @@ export default function Topbar () {
 
           </div>
 
-          <a href="/contactanos">
-
-            <CustomButton 
-              buttonClass={ButtonClass.TransparentButtonsClass('group-hover/main-container:text-gray-800')}
-            >Contáctanos</CustomButton>
-
-          </a>
-
         </div>
 
-        <ChatbotBox/> 
+        <div/>
 
       </nav>
 
@@ -119,9 +112,9 @@ function ServicesOptions () {
 
   const servicesList = [
     { label:'Electromovilidad', url: '/fronius' },
-    { label:'Iluminarias', url: '/iluminarias' },
-    { label:'Baterías e Inversores', url: '/fronius' },
-    { label:'Sistemas Fotovoltaícos', url: '/fronius' },
+    { label:'Iluminación de alta eficiencia', url: '/iluminarias' },
+    { label:'Monitoreo', url: '/monitoreo' },
+    // { label:'Sistemas Fotovoltaícos', url: '/fronius' },
   ];
 
   return (
