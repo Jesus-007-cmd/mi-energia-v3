@@ -18,6 +18,6 @@ export default class ButtonClass {
 
   static WhiteBorderButtonClass = `${this.commonButtonClass} border-white text-white hover:text-gray-800 hover:bg-white`;
 
-  static TransparentButtonsClass = (extra?:string) => `${this.commonButtonClass} text-white hover:bg-gray-100 hover:text-gray-800 ${extra}`;
+  static TransparentButtonsClass = (extra?:string) => `${this.commonButtonClass} hover:bg-gray-100 ${extra}`;
 
 }

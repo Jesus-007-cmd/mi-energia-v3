@@ -5,86 +5,20 @@ import { YouTube } from 'astro-embed';
 
 // Components
 import Layout from "../layouts/Layout.astro";
-
-const whyFronius = [
-	{
-		title: "Experiencia de calidad",
-		description: `
-			Con más de 30 años de experiencia en instalación de sistemas fotovoltaicos, 
-      con equipos de alta calidad. Confía en nuestros aspectos para diseñar un 
-      sistema fotovoltaico adaptado a tus necesidades.
-		`,
-	},
-	{
-		title: "Rentabilidad garantizada",
-		description: `
-			En Mi Energía MX tu empresa invierte en un sistema cuyo costo siempre 
-      será menor al valor de la energía que produce, asegurando un retorno de 
-      inversión óptimo. Ahorra costos de electricidad, aprovecha tu recurso solar.
-    `,
-	},
-	{
-		title: "Servicio excepcional",
-		description: `
-			Con Mi Energía MX, obtendrás un monitoreo remoto constante, 
-      nuestros tiempos de respuesta en caso de fallas son inigualables, 
-      garantizando el funcionamiento continuo de tu sistema fotovoltaico.
-		`,
-	},
-];
-
-const lideresCambioList = [
-  'Proyectos de medición, ahorro y gestión inteligente de energía',
-  'Proyectos de iluminación LED exterior e industrial',
-  'Sistemas Fotovoltaicos Interconectados a la red',
-  'Soluciones de almacenamiento híbridos y aislados.',
-  'Soluciones de carga inteligente de baterías para vehículos de logística y diseño de salas de carga.',
-  'Soluciones en electromovilidad',
-  'Los SFV son nuestro producto principal y el 80% de nuestros clientes son B2B',
-];
-
-const beneficiosList = [
-  { title:'Calidad y Sostenibilidad', p:'Fronius es reconocida con premios como el Intersolar Award y Smarter E.' },
-  { title:'Formación Continua', p:'Nos aseguramos de ofrecer la mejor calidad gracias a nuestra formación constante.' },
-  { title:'Servicio Completo', p:'Asesoramiento profesional y productos de alta calidad garantizados.' }
-];
-
-const bajaTusCostosList = [
-  'Un proyecto fotovoltaico con Mi Energía MX baja los costos de energía al aprovechar un abundante recurso con el que su empresa ya cuenta: la radiación solar.',
-  'Contacte a nuestra unidad de proyectos para evaluar exactamente cuánto dinero vale la radiación solar que cae diariamente sobre su techo.',
-  'No tener un sistema fotovoltaico hoy en día es desperdiciar un valioso recurso que su empresa ya tiene y desaprovechar una gran oportunidad.',
-];
-
-const monitoreeSuInstalacionList = [
-  'Garantice la funcionalidad',
-  'Reduzca el periodo de amortización',
-  'Exponga a los derrochadores de energía',
-  'Analice y optimice el consumo de energía',
-  'Mantenga la instalación actualizada',
-  'Ahorre dinero con extensiones individuales',
-  'Extienda la garantía sin cargo',
-];
-
-const ventajasAUnSoloVistazo = [
-  'Gestión sencilla de una gran cantidad de sistema fotovoltaico. Muy valioso para empresas que tienen sucursales o muchos puntos de consumo.',
-  'Notificaciones automáticas, informes o reportes periódicos programables.',
-  'Control de costos y visualización de rentabilidad.',
-];
-
-const tauroList = [
-  '• Instalación rápida y mantenimiento eficiente',
-  '• Electrónica conductora protegida por la active cooling technology',
-  '• La carcasa de doble pared garantiza una compensación de temperatura óptima',
-  '• Alto rendimiento estable incluso a temperaturas ambiente de hasta 50°C'
-];
-
-
-const diferencialesFronius = [
-  'Amplia experiencia en soluciones de energías renovables.',
-  'Consultores competentes para la transición energética.',
-  'Excelente servicio posventa para el mantenimiento y revisión de instalaciones.',
-  'Mi Energía MX está certificado por Fronius Solution Partner que cumple los criterios de calidad definidos',
-];
+import BajaTusCostos from '../sections/screens/fronius/BajaTusCostos.astro';
+import InversorRobusto from '../sections/screens/fronius/InversorRobusto.astro';
+import PorQueMiEnergia from '../sections/screens/fronius/PorQueMiEnergia.astro';
+import VentajasVistazo from '../sections/screens/fronius/VentajasVistazo.astro';
+import BackgroundWithVideo from '../components/custom/BackgroundWithVideo.astro';
+import EnergiaRenovable from '../sections/screens/fronius/EnergiaRenovable.astro';
+import BeneficiosFronius from '../sections/screens/fronius/BeneficiosFronius.astro';
+import BajaTusCostosList from '../sections/screens/fronius/BajaTusCostosList.astro';
+import MonitoreeInstalacion from '../sections/screens/fronius/MonitoreeInstalacion.astro';
+import DisenadoLiderMercado from '../sections/screens/fronius/DisenadoLiderMercado.astro';
+import QueDiferenciaMiEnergia from '../sections/screens/fronius/QueDiferenciaMiEnergia.astro';
+import SustentabilidadAmbiente from '../sections/screens/fronius/SustentabilidadAmbiente.astro';
+import SuministroEnergiaRespaldo from '../sections/screens/fronius/SuministroEnergiaRespaldo.astro';
+import FuncionInstalacionFotovoltaica from '../sections/screens/fronius/FuncionInstalacionFotovoltaica.astro';
 
 const genPlus24 = [
   '• Uso flexible de la energía solar, de día o de noche.',
@@ -113,9 +47,11 @@ const genPlus24 = [
 
 <Layout title="Fronius">
 
-  <section class="bg-gray-700 h-screen  flex text-2xl font-medium"/>
+  <BackgroundWithVideo 
+    url="https://blau-app-storage.s3.amazonaws.com/consultorias/mi-energia/MiEnergia-02.mov"
+  />
 
-  <section class="bg-neutral-200 flex flex-col p-6 md:px-20 lg:px-40 xl:px-60">
+  <section class="bg-neutral-800 text-white flex flex-col p-6 md:px-20 lg:px-40 xl:px-60">
 
 		<p class="text-lg text-center font-medium">
 			Impulsamos la transición energética y descarbonización de México a través de soluciones energéticas 
@@ -125,295 +61,32 @@ const genPlus24 = [
 
 	</section>
 
-	<section class="bg-neutral-800 text-white  p-6 md:px-20 lg:px-40 xl:px-60 flex flex-col gap-4 text-center">
+  <PorQueMiEnergia/>
 
-		<h3 class="text-2xl font-semibold">¿Por qué elegir Mi Energía MX?</h3>
+  <QueDiferenciaMiEnergia/>
 
-		<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-			{whyFronius.map((row, index) => 
-
-				<div class="text-center p-6 gap-4 flex flex-col border items-center bg-neutral-800 rounded">
-
-					<div class="border min-h-10 w-10 flex justify-center items-center rounded text-yellow-500 font-medium">
-						{index+1}
-					</div>
-
-					<div>
-						<p class="text-lg font-medium">{row.title}</p>
-						<p>{row.description}</p>
-					</div>
-
-				</div>
-		
-			)}
-
-		</div>
-
-	</section>
-
-  <section class="bg-neutral-100 text-center flex flex-col gap-4 p-6 md:px-20 lg:px-40 xl:px-60">
-
-    <div class="flex flex-col gap-1">
-
-      <h2 class="text-2xl font-semibold">Líderes de cambio</h2>
-
-      <p>
-        Ofrecemos soluciones integrales de energía a nuestros clientes, 
-        ya sean residencias, negocios, corporativos o industria, ya sea 
-        en una ubicación o múltiples sucursales. Nuestros productos principales son:
-      </p>
-
-    </div>
-
-    <div class="grid gap-4 grid-cols-2 md:grid-cols-3">
-      {lideresCambioList.map((row) => <div class="p-4 border rounded flex flex-col bg-white">{row}</div>)}
-    </div>
-
-  </section>
-
-  <section class="bg-neutral-800 text-white text-center flex flex-col gap-4 p-6 md:px-20 lg:px-40 xl:px-60">
-
-    <h3 class="text-2xl font-semibold col-span-2">¿Qué diferencia Mi Energía MX como Fronius Solutions Partner?</h3>
-
-    <div class="gap-4 grid grid-cols-2 md:grid-cols-4">
-      {diferencialesFronius.map((item) => <div class="border rounded p-4 flex items-center">{item}</div>)}
-    </div>
-
-  </section>
-
-  <section class="bg-neutral-100 text-center flex flex-col gap-4 p-6 md:px-20 lg:px-40 xl:px-60">
-
-    <div class="flex flex-col gap-1">
-      <h2 class="text-2xl font-semibold">Beneficios</h2>
-      <p>Al ser parte de FSP obtenemos una implementación de soluciones de sistemas de energías renovables, incluidas las soluciones fotovoltaicas.</p>
-    </div>
-
-    <div class="grid gap-4 grid-cols-1 md:grid-cols-2">
-
-      {beneficiosList.map((row, index) => 
-        <div class={`border rounded flex flex-col p-4 bg-white justify-center ${(index === 1) ? 'row-span-2' : '' }`}>
-          <h3 class="text-lg font-medium">{row.title}</h3>
-          <p>{row.p}</p>
-        </div>
-      )}
-
-    </div>
-
-  </section>
+  <BeneficiosFronius/>
 
   <section class="bg-neutral-800 text-white p-6 md:px-20 lg:px-40 xl:px-60">
-
     <p class="text-xl font-medium text-center">Confía en nuestra experiencia y en la tecnología de vanguardia para tus necesidades solares.</p>
-
   </section>
 
-	<section class="bg-neutral-100 grid grid-cols-1 md:grid-cols-2">
+	<DisenadoLiderMercado/>
 
-		<div class="flex flex-col">
-      <img src="/images/screens/fronius/img5.jpg">
-    </div>
+	<BajaTusCostos/>
 
-		<div class="flex flex-col justify-center gap-4 p-6 md:p-12">
+  <SustentabilidadAmbiente/>
 
-			<div>
-				<h3 class="text-sm">Beneficios</h3>
-				<h3 class="text-2xl font-semibold">Diseñado por el líder del mercado fotovoltaico</h3>
-			</div>
-
-			<table class="border bg-white border-collapse">
-
-				<tbody>
-					
-					<tr>
-
-						<td class="p-3 border text-red-600 font-medium">
-              Justo a su medida
-            </td>
-
-						<td class="p-3 border">
-              Dimensionamos nuestro sistema mediante un análisis exhaustivo de sus necesidades energéticas, 
-              instalaciones e historial de pagos electrónicos para asegurar ahorros óptimos.
-            </td>
-
-					</tr>
-
-					<tr>
-
-						<td class="p-3 border text-red-600 font-medium">
-              Operación y mantenimiento
-            </td>
-
-						<td class="p-3 border">
-              Optimiza tu empresa con nuestro paquete de operación y mantenimiento. 
-              Nos encargamos del funcionamiento mientras generas ahorros con energía solar.
-            </td>
-            
-					</tr>
-
-					<tr>
-						
-            <td class="p-3 border text-red-600 font-medium">
-              Monitoreo 24h
-            </td>
-
-						<td class="p-3 border">
-              Se realiza un monitoreo las 24 horas a través de Fronius Solar Web para asegurar 
-              el funcionamiento óptimo del sistema. Sin preocupaciones por fallos, 
-              con tiempos de respuesta excelentes.
-            </td>
-
-					</tr>
-
-				</thead>
-
-			</table>
-
-		</div>
-
-	</section>
-
-	<section class="bg-neutral-800 grid grid-cols-1 md:grid-cols-2">
-
-		<div class="flex flex-col justify-center gap-1 text-white p-6 md:p-12">
-
-			<div>
-				<h3 class="text-sm">Beneficios</h3>
-				<h3 class="text-2xl font-semibold">Baja tus costos</h3>
-			</div>
-
-      <p>
-        Con un proyecto fotovoltaico de Fronius, tu empresa puede reducir significativamente los costos de energía al aprovechar el abundante recurso de la radiación solar.
-      </p>
-
-		</div>
-
-		<img src="https://www.fronius.com/~/protected-media/international/solar-energy-2-0/residential-endcustomers/product-pages/gen24-vielseitigkeit-169.jpg?26658"/>
-
-	</section>
-
-  <section class="grid grid-cols-1 md:grid-cols-2">
-
-    <img src="/images/screens/fronius/img6.jpg">
-
-    <div class="bg-neutral-100 flex flex-col p-6 md:p-12 justify-center">
-
-      <h3 class="text-2xl font-semibold">Sustentabilidad para el ambiente, ahorros para ustedes</h3>
-
-      <p>
-        Instale un sistema fotovoltaico con Mi Energía MX para generar en su empresa 
-        energía limpia y más barata en su propio techo. Esta es la mejor forma de ser 
-        socialmente responsable y amigable con el medio ambiente al mismo tiempo que 
-        bajan sus costos de operación.
-      </p>
-
-    </div>
-
-  </section>
-
-  <section class="bg-neutral-800 text-white text-center flex flex-col gap-4 p-6 md:px-20 lg:px-40 xl:px-60">
-
-    <h3 class="text-2xl font-semibold">Baja tus costos</h3>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-
-      {bajaTusCostosList.map((row, index) =>
-
-        <div class="border rounded flex flex-col items-center justify-center p-4 gap-2">
-
-          <div class="min-h-10 min-w-10 border rounded flex items-center justify-center text-yellow-500 font-medium">
-            {index + 1}
-          </div>
-
-          <p>{row}</p>
-
-        </div>
-
-      )}
-
-    </div>
-
-  </section>
+  <BajaTusCostosList/>
 
   <!-- Sistema fotovoltaico residenciales híbridos -->
-  <section class="bg-neutral-100">
+  <EnergiaRenovable/>
 
-    <div class="grid grid-cols-1 md:grid-cols-2">
-
-      <div class="flex flex-col">
-        <img src="/images/screens/fronius/img7.png">
-      </div>
-
-      <div class="flex flex-col justify-center p-6 md:p-12">
-        <span class="text-sm">Sistema fotovoltaico residenciales híbridos</span>
-        <h2 class="text-2xl font-semibold">Energía 100% renovable para su casa</h2>
-        <p>En Mi Energía MX si deseas ahorrar dinero y proteger el medioambiente? Con una instalación fotovoltaica brindará energía renovable para tu casa.</p>
-      </div>
-
-    </div>
-
-  </section>
-
-  <section class="bg-neutral-800 text-white">
-
-    <div class="grid grid-cols-1 md:grid-cols-2">
-
-      <div class="flex flex-col justify-center p-6 md:p-12">
-        <span class="text-sm">Sistema fotovoltaico residenciales híbridos</span>
-        <h2 class="text-2xl font-semibold">Suministro de energía de respaldo en caso de apagón</h2>
-        <p>La mayoría de las instalaciones fotovoltaicas suelen apagarse durante apagones.</p>
-        <p>Con un inversor con función de respaldo y almacenamiento de energía, seguirás teniendo electricidad durante un apagón.</p>
-      </div>
-
-      <div class="flex flex-col">
-        <img src="/images/screens/fronius/img8.jpg">
-      </div>
-
-    </div>
-
-  </section>
+  <SuministroEnergiaRespaldo/>
   
-  <section class="bg-neutral-500 text-white justify-center items-center gap-6 md:gap-12 flex flex-col md:flex-row p-6 md:px-20 lg:px-40 xl:px-60">
+  <FuncionInstalacionFotovoltaica/>
 
-    <div class="flex flex-col text-center">
-      <h2 class="text-2xl font-semibold">¿Cómo funciona una instalación fotovoltaica?</h2>
-      <p>De esta manera, puede utilizar la energía de su propio techo en todo el hogar.</p>
-    </div>
-
-    <img 
-      src="/images/screens/fronius/img9.png" 
-      class="rounded border p-4 h-96 bg-neutral-200"
-    >
-
-  </section>
-
-  <section class="bg-neutral-800 text-white text-center flex flex-col gap-4 p-6 md:px-20 lg:px-40 xl:px-60">
-
-    <h3 class="text-2xl font-semibold text-center">Monitoree su instalación fotovoltaica en todo momento</h3>
-
-    <div class="gap-6 grid grid-cols-1 md:grid-cols-3">
-
-      <div class="bg-neutral-700 border rounded p-4 flex flex-col justify-center">
-
-        <p>
-          Con la herramienta de monitoreo gratuita Fronius Solar.web, puede supervisar el consumo 
-          y rendimiento energético en todo momento y aprovechar al máximo su instalación fotovoltaica.
-        </p>
-
-      </div>
-
-      <ul class="bg-neutral-700 flex flex-col justify-center border rounded p-4">
-        {monitoreeSuInstalacionList.map((item) => <li>{item}</li>)}
-      </ul>
-
-      <img 
-        src="/images/screens/fronius/img10.jpeg" 
-        class="border rounded"
-      >
-
-    </div>
-
-  </section>
+  <MonitoreeInstalacion/>
 
   <section class="flex flex-col text-center p-6 md:px-20 lg:px-40 xl:px-60">
 
@@ -426,21 +99,7 @@ const genPlus24 = [
 
   </section>
 
-  <section class="bg-neutral-800 text-white gap-6 flex flex-col text-center p-6 md:px-20 lg:px-40 xl:px-60">
-
-    <h3 class="text-2xl font-semibold">Ventajas a un solo vistazo</h3>
-
-    <div class="gap-4 grid grid-cols-1 md:grid-cols-3">
-
-      {ventajasAUnSoloVistazo.map((row) => 
-        <div class="border rounded p-4 flex items-center">
-          <p>{row}</p>
-        </div>
-      )}
-
-    </div>
-
-  </section>
+  <VentajasVistazo/>
 
   <section class="bg-neutral-200 flex flex-col text-center p-6 md:px-20 lg:px-40 xl:px-60">
 
@@ -455,61 +114,7 @@ const genPlus24 = [
 
   </section>
  
-  <section class="p-6 md:px-20 lg:px-40 flex flex-col gap-6">
-
-    <div class='grid grid-cols-1 lg:grid-cols-2 items-center'>
-
-      <div class="flex flex-col">
-
-        <div class="flex justify-center">
-
-          <img 
-            src="/images/screens/fronius/img2.jpg" 
-            alt="Fronius Tauro"
-            class="h-[340px]"
-          />
-
-        </div>
-
-        <div class="flex flex-col items-center">
-
-          <div class="w-1/4 bg-neutral-800 h-[2px] mb-4"/>
-
-          <h4 class="font-semibold text-xl">Fronius Tauro ECO 208-220</h4>
-
-          <ul class="flex flex-col items-center">
-
-            <li>Rango de Potencia: 50 kW</li>
-
-            <li>Ideal para países con clase de tensión 208 - 220V</li>
-
-          </ul>
-
-        </div>
-
-      </div>
-
-      <div class="flex flex-col p-6 text-center lg:text-left gap-2">
-
-        <div>
-
-          <h3 class="font-semibold text-2xl">El inversor robusto Fronius Tauro impresiona por sus mínimos costos de funcionamiento del sistema.</h3>
-    
-          <p>Para los proyectos hace que las instalaciones fotovoltaicas comerciales a gran escala sean rentables.</p>
-    
-        </div>
-    
-        <ul class="flex flex-col">
-    
-          {tauroList.map((item) => <li>{item}</li>)}
-    
-        </ul>
-
-      </div>
-
-    </div>
-
-  </section>
+  <InversorRobusto/>
 
   <section class="flex flex-col">
 

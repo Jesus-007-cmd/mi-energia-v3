@@ -5,23 +5,29 @@ import { useState } from 'react';
 import CustomButton from '../forms/CustomButton';
 
 // Classes
+import AppRoutes from '../../routes';
 import ButtonClass from '../../classes/ButtonClass';
 
-export default function Topbar () {
+type Props = {
+  hasBackground:boolean;
+}
 
+export default function Topbar (props:Props) {
+
+  // States
   const [ isMouseInTopBar, setIsMouseInTopBar ] = useState(false);
   const [ isMouseInServiceButton, setIsMouseInServiceButton ] = useState(false);
 
   const headerButtons = [
-    { label:'Servicios' },
-    { label:'Financiamiento', url: '/financiamiento' },
-    { label:'Contáctanos', url: '/contactanos' },
+    { label:AppRoutes.serviciosRoute.title },
+    { label:AppRoutes.financiamientoRoute.title, url:AppRoutes.financiamientoRoute.route },
+    { label:AppRoutes.contactanosRoute.title, url:AppRoutes.contactanosRoute.route }
   ];
 
   // Styles
   const navStyle = `
     px-4 md:px-8 h-20 flex justify-between items-center gap-4 absolute z-10 w-full 
-    transition duration-500 ease-in-out group-hover/main-container:bg-white
+    ${props.hasBackground ? 'bg-white' : ''} transition duration-500 ease-in-out group-hover/main-container:bg-white
   `;
 
   // Toggle
@@ -40,7 +46,11 @@ export default function Topbar () {
 
   return (
 
-    <div className='flex text-center group/main-container' onMouseEnter={toggleIsMouseInTopBar} onMouseLeave={toggleIsMouseInTopBar}>
+    <div 
+      className='flex text-center group/main-container' 
+      onMouseEnter={toggleIsMouseInTopBar} 
+      onMouseLeave={toggleIsMouseInTopBar}
+    >
 
       <nav className={navStyle}>
 
@@ -48,12 +58,12 @@ export default function Topbar () {
 
           <img
             src='/images/mi-energia-logo/logo1.png'
-            className="h-10 hidden group-hover/main-container:block"
+            className={`h-10 ${props.hasBackground ? 'block' : 'hidden group-hover/main-container:block'}`}
           />
 
           <img 
             src='/images/mi-energia-logo/logo2.png' 
-            className="h-10 group-hover/main-container:hidden"
+            className={`h-10 group-hover/main-container:hidden ${props.hasBackground ? 'hidden' : 'block'}`}
           />
 
         </a>
@@ -71,7 +81,7 @@ export default function Topbar () {
                 <div className='group/service-container' key={key}>
 
                   <CustomButton
-                    buttonClass={ButtonClass.TransparentButtonsClass('group-hover/main-container:text-gray-800')} 
+                    buttonClass={ButtonClass.TransparentButtonsClass(`${props.hasBackground ? '' : 'text-white group-hover/main-container:text-gray-800'}`)} 
                     onEnter={toggleIsMouseInServiceButton}
                   >{button.label}</CustomButton>
 
@@ -81,10 +91,10 @@ export default function Topbar () {
 
                 :
 
-                <a className="text-white" href={button.url} key={key}>
+                <a href={button.url} key={key}>
                 
                   <CustomButton 
-                    buttonClass={ButtonClass.TransparentButtonsClass('group-hover/main-container:text-gray-800')} 
+                    buttonClass={ButtonClass.TransparentButtonsClass(`${props.hasBackground ? '' : 'text-white group-hover/main-container:text-gray-800'}`)} 
                     onEnter={toggleIsMouseInAnyOtherButton}
                   >{button.label}</CustomButton>
           
@@ -111,10 +121,26 @@ export default function Topbar () {
 function ServicesOptions () {
 
   const servicesList = [
-    { label:'Electromovilidad', url: '/fronius' },
-    { label:'Iluminación de alta eficiencia', url: '/iluminarias' },
-    { label:'Monitoreo', url: '/monitoreo' },
-    // { label:'Sistemas Fotovoltaícos', url: '/fronius' },
+    { 
+      label:AppRoutes.electromovilidadRoute.title, 
+      url:AppRoutes.electromovilidadRoute.route 
+    },
+    { 
+      label:AppRoutes.sistemaFotovoltaicoComercialRoute.title,
+      url:AppRoutes.sistemaFotovoltaicoComercialRoute.route 
+    },
+    { 
+      label:AppRoutes.sistemaFotovoltaicoResidencialesHibridos.title,
+      url:AppRoutes.sistemaFotovoltaicoResidencialesHibridos.route 
+    },
+    { 
+      label:AppRoutes.sistemaFotovoltaicoComercialEIndustrialRoute.title,
+      url:AppRoutes.sistemaFotovoltaicoComercialEIndustrialRoute.route 
+    },
+    { 
+      label:AppRoutes.monitoreoRoute.title,
+      url:AppRoutes.monitoreoRoute.route 
+    },
   ];
 
   return (

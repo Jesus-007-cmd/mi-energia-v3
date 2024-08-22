@@ -76,44 +76,23 @@ const selectedIluminaria = iluminarias[id];
 
 ---
 
-<Layout title={selectedIluminaria.title}>
+<Layout title={selectedIluminaria.title} hasBackground>
 
-  <div class='h-screen bg-gray-700'></div>
+  <div class="h-screen bg-gray-700 grid grid-cols-1 md:grid-cols-2">
 
-  <div class="p-6 flex flex-col gap-4 bg-gray-50">
+    <div class="h-screen w-full flex flex-col items-center justify-center bg-gray-600">
 
-    <div class="grid grid-cols-2 gap-4">
+      <h3 class="text-lg font-medium text-white">{selectedIluminaria.title}</h3>
 
-      <div class="flex flex-col items-center p-6 bg-white rounded border">
+      <img src={selectedIluminaria.img} class="h-60">
 
-        <h3 class="text-lg font-medium">{selectedIluminaria.title}</h3>
+      <CustomButton buttonClass={ButtonClass.BlackButtonClass}>
+        Solicitar Cotización
+      </CustomButton>
 
-        <div>
-          <img src={selectedIluminaria.img} class="h-60">
-        </div>
+    </div>
 
-        <CustomButton buttonClass={ButtonClass.BlackButtonClass}>
-          Solicitar Cotización
-        </CustomButton>
-
-      </div>
-
-      <div class="flex flex-col gap-4 p-6 bg-white border rounded">
-
-        <h3 class="text-lg font-medium">Aplicaciones</h3>
-        
-        <div class="grid grid-cols-3 gap-4">
-
-          {selectedIluminaria.aplicaciones.map((row) => 
-
-            <div class="p-4 bg-white border rounded">
-              <p>{row}</p>
-            </div>
-            
-          )}
-        </div>
-
-      </div>
+    <div class="h-screen bg-gray-100 flex flex-col justify-center p-6 gap-6">
 
       <div class="p-6 flex flex-col justify-center rounded border bg-white">
 
@@ -142,8 +121,8 @@ const selectedIluminaria = iluminarias[id];
         </ul>
 
       </div>
-
-    </div>
+    
+    </div>  
 
   </div>
 

@@ -1,0 +1,32 @@
+--- 
+
+const ventajasList = [
+  'Poder reservar el punto de carga a través de la app',
+  'Administrar tarifas de carga dependiendo del día y del horario',
+  'Llevar un control de los cobros, cargas y clientes',
+  'Establecer tarifas de ocupación de espacio etc etc.',
+]
+
+---
+
+<div class='p-6 md:px-20 lg:px-40 xl:px-60 flex flex-col bg-gray-100 text-center items-center gap-6'>
+
+  <h3 class='font-semibold text-xl'>
+    Ventajas de ser anfitrión de una estación de carga
+  </h3>
+
+  <div class='grid grid-cols-1 md:grid-cols-2 gap-6'>
+
+    {ventajasList.map((row) => 
+
+      <div class='border rounded-sm p-6 flex flex-col bg-white'>
+
+        <h2 class='text-lg font-medium'>{row}</h2>
+
+      </div>
+
+    )}
+
+  </div>
+
+</div>

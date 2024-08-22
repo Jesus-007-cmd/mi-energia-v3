@@ -45,11 +45,9 @@ export default function EmailFormContainer () {
 
       </div>
 
-      <div className='flex flex-col lg:grid lg:grid-cols-2'>
+      <div className='flex flex-col lg'>
 
         <EmailForm/>
-
-        <LocationContainer/>
 
       </div>      
 
@@ -104,7 +102,7 @@ function EmailForm () {
 
       <ServicioOptionsContainer/>
 
-      <div className='flex flex-col gap-4 pt-4'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-4 pt-4'>
 
         <div className='flex flex-col gap-1'>
           <label>Nombre</label>
@@ -131,20 +129,6 @@ function EmailForm () {
       <div className='flex justify-center'>
         <CustomButton buttonClass={ButtonClass.YellowButtonClass}>Enviar</CustomButton>
       </div> 
-
-    </div>
-
-  )
-
-}
-
-function LocationContainer () {
-
-  return (
-
-    <div className='flex flex-col p-6 gap-4 bg-neutral-200'>
-
-      <h3 className='text-xl font-semibold text-center'>Servicios Realizados</h3>
 
     </div>
 

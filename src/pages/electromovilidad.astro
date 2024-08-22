@@ -3,43 +3,30 @@
 // Components
 import Layout from "../layouts/Layout.astro";
 
-const services = [
-  { img:'/images/screens/home/logos-certificaciones/img7.png', title:'Fronius', route:'/services/fronius' },
-  { img:'/images/screens/home/logos-certificaciones/img13.png', title:'Tauro', route:'/services/tauro' },
-]
+// Sections
+import AdoptaEstacionCarga from '../sections/screens/electromovilidad/AdoptaEstacionCarga.astro';
+import ElectrificaTuFlotilla from '../sections/screens/electromovilidad/ElectrificaTuFlotilla.astro';
+import VentajasElectromovilidad from '../sections/screens/electromovilidad/VentajasElectromovilidad.astro';
+import MovilidadElectricaCamino from '../sections/screens/electromovilidad/MovilidadElectricaCamino.astro';
+import ConvertirFlotaEmpresarial from '../sections/screens/electromovilidad/ConvertirFlotaEmpresarial.astro';
+import SerAnfitrionEstacionCargo from '../sections/screens/electromovilidad/SerAnfitrionEstacionCargo.astro';
 
 ---
 
 <Layout title="Electromovilidad">
 
-  <div class="h-screen bg-gray-700">
+  <div class='h-screen bg-gray-700'/>
 
-  </div>
+  <SerAnfitrionEstacionCargo/>
 
-  <div class="flex flex-col justify-center gap-4 p-6">
-
-    <h3 class="text-center">Nuestros Servicios</h3>
-
-    <div class="flex justify-center gap-4">
-
-      {services.map((service) => (
-
-        <a href={service.route}>
-
-          <div class="flex flex-col items-center hover:bg-gray-100 p-6 cursor-pointer rounded">
+  <ConvertirFlotaEmpresarial/>
   
-            <h2>{service.title}</h2>
-    
-            <img src={service.img} alt={service.title} class="w-48" />
-    
-          </div>
+  <MovilidadElectricaCamino/>
 
-        </a>
-  
-      ))}
+  <AdoptaEstacionCarga/>
 
-    </div>
+  <VentajasElectromovilidad/>
 
-  </div>
+  <ElectrificaTuFlotilla/>
   
 </Layout>

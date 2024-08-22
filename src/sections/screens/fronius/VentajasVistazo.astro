@@ -1,0 +1,25 @@
+---
+
+const ventajasAUnSoloVistazo = [
+  'Gestión sencilla de una gran cantidad de sistema fotovoltaico. Muy valioso para empresas que tienen sucursales o muchos puntos de consumo.',
+  'Notificaciones automáticas, informes o reportes periódicos programables.',
+  'Control de costos y visualización de rentabilidad.',
+];
+
+---
+
+<section class="bg-neutral-800 text-white gap-6 flex flex-col text-center p-6 md:px-20 lg:px-40 xl:px-60">
+
+  <h3 class="text-2xl font-semibold">Ventajas a un solo vistazo</h3>
+
+  <div class="gap-4 grid grid-cols-1 md:grid-cols-3">
+
+    {ventajasAUnSoloVistazo.map((row) => 
+      <div class="border rounded p-4 flex items-center bg-neutral-700">
+        <p>{row}</p>
+      </div>
+    )}
+
+  </div>
+
+</section>

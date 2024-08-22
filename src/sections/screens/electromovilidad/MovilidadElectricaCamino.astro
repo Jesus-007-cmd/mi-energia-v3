@@ -1,0 +1,44 @@
+---
+
+const movilidadList = [
+  { 
+    title:'Impulsar la eficiencia',
+    description:'La transición a una flota de vehículos eléctricos optimiza el consumo de energía y reduce los costos operativos, tanto a corto como a largo plazo.'
+  },
+  {
+    title:'Reducir costos',
+    description:'Las empresas informan una disminución del 50% en los costos de mantenimiento al cambiar de vehículos tradicionales de gasolina a una flota eléctrica.'
+  },
+  {
+    title:'Prepárate para el futuro',
+    description:'Las empresas que adoptan la movilidad eléctrica se posicionan como líderes en sostenibilidad y responsabilidad social.'
+  },
+  {
+    title:'Predicar con el ejemplo',
+    description:'Demuestre su compromiso con la sostenibilidad y la reducción de emisiones nocivas al hacer la transición a una flota eléctrica.'
+  }
+]
+
+---
+
+<div class="bg-gray-100 p-6 md:px-20 lg:px-40 xl:px-60 grid grid-cols-1 md:grid-cols-2 gap-6">
+
+  {
+    movilidadList.map((row, index) => 
+
+      <div class="text-center border rounded-sm bg-white p-6 flex flex-col items-center">
+
+        <div class="min-w-12 h-12 rounded-sm border bg-gray-100 mb-4 flex items-center justify-center">
+          <span class="text-red-500 font-medium text-lg">{index + 1}</span>
+        </div>
+
+        <h4 class="text-lg font-medium">{row.title}</h4>
+
+        <p>{row.description}</p>
+
+      </div>
+
+    )
+  }
+
+</div>

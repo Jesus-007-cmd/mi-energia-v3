@@ -1,0 +1,28 @@
+---
+
+// Classes
+import ButtonClass from '../../../classes/ButtonClass';
+
+// Components
+import CustomButton from '../../../components/forms/CustomButton';
+
+// Sections
+import BackgroundWithVideo from '../../../components/custom/BackgroundWithVideo.astro';
+
+const { url } = Astro.props;
+---
+
+<BackgroundWithVideo url={url}/>
+
+<!-- @TIP: Con h-0 se remueve el espacio que deja el display relative -->
+<div class="flex gap-4 justify-center relative bottom-16 h-0">
+
+  <a href="/sobre-nosotros">
+    <CustomButton buttonClass={ButtonClass.WhiteBorderButtonClass}>Nosotros</CustomButton>
+  </a>
+
+  <a href="/conocer-mas">
+    <CustomButton buttonClass={ButtonClass.WhiteButtonClass}>Conocer más</CustomButton>
+  </a>
+  
+</div>

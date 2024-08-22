@@ -1,12 +1,15 @@
 ---
-// Classes
-import ButtonClass from '../classes/ButtonClass';
 
 // Components
 import Layout from '../layouts/Layout.astro';
-import CustomButton from '../components/forms/CustomButton';
-import OurLocationMap from '../sections/data/OurLocationMap';
 import BlackWhiteContainerWithImage from '../sections/data/BlackWhiteContainerWithImage.astro';
+
+// Sections
+import HomeVideo from '../sections/screens/home/HomeVideo.astro';
+import PlantasSitios from '../sections/screens/home/PlantasSitios.astro';
+import NuestrasRedes from '../sections/screens/home/NuestrasRedes.astro';
+import MiEnergiaServicios from '../sections/screens/home/MiEnergiaServicios.astro';
+import NuestrosCertificados from '../sections/screens/home/NuestrosCertificados.astro';
 
 // Types
 import type { SectionRow } from "../sections/data/BlackWhiteContainerWithImage.astro";
@@ -35,26 +38,6 @@ const sectionRows:SectionRow[] = [
 	}
 ];
 
-const socialNetworks = [
-	{
-		name:'Facebook',
-		url:'https://www.facebook.com/mienergiamx/?locale=es_LA',
-		icon:'logo-facebook.svg'
-	},
-	{
-		name:'Instagram',
-		url:'https://www.instagram.com/mienergiamx/',
-		icon:'logo-instagram.svg'
-	},
-	{
-		name:'LinkedIn',
-		url:'https://mx.linkedin.com/company/mi-energ%C3%ADa-mx',
-		icon:'logo-linkedin.svg'
-	}
-];
-
-const certificates = [1, 2, 3, 4, 5, 6, 7, 8];
-
 ---
 
 <style>
@@ -67,27 +50,7 @@ const certificates = [1, 2, 3, 4, 5, 6, 7, 8];
 
 <Layout title="Welcome to Mi Energia MX.">
 
-	<section class="h-screen bg-white flex flex-col bg-image header-bg-image py-20 px-8">
-
-		<div class='text-white text-center flex flex-col gap-4 h-full justify-between'>
-
-			<h1 class="text-3xl font-semibold"></h1>
-
-			<div class="flex gap-4 justify-center">
-
-				<a href="/sobre-nosotros">
-					<CustomButton buttonClass={ButtonClass.WhiteBorderButtonClass}>Nosotros</CustomButton>
-				</a>
-
-				<a href="/conocer-mas">
-					<CustomButton buttonClass={ButtonClass.WhiteButtonClass}>Conocer más</CustomButton>
-				</a>
-				
-			</div>
-
-		</div>
-
-	</section>
+	<HomeVideo url="https://blau-app-storage.s3.amazonaws.com/consultorias/mi-energia/MiEnergia-01.mov"/>
 
 	<BlackWhiteContainerWithImage sectionRows={sectionRows} />
 
@@ -106,85 +69,12 @@ const certificates = [1, 2, 3, 4, 5, 6, 7, 8];
 
 	</section>
 
-	<section class="bg-neutral-100 gap-6 flex flex-col text-center p-6 md:p-12 md:px-20 lg:px-40">
+	<NuestrosCertificados/>
 
-		<div class="flex flex-col text-center items-center gap-1">
-			<h3 class="text-2xl font-semibold">Nuestros Certificados y Distintivos</h3>
-			<p>
-				En Mi Energía MX nos enorgullecemos de contar con altos estándares de calidad y compromiso ambiental. 
-				Nuestros certificados y distintivos respaldan nuestro compromiso con la excelencia y la sostenibilidad. 
-			</p>
-		</div>
+	<MiEnergiaServicios/>
 
-		<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 items-center justify-items-center">
-			{certificates.map((certificate) => (
-				<img src={`/images/screens/home/logos-certificaciones/img${certificate}.png`}/>
-			))}
-		</div>
+	<PlantasSitios/>
 
-	</section>
-
-	<section class="p-6 items-center gap-6 md:gap-12 md:p-20 grid grid-cols-1 md:grid-cols-2">
-
-		<img 
-			src="/images/screens/home/img5.png" 
-			alt="Diagrama Cliente Ideal" 
-			class="sm:h-[500px] mx-auto"
-		/>
-
-		<div class="flex flex-col">
-
-			<p>
-				Mi Energía MX proporciona una amplia gama de servicios energéticos y servicios de activos energéticos.
-				Nuestro objetivo es desarrollar un portafolio integral de soluciones 
-				que aceleren e impulsen la transición energética y la descarbonización en México. 
-			</p>
-
-			<p>
-				Nos comprometemos a colaborar con Empresa Socialmente Responsable para mejorar la sostenibilidad y 
-				cumplir con los objetivos de desarrollo sostenible de la ONU.
-			</p>
-
-		</div>
-
-	</section>
-
-	<section class="bg-neutral-700 text-white flex flex-col gap-4 p-6 md:px-20 lg:px-40 xl:px-60">
-
-		<h2 class="text-2xl font-semibold text-center">Plantas de sitios trabajados</h2>
-
-		<OurLocationMap client:load/>
-		
-	</section>
-
-	<section class="bg-neutral-100 flex flex-col items-center p-6">
-
-		<div class="flex flex-col text-center text-gap-8">
-
-			<h3 class="text-xl font-semibold">Nuestras Redes</h3>
-
-			<div class="flex flex-row gap-12">
-
-				{socialNetworks.map((row) => (
-
-					<a 
-						class="flex flex-col p-3 hover:bg-gray-100 cursor-pointer hover:rounded-md gap-1" 
-						href={row.url}
-						target="_blank"
-					>
-
-						<img src={`/images/general-logo/${row.icon}`} alt={row.name} class="w-10 h-10 mx-auto" />
-	
-						<h3 class="font-medium">{row.name}</h3>
-	
-					</a>
-	
-				))}
-
-			</div>
-
-		</div>
-
-	</section>
+	<NuestrasRedes/>
 
 </Layout>

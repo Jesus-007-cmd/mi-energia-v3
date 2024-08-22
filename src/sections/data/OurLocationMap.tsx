@@ -1,6 +1,4 @@
 // Components
-import clsx from 'clsx';
-import { twMerge } from 'tailwind-merge';
 import { GoogleMap, useJsApiLoader, MarkerF } from '@react-google-maps/api';
 
 const locationList:LocationData[] = [

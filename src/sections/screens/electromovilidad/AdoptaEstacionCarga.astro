@@ -1,0 +1,64 @@
+---
+
+const data:MovilidadData[] = [
+  {
+    title:'Mantenimiento',
+    description:'Esto se debe a la reducción en vla frecuencia y el costo de las reparaciones, la mayor durabilidad de los equipos y la disminución del tiempo de inactividad. Además, la implementación de sistemas de monitoreo predictivo permite identificar problemas potenciales antes de que se conviertan en fallos costosos, optimizando así los recursos y mejorando la eficiencia operativa.',
+    img:'/images/general-logo/tools.svg'
+  },
+  {
+    title:'Reposición de piezas',
+    description:'Un motor de combustión interna puede contener más de 2,700 partes móviles, mientras que un motor eléctrico generalmente tiene entre 30 y 40. Esta significativa reducción en el número de componentes móviles disminuye considerablemente la probabilidad de fallos y reduce la necesidad de sustitución y mantenimiento.',
+    img:'/images/general-logo/gear.svg'
+  },
+  {
+    title:'Combustible',
+    description:'Los precios de las gasolinas aumentan cada año, incluso con los subsidios gubernamentales, y pueden variar según las condiciones políticas globales. En cambio, si en nuestra empresa utilizamos energía renovable, podemos controlar y proyectar costos fijos de este recurso, logrando ahorros que pueden superar el 95%.',
+    img:'/images/general-logo/bolt.svg'
+  },
+  {
+    title:'Sostenibilidad',
+    description:'Según el Inventario Nacional de Emisiones de Gases y Compuestos de Efecto Invernadero (INEGyCEI) el autotransporte es el generador del 18.5% de emisiones de estos gases en México.',
+    img:'/images/general-logo/money.svg'
+  }
+];
+
+type MovilidadData = {
+  title:string;
+  description:string;
+  img:string;
+}
+
+---
+
+<div class='bg-neutral-700 text-white text-center flex flex-col p-6 md:px-20 lg:px-40 xl:px-60'>
+
+  <h3 class="text-xl font-semibold">La movilidad eléctrica es el camino hacia el futuro del transporte.</h3>
+
+  <p class="mb-6">
+    Los autos eléctricos no sólo son más eficientes en conversión de energía en comparación 
+    con los de combustión interna (hasta 77% VS 25%) si no que además, representan grandes ahorros 
+    y ventajas para las empresas que deciden transitar a este tipo de vehículos. Por ejemplo:
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    {data.map((row) => 
+
+      <div class="border rounded-sm p-6 flex flex-col items-center bg-neutral-800">
+
+        <div class="h-14 w-14 border rounded-sm mb-4 flex items-center justify-center bg-neutral-700">
+          <img src={row.img} class="h-6 w-6"/>
+        </div>
+
+        <h4 class="text-lg font-medium">{row.title}</h4>
+
+        <p>{row.description}</p>
+
+      </div>
+
+    )}
+
+  </div>
+
+</div>
