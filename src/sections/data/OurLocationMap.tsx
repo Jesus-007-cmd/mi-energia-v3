@@ -1,27 +1,6 @@
 // Components
 import { GoogleMap, useJsApiLoader, MarkerF } from '@react-google-maps/api';
 
-const locationList:LocationData[] = [
-  {
-    amount:103,
-    description:'Clientes de Yucatán:',
-  },
-  {
-    amount:14,
-    description:'Clientes en Campeche:',
-  },
-  {
-    amount:25,
-    description:'Clientes en Quintana Roo:',
-  },
-];
-
-// Types
-type LocationData = {
-  amount: number;
-  description: string;
-}
-
 type Props = {
   gridsAtMd?: string;
   gridsAtLg?: string;
@@ -33,9 +12,6 @@ export default function OurLocationMap (props:Props) {
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyAUwJ1TLf3hpbdEhi0euPG7bSZr6ouxRCw"
   })
-
-  const gridsAtMd = (props?.gridsAtMd || 'md:grid-cols-3');
-  const gridsAtLg = (props?.gridsAtLg || 'lg:grid-cols-3');
 
   const markers = [
 
@@ -203,21 +179,12 @@ export default function OurLocationMap (props:Props) {
           <GoogleMap
             mapContainerStyle={{ height:"400px", width:"100%", borderRadius:"0.25rem" }}
             center={{ lat:20.9858054, lng:-89.7844126  }}
-            zoom={10}
+            zoom={7}
+            // Disable default UI and zoom controls
+            options={{ disableDefaultUI:true, zoomControl:true, maxZoom:7 }}
           >{markers.map((row, index) => <MarkerF key={index} position={row.position}/>)}</GoogleMap>
         </div>
       }
-
-      <div className={`gap-6 flex flex-col md:grid ${gridsAtMd} ${gridsAtLg}`}>
-
-        {locationList.map((row, key) => (
-          <div className='bg-neutral-600 flex flex-col items-center justify-center text-center p-6 border rounded' key={key}>
-            <span className='font-medium text-xl'>{row.amount}</span>
-            <span className='text-lg'>{row.description}</span>
-          </div>
-        ))}
-
-      </div>
 
     </div>
 

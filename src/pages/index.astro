@@ -2,7 +2,6 @@
 
 // Components
 import Layout from '../layouts/Layout.astro';
-import BlackWhiteContainerWithImage from '../sections/data/BlackWhiteContainerWithImage.astro';
 
 // Sections
 import HomeVideo from '../sections/screens/home/HomeVideo.astro';
@@ -10,33 +9,6 @@ import PlantasSitios from '../sections/screens/home/PlantasSitios.astro';
 import NuestrasRedes from '../sections/screens/home/NuestrasRedes.astro';
 import MiEnergiaServicios from '../sections/screens/home/MiEnergiaServicios.astro';
 import NuestrosCertificados from '../sections/screens/home/NuestrosCertificados.astro';
-
-// Types
-import type { SectionRow } from "../sections/data/BlackWhiteContainerWithImage.astro";
-
-const sectionRows:SectionRow[] = [
-	{
-		subtitle:'Sobre Nosotros',
-		title:'Mi Energía MX',
-		description:`
-			Nos enfocamos en brindar calidad y buen servicio, utilizando los mejores productos del mercado. 
-			Impulsamos la transición energética y descarbonización de México a través de soluciones energéticas 
-			altamente rentables y eficientes que agregan valor a nuestros clientes reduciendo sus gastos fijos y 
-			huella de carbono. Más de 30 años de experiencia en servicios de instalación energética.
-		`,
-		classImage:'first-row-image'
-	},
-	{
-		subtitle:'Sobre Nosotros',
-		title:'Beneficios',
-		description:`
-			Con nuestra asesoría experta, podrás reducir tus costos fijos y tú huella de carbono. 
-			Recupera tu inversión de manera rápida eliminando costos de energía. 
-			Además, te mostraremos cómo reducir tu consumo energético para seguir ahorrando a largo plazo.
-		`,
-		classImage:'second-row-image'
-	}
-];
 
 ---
 
@@ -52,11 +24,9 @@ const sectionRows:SectionRow[] = [
 
 	<HomeVideo url="https://blau-app-storage.s3.amazonaws.com/consultorias/mi-energia/MiEnergia-01.mov"/>
 
-	<BlackWhiteContainerWithImage sectionRows={sectionRows} />
-
 	<section class="bg-neutral-700 text-white flex flex-col items-center gap-6 p-6 md:p-12 md:px-20 lg:px-40 xl:px-60">
 
-		<p class="text-lg text-center font-medium">
+		<p class="text-xl text-center font-medium">
 			Formamos parte de Ingeniería y Desarrollo de Yucatán S.A. de C.V. (IDY), 
 			empresa constructora y de servicios de ingeniería con más de 30 años de experiencia 
 			en la industria de la construcción (fundación 1991).

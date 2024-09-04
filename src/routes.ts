@@ -1,10 +1,5 @@
 export default class AppRoutes {
 
-  static sistemaFotovoltaicoComercialRoute:AppRoute = {
-    route:'/fronius',
-    title:'Sistema fotovoltaico comercial'
-  }
-
   static sistemaFotovoltaicoResidencialesHibridos:AppRoute = {
     route:'/fronius',
     title:'Sistema fotovoltaico residenciales híbridos'
@@ -43,6 +38,16 @@ export default class AppRoutes {
   static electromovilidadRoute:AppRoute = {
     route:'/electromovilidad',
     title:'Electromovilidad'
+  }
+
+  static batteriesRoute:AppRoute = {
+    route:'/bess-system',
+    title:'Sistema BESS'
+  }
+
+  static sobreNosotrosRoute:AppRoute = {
+    route:'/sobre-nosotros',
+    title:'Sobre nosotros'
   }
 
 }

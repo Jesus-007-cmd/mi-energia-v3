@@ -1,0 +1,41 @@
+---
+
+const genPlus24 = [
+  '• Puerto único',
+  '• Potencia configurable de hasta 50A',
+  '• Herramienta de gestión remota',
+  '• Plug and Charge ISO 15118 (listo para hardware)',
+  '• Funcionalidad de Smart Grid para comunicaciones directas con servicios públicos',
+  '• Montaje en pared o pedestal con sistema opcional de gestión de cables',
+];
+
+---
+
+<section class="bg-neutral-800 text-white p-6 md:px-20 lg:px-40 flex flex-col gap-6">
+
+  <div class='items-center grid grid-cols-1 lg:grid-cols-2'>
+
+    <div class="flex flex-col">
+
+      <div class="flex justify-center">
+        <img src="/images/screens/electromovilidad/img1.png" class="h-[340px]"/>
+      </div>
+
+    </div>
+
+    <div class="flex flex-col p-6 text-center lg:text-left gap-2">
+
+      <div>
+        <h3 class="font-semibold text-2xl">MQ 200</h3>
+        <p>El MQ 200 está diseñado para flotas y ubicaciones de múltiples unidades con una salida rápida de 50A y una experiencia del usuario sin esfuerzo, apoyado en una robusta herramienta para mayor control.</p>
+      </div>
+  
+      <ul class="flex flex-col">
+        {genPlus24.map((item) => <li>{item}</li>)}
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>

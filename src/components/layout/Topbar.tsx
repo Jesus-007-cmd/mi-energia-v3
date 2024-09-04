@@ -20,6 +20,7 @@ export default function Topbar (props:Props) {
 
   const headerButtons = [
     { label:AppRoutes.serviciosRoute.title },
+    { label:AppRoutes.sobreNosotrosRoute.title, url:AppRoutes.sobreNosotrosRoute.route },
     { label:AppRoutes.financiamientoRoute.title, url:AppRoutes.financiamientoRoute.route },
     { label:AppRoutes.contactanosRoute.title, url:AppRoutes.contactanosRoute.route }
   ];
@@ -122,12 +123,12 @@ function ServicesOptions () {
 
   const servicesList = [
     { 
-      label:AppRoutes.electromovilidadRoute.title, 
-      url:AppRoutes.electromovilidadRoute.route 
+      label:AppRoutes.batteriesRoute.title, 
+      url:AppRoutes.batteriesRoute.route 
     },
     { 
-      label:AppRoutes.sistemaFotovoltaicoComercialRoute.title,
-      url:AppRoutes.sistemaFotovoltaicoComercialRoute.route 
+      label:AppRoutes.electromovilidadRoute.title, 
+      url:AppRoutes.electromovilidadRoute.route 
     },
     { 
       label:AppRoutes.sistemaFotovoltaicoResidencialesHibridos.title,

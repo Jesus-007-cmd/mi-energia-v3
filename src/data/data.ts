@@ -5,17 +5,17 @@ export const networkList:NetworkData[] = [
   { 
     label:'Facebook', 
     url:'https://www.facebook.com',
-    logo:'/images/general-logo/logo-facebook.svg'
+    logo:'/images/icons/facebook.svg'
   },
   { 
     label:'Instagram', 
     url:'https://www.instagram.com',
-    logo:'/images/general-logo/logo-instagram.svg'
+    logo:'/images/icons/instagram.svg'
   },
   { 
     label:'LinkedIn', 
     url:'https://www.linkedin.com',
-    logo:'/images/general-logo/logo-linkedin.svg'
+    logo:'/images/icons/linkedin.svg'
   }
 ];
 

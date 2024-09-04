@@ -6,6 +6,8 @@ import ButtonClass from '../classes/ButtonClass';
 // Components
 import Layout from '../layouts/Layout.astro';
 import CustomButton from '../components/forms/CustomButton';
+import type { SectionRow } from '../sections/data/BlackWhiteContainerWithImage.astro';
+import BlackWhiteContainerWithImage from '../sections/data/BlackWhiteContainerWithImage.astro';
 
 const sobreNosotrosParagraph = `
   En Mi Energía MX estamos enfocándonos en brindarles calidad y el buen servicio, utilizando los mejores productos del mercado. 
@@ -13,48 +15,62 @@ const sobreNosotrosParagraph = `
   rentables y eficientes que agregan valor a nuestros clientes reduciendo sus gastos fijos y huella de carbono. 
   Más de 30 años de experiencia en servicios de construcción nos respaldan.`
 
+const sectionRows:SectionRow[] = [
+	{
+		subtitle:'Sobre Nosotros',
+		title:'Mi Energía MX',
+		description:`
+			Nos enfocamos en brindar calidad y buen servicio, utilizando los mejores productos del mercado. 
+			Impulsamos la transición energética y descarbonización de México a través de soluciones energéticas 
+			altamente rentables y eficientes que agregan valor a nuestros clientes reduciendo sus gastos fijos y 
+			huella de carbono. Más de 30 años de experiencia en servicios de instalación energética.
+		`,
+		classImage:'first-row-image'
+	},
+	{
+		subtitle:'Sobre Nosotros',
+		title:'Beneficios',
+		description:`
+			Con nuestra asesoría experta, podrás reducir tus costos fijos y tú huella de carbono. 
+			Recupera tu inversión de manera rápida eliminando costos de energía. 
+			Además, te mostraremos cómo reducir tu consumo energético para seguir ahorrando a largo plazo.
+		`,
+		classImage:'second-row-image'
+	}
+];
+
 ---
 
 <Layout title='Sobre Nosotros'>
 
   <section class="bg-neutral-800 flex flex-col justify-center items-center p-6 pt-20 text-white h-96">
-
     <h2 class="text-2xl font-semibold">Sobre Nosotros</h2>
-
     <p class="md:w-1/2 text-center">{sobreNosotrosParagraph}</p>
-
   </section>
 
+  <BlackWhiteContainerWithImage sectionRows={sectionRows} />
+
   <div class="bg-gray-700 h-screen flex items-center justify-between flex-col p-6">
-
     <h2 class="text-xl font-medium text-white">Título X</h2>
-
     <CustomButton buttonClass={ButtonClass.WhiteBorderButtonClass}>Conócenos</CustomButton>
-
   </div>
 
   <section class="grid grid-cols-1 md:grid-cols-2 text-center h-96">
 
     <div class="p-6 bg-gray-100 order-2 md:order-1 h-full flex flex-col justify-center">
-
       <h2 class="text-xl font-semibold">Nuestra Misión</h2>
-
       <p>
         Contribuir con nuestros clientes en la gestión inteligente de la energía eléctrica, 
         promoviendo su generación a partir de fuentes renovables y optimizando su uso de manera eficiente.
       </p>
-
     </div>
 
     <div class="p-6 bg-neutral-800 text-white order-1 md:order-2 h-full flex flex-col justify-center">
-
       <h2 class="text-xl font-semibold">Nuestra Visión</h2>
-
       <p>
         Nuestro objetivo es ser la principal empresa de gestión de recursos energéticos en México, reconocida por la calidad profesional de nuestro equipo y la confiabilidad de los equipos que ofrecemos. 
         Nos destacamos por ofrecer soluciones innovadoras que satisfacen las necesidades de nuestros clientes.
       </p>
-
     </div>
 
   </section>
@@ -62,11 +78,8 @@ const sobreNosotrosParagraph = `
   <section>
 
     <div class="bg-gray-700 h-screen flex items-center justify-between flex-col p-6">
-
       <h2 class="text-xl text-white font-semibold">Título X</h2>
-
       <CustomButton buttonClass={ButtonClass.WhiteBorderButtonClass}>Conócenos</CustomButton>
-
     </div>
 
   </section>

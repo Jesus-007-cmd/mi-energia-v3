@@ -10,6 +10,7 @@ import InversorRobusto from '../sections/screens/fronius/InversorRobusto.astro';
 import PorQueMiEnergia from '../sections/screens/fronius/PorQueMiEnergia.astro';
 import VentajasVistazo from '../sections/screens/fronius/VentajasVistazo.astro';
 import BackgroundWithVideo from '../components/custom/BackgroundWithVideo.astro';
+import Fronius2024 from '../sections/screens/electromovilidad/Fronius2024.astro';
 import EnergiaRenovable from '../sections/screens/fronius/EnergiaRenovable.astro';
 import BeneficiosFronius from '../sections/screens/fronius/BeneficiosFronius.astro';
 import BajaTusCostosList from '../sections/screens/fronius/BajaTusCostosList.astro';
@@ -19,13 +20,6 @@ import QueDiferenciaMiEnergia from '../sections/screens/fronius/QueDiferenciaMiE
 import SustentabilidadAmbiente from '../sections/screens/fronius/SustentabilidadAmbiente.astro';
 import SuministroEnergiaRespaldo from '../sections/screens/fronius/SuministroEnergiaRespaldo.astro';
 import FuncionInstalacionFotovoltaica from '../sections/screens/fronius/FuncionInstalacionFotovoltaica.astro';
-
-const genPlus24 = [
-  '• Uso flexible de la energía solar, de día o de noche.',
-  '• Aún más independencia de los proveedores de electricidad y de los precios de la energía.',
-  '• Acceso rápido a la interfaz web para configuraciones y funciones adicionales',
-  '• Cobertura total de la garantía cuando registra el inversor en Fronius Solar.web',
-];
 
 ---
 
@@ -88,7 +82,7 @@ const genPlus24 = [
 
   <MonitoreeInstalacion/>
 
-  <section class="flex flex-col text-center p-6 md:px-20 lg:px-40 xl:px-60">
+  <section class="flex flex-col text-center p-6 md:py-10 md:px-20 lg:px-40 xl:px-60">
 
     <h3 class="text-2xl font-semibold">Monitoreo del sistema fotovoltaico con Fronius Solar.web</h3>
 
@@ -126,59 +120,7 @@ const genPlus24 = [
 
   </section>
 
-  <section class="bg-neutral-800 text-white p-6 md:px-20 lg:px-40 flex flex-col gap-6">
-
-    <div class=' items-center grid grid-cols-1 lg:grid-cols-2'>
-
-      <div class="flex flex-col">
-
-        <div class="flex justify-center">
-
-          <img 
-            src="/images/screens/fronius/img11.png" 
-            alt="Fronius GenPlus24"
-            class="h-[340px]"
-          />
-
-        </div>
-
-        <div class="flex flex-col items-center">
-
-          <div class="w-1/4 bg-white h-[2px] mb-4"/>
-
-          <ul class="flex flex-col items-center">
-
-            <li>Rango de Potencia: 3 / 4 / 5 kW*  6 / 8 / 10 kW</li>
-
-            <li>Ideal para países con clase de tensión: 80 V - 1.000 V</li>
-
-          </ul>
-
-        </div>
-
-      </div>
-
-      <div class="flex flex-col p-6 text-center lg:text-left gap-2">
-
-        <div>
-
-          <h3 class="font-semibold text-2xl">Fronius GEN24</h3>
-    
-          <p>El Fronius GEN24 plus cuenta con una amplia gama de características que apoya un suministro de energía sostenible e independiente. </p>
-    
-        </div>
-    
-        <ul class="flex flex-col">
-    
-          {genPlus24.map((item) => <li>{item}</li>)}
-    
-        </ul>
-
-      </div>
-
-    </div>
-
-  </section>
+  <Fronius2024/>
 
 </Layout>
 
