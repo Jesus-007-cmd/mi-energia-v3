@@ -68,9 +68,9 @@ const beneficiosBessList = [
 
   <section class="flex flex-col p-6 md:px-20 lg:px-40 xl:px-60">
 
-    <h2 class="text-lg font-medium">¿Qué es BESS?</h2>
+    <h2 class="text-2xl font-medium">¿Qué es BESS?</h2>
 
-    <p class="mb-6">
+    <p class="text-lg mb-6">
       Un sistema BESS (Battery Energy Storage System) permite almacenar energía en periodos de baja demanda para su uso
       durante momentos de alta demanda, ayudando a optimizar el consumo y reducir costos energéticos.
     </p>
@@ -87,13 +87,13 @@ const beneficiosBessList = [
 
   </section>
 
-  <section class="flex flex-col p-6 md:px-20 lg:px-40 bg-gray-700 text-white">
+  <section class="flex flex-col p-6 md:px-20 lg:px-40 xl:px-60 bg-gray-700 text-white">
 
     <div>
 
-      <h2 class="text-lg font-medium">Beneficios clave de BESS</h2>
+      <h2 class="text-2xl font-medium">Beneficios clave de BESS</h2>
 
-      <p class="mb-6">
+      <p class="text-lg mb-6">
         Gracias a estrategias como time shifting y peak shaving, puedes ahorrar
         significativamente en tu factura eléctrica
       </p>
@@ -117,7 +117,7 @@ const beneficiosBessList = [
 
   <section class="flex flex-col gap-6 p-6 md:px-20 lg:px-40 xl:px-60 bg-neutral-100">
 
-    <h3 class="text-lg font-medium">Usos de los BESS</h3>
+    <h3 class="text-2xl font-medium">Usos de los BESS</h3>
 
     <div class="flex flex-col gap-6">
 
@@ -127,7 +127,7 @@ const beneficiosBessList = [
 
           <div class="p-6 border rounded bg-white">
             <h3 class="font-medium text-lg">{row.title}</h3>
-            <h3>{row.description}</h3>
+            <p>{row.description}</p>
           </div>
 
           <div class="border rounded bg-gray-100">
@@ -150,9 +150,9 @@ const beneficiosBessList = [
       
       <div class="flex flex-col gap-6">
 
-        <h3 class="text-lg font-medium">Beneficios adicionales de BESS</h3>
+        <h3 class="text-2xl font-medium">Beneficios adicionales de BESS</h3>
 
-        <div class="grid grid-cols-2 gap-6">
+        <div class="grid gap-6">
 
           {beneficiosBessList.map((row) => 
 

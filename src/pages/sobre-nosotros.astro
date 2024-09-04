@@ -6,8 +6,10 @@ import ButtonClass from '../classes/ButtonClass';
 // Components
 import Layout from '../layouts/Layout.astro';
 import CustomButton from '../components/forms/CustomButton';
-import type { SectionRow } from '../sections/data/BlackWhiteContainerWithImage.astro';
 import BlackWhiteContainerWithImage from '../sections/data/BlackWhiteContainerWithImage.astro';
+
+// Types
+import type { SectionRow } from '../sections/data/BlackWhiteContainerWithImage.astro';
 
 const sobreNosotrosParagraph = `
   En Mi Energía MX estamos enfocándonos en brindarles calidad y el buen servicio, utilizando los mejores productos del mercado. 
@@ -44,8 +46,8 @@ const sectionRows:SectionRow[] = [
 <Layout title='Sobre Nosotros'>
 
   <section class="bg-neutral-800 flex flex-col justify-center items-center p-6 pt-20 text-white h-96">
-    <h2 class="text-2xl font-semibold">Sobre Nosotros</h2>
-    <p class="md:w-1/2 text-center">{sobreNosotrosParagraph}</p>
+    <h2 class="text-2xl font-medium">Sobre Nosotros</h2>
+    <p class="md:w-1/2 text-center text-lg">{sobreNosotrosParagraph}</p>
   </section>
 
   <BlackWhiteContainerWithImage sectionRows={sectionRows} />
@@ -58,16 +60,16 @@ const sectionRows:SectionRow[] = [
   <section class="grid grid-cols-1 md:grid-cols-2 text-center h-96">
 
     <div class="p-6 bg-gray-100 order-2 md:order-1 h-full flex flex-col justify-center">
-      <h2 class="text-xl font-semibold">Nuestra Misión</h2>
-      <p>
+      <h2 class="text-2xl font-medium">Nuestra Misión</h2>
+      <p class="text-lg">
         Contribuir con nuestros clientes en la gestión inteligente de la energía eléctrica, 
         promoviendo su generación a partir de fuentes renovables y optimizando su uso de manera eficiente.
       </p>
     </div>
 
     <div class="p-6 bg-neutral-800 text-white order-1 md:order-2 h-full flex flex-col justify-center">
-      <h2 class="text-xl font-semibold">Nuestra Visión</h2>
-      <p>
+      <h2 class="text-2xl font-medium">Nuestra Visión</h2>
+      <p class="text-lg">
         Nuestro objetivo es ser la principal empresa de gestión de recursos energéticos en México, reconocida por la calidad profesional de nuestro equipo y la confiabilidad de los equipos que ofrecemos. 
         Nos destacamos por ofrecer soluciones innovadoras que satisfacen las necesidades de nuestros clientes.
       </p>
