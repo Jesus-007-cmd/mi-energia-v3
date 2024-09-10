@@ -20,4 +20,6 @@ export default class ButtonClass {
 
   static TransparentButtonsClass = (extra?:string) => `${this.commonButtonClass} hover:bg-gray-100 ${extra}`;
 
+  static TraslucidButtonsClass = (extra?:string) => `${this.commonButtonClass} bg-black bg-opacity-50 hover:bg-opacity-100 ${extra}`;
+
 }

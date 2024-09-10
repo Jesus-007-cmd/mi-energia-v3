@@ -1,21 +1,17 @@
 ---
 
-// Classes
-import ButtonClass from '../classes/ButtonClass';
-
 // Components
 import Layout from '../layouts/Layout.astro';
-import CustomButton from '../components/forms/CustomButton';
+import CustomGallery from '../sections/data/CustomGallery';
+import BackgroundWithVideo from '../components/custom/BackgroundWithVideo.astro';
 import BlackWhiteContainerWithImage from '../sections/data/BlackWhiteContainerWithImage.astro';
+
+// Sections
+import MisionVision from '../sections/screens/sobre-nosotros/MisionVision.astro';
+import SobreNosotrosTitle from '../sections/screens/sobre-nosotros/SobreNosotrosTitle.astro';
 
 // Types
 import type { SectionRow } from '../sections/data/BlackWhiteContainerWithImage.astro';
-
-const sobreNosotrosParagraph = `
-  En Mi Energía MX estamos enfocándonos en brindarles calidad y el buen servicio, utilizando los mejores productos del mercado. 
-  Queremos ayudarte a impulsar la transición energética y descarbonización de México a través de soluciones energéticas altamente 
-  rentables y eficientes que agregan valor a nuestros clientes reduciendo sus gastos fijos y huella de carbono. 
-  Más de 30 años de experiencia en servicios de construcción nos respaldan.`
 
 const sectionRows:SectionRow[] = [
 	{
@@ -41,49 +37,39 @@ const sectionRows:SectionRow[] = [
 	}
 ];
 
+const photos = [
+    '/images/screens/sobre-nosotros/img1.jpg',
+    '/images/screens/sobre-nosotros/img2.jpg',
+    '/images/screens/sobre-nosotros/img3.jpg',
+    '/images/screens/sobre-nosotros/img4.jpg',
+    '/images/screens/sobre-nosotros/img5.jpg',
+    '/images/screens/sobre-nosotros/img6.jpg',
+    '/images/screens/sobre-nosotros/img7.jpg',
+    '/images/screens/sobre-nosotros/img8.jpg',
+    '/images/screens/sobre-nosotros/img9.jpg',
+    '/images/screens/sobre-nosotros/img10.jpg',
+    '/images/screens/sobre-nosotros/img11.jpg',
+    '/images/screens/sobre-nosotros/img12.jpg',
+    '/images/screens/sobre-nosotros/img13.jpg',
+    '/images/screens/sobre-nosotros/img14.jpg',
+    '/images/screens/sobre-nosotros/img15.jpg',
+    '/images/screens/sobre-nosotros/img16.jpg',
+  ];
+
 ---
 
 <Layout title='Sobre Nosotros'>
 
-  <section class="bg-neutral-800 flex flex-col justify-center items-center p-6 pt-20 text-white h-96">
-    <h2 class="text-2xl font-medium">Sobre Nosotros</h2>
-    <p class="md:w-1/2 text-center text-lg">{sobreNosotrosParagraph}</p>
-  </section>
+  <BackgroundWithVideo
+    url="https://blau-app-storage.s3.amazonaws.com/consultorias/mi-energia/MiEnergia-02.mov"
+  />
+
+  <SobreNosotrosTitle/>
 
   <BlackWhiteContainerWithImage sectionRows={sectionRows} />
 
-  <div class="bg-gray-700 h-screen flex items-center justify-between flex-col p-6">
-    <h2 class="text-xl font-medium text-white">Título X</h2>
-    <CustomButton buttonClass={ButtonClass.WhiteBorderButtonClass}>Conócenos</CustomButton>
-  </div>
+  <MisionVision/>
 
-  <section class="grid grid-cols-1 md:grid-cols-2 text-center h-96">
-
-    <div class="p-6 bg-gray-100 order-2 md:order-1 h-full flex flex-col justify-center">
-      <h2 class="text-2xl font-medium">Nuestra Misión</h2>
-      <p class="text-lg">
-        Contribuir con nuestros clientes en la gestión inteligente de la energía eléctrica, 
-        promoviendo su generación a partir de fuentes renovables y optimizando su uso de manera eficiente.
-      </p>
-    </div>
-
-    <div class="p-6 bg-neutral-800 text-white order-1 md:order-2 h-full flex flex-col justify-center">
-      <h2 class="text-2xl font-medium">Nuestra Visión</h2>
-      <p class="text-lg">
-        Nuestro objetivo es ser la principal empresa de gestión de recursos energéticos en México, reconocida por la calidad profesional de nuestro equipo y la confiabilidad de los equipos que ofrecemos. 
-        Nos destacamos por ofrecer soluciones innovadoras que satisfacen las necesidades de nuestros clientes.
-      </p>
-    </div>
-
-  </section>
-
-  <section>
-
-    <div class="bg-gray-700 h-screen flex items-center justify-between flex-col p-6">
-      <h2 class="text-xl text-white font-semibold">Título X</h2>
-      <CustomButton buttonClass={ButtonClass.WhiteBorderButtonClass}>Conócenos</CustomButton>
-    </div>
-
-  </section>
+	<CustomGallery photos={photos} client:visible/>
 
 </Layout>

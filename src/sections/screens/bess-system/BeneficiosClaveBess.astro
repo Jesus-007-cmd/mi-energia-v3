@@ -1,0 +1,50 @@
+---
+
+const explicacionesList = [
+  { 
+    title:'Time Shifting',
+    description: 'Cargamos las baterías cuando los precios de la energía son más bajos y las descargamos cuando los precios son más altos, optimizando tu consumo.'
+  },
+  {
+    title: 'Peak Shaving',
+    description: 'Reducimos la demanda en horas punta, evitando picos en el consumo que elevan los costos energéticos.'
+  },
+  {
+    title: 'Continuidad operativa',
+    description: 'Los sistemas BESS te brindan protección instantánea ante fallas en la red, garantizando un suministro continuo de energía para tus operaciones críticas.'
+  },
+  {
+    title: 'Mejora del factor de potencia',
+    description: 'Optimiza el rendimiento de tu instalación mejorando el factor de potencia y evitando penalizaciones en tu factura eléctrica.'
+  }
+];
+
+---
+
+<section class="flex flex-col p-6 md:px-20 lg:px-40 xl:px-60 bg-gray-700 text-white">
+
+  <div>
+
+    <h2 class="text-2xl font-medium">Beneficios clave de BESS</h2>
+
+    <p class="text-lg mb-6">
+      Gracias a estrategias como time shifting y peak shaving, puedes ahorrar
+      significativamente en tu factura eléctrica
+    </p>
+
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+
+    {explicacionesList.map((row) => 
+
+      <div class="p-6 bg-gray-600 border rounded">
+        <h3 class="font-medium">{row.title}</h3>
+        <h3>{row.description}</h3>
+      </div>
+
+    )}
+
+  </div>
+
+</section>

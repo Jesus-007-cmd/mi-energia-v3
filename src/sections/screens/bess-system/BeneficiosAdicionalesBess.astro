@@ -1,0 +1,53 @@
+---
+
+const beneficiosBessList = [
+  {
+    title:'Impulsa tus niveles de Sostenibilidad',
+    description:'Maximiza la eficiencia de tus fuentes renovables, evitando la pérdida de energía y reduciendo tu impacto ambiental.'
+  },
+  {
+    title:'Autonomía y gestión energética',
+    description:'Implementa microrredes de energía distribuida que pueden operar conectadas a la red pública o de manera independiente, aumentando tu autonomía e integra diversas fuentes de energía y siempre utiliza la más económica para optimizar tu consumo.'
+  },
+  {
+    title:'Mejora la calidad de tu energía y protege tu maquinaria',
+    description:'Protege tus equipos más sensibles estabilizando la frecuencia y el voltaje, y asegura un factor de potencia dentro de los parámetros reglamentarios.'
+  },
+  {
+    title:'Cumplimiento del Código de Red 2.0',
+    description:'Cumple con las regulaciones del Código de Red y evita sanciones. Nuestros sistemas garantizan la eficiencia, calidad y confiabilidad del suministro eléctrico.'
+  }
+]
+
+---
+
+<section class="flex flex-col gap-6 p-6 md:px-20 lg:px-40 xl:px-60 bg-neutral-800 text-white">
+
+  <div class="grid grid-cols-2 gap-6">
+
+    <div class="border rounded p-6 flex items-center">
+      <img src="/images/screens/bess-system/img5.png" alt="">
+    </div>
+    
+    <div class="flex flex-col gap-6">
+
+      <h3 class="text-2xl font-medium">Beneficios adicionales de BESS</h3>
+
+      <div class="grid gap-6">
+
+        {beneficiosBessList.map((row) => 
+
+          <div class="p-6 border rounded bg-neutral-700">
+            <h3 class="font-medium">{row.title}</h3>
+            <h3>{row.description}</h3>
+          </div>
+
+        )}
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

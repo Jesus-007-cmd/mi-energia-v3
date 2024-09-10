@@ -1,12 +1,7 @@
 // Components
 import { GoogleMap, useJsApiLoader, MarkerF } from '@react-google-maps/api';
 
-type Props = {
-  gridsAtMd?: string;
-  gridsAtLg?: string;
-}
-
-export default function OurLocationMap (props:Props) {
+export default function OurLocationMap () {
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
