@@ -4,14 +4,14 @@
 import Layout from '../layouts/Layout.astro';
 import CustomGallery from '../sections/data/CustomGallery';
 import BackgroundWithVideo from '../components/custom/BackgroundWithVideo.astro';
-import BlackWhiteContainerWithImage from '../sections/data/BlackWhiteContainerWithImage.astro';
+import BlackWhiteContainerWithImage from '../sections/data/BlackWhiteContainerWithImage';
 
 // Sections
 import MisionVision from '../sections/screens/sobre-nosotros/MisionVision.astro';
 import SobreNosotrosTitle from '../sections/screens/sobre-nosotros/SobreNosotrosTitle.astro';
 
 // Types
-import type { SectionRow } from '../sections/data/BlackWhiteContainerWithImage.astro';
+import type { SectionRow } from '../sections/data/BlackWhiteContainerWithImage';
 
 const sectionRows:SectionRow[] = [
 	{
@@ -23,7 +23,8 @@ const sectionRows:SectionRow[] = [
 			altamente rentables y eficientes que agregan valor a nuestros clientes reduciendo sus gastos fijos y 
 			huella de carbono. Más de 30 años de experiencia en servicios de instalación energética.
 		`,
-		classImage:'first-row-image'
+		image:'/images/screens/home/img1.jpg',
+    
 	},
 	{
 		subtitle:'Sobre Nosotros',
@@ -33,28 +34,28 @@ const sectionRows:SectionRow[] = [
 			Recupera tu inversión de manera rápida eliminando costos de energía. 
 			Además, te mostraremos cómo reducir tu consumo energético para seguir ahorrando a largo plazo.
 		`,
-		classImage:'second-row-image'
+		image:'/images/screens/home/img2.jpg',
 	}
 ];
 
 const photos = [
-    '/images/screens/sobre-nosotros/img1.jpg',
-    '/images/screens/sobre-nosotros/img2.jpg',
-    '/images/screens/sobre-nosotros/img3.jpg',
-    '/images/screens/sobre-nosotros/img4.jpg',
-    '/images/screens/sobre-nosotros/img5.jpg',
-    '/images/screens/sobre-nosotros/img6.jpg',
-    '/images/screens/sobre-nosotros/img7.jpg',
-    '/images/screens/sobre-nosotros/img8.jpg',
-    '/images/screens/sobre-nosotros/img9.jpg',
-    '/images/screens/sobre-nosotros/img10.jpg',
-    '/images/screens/sobre-nosotros/img11.jpg',
-    '/images/screens/sobre-nosotros/img12.jpg',
-    '/images/screens/sobre-nosotros/img13.jpg',
-    '/images/screens/sobre-nosotros/img14.jpg',
-    '/images/screens/sobre-nosotros/img15.jpg',
-    '/images/screens/sobre-nosotros/img16.jpg',
-  ];
+  '/images/screens/sobre-nosotros/img1.jpg',
+  '/images/screens/sobre-nosotros/img2.jpg',
+  '/images/screens/sobre-nosotros/img3.jpg',
+  '/images/screens/sobre-nosotros/img4.jpg',
+  '/images/screens/sobre-nosotros/img5.jpg',
+  '/images/screens/sobre-nosotros/img6.jpg',
+  '/images/screens/sobre-nosotros/img7.jpg',
+  '/images/screens/sobre-nosotros/img8.jpg',
+  '/images/screens/sobre-nosotros/img9.jpg',
+  '/images/screens/sobre-nosotros/img10.jpg',
+  '/images/screens/sobre-nosotros/img11.jpg',
+  '/images/screens/sobre-nosotros/img12.jpg',
+  '/images/screens/sobre-nosotros/img13.jpg',
+  '/images/screens/sobre-nosotros/img14.jpg',
+  '/images/screens/sobre-nosotros/img15.jpg',
+  '/images/screens/sobre-nosotros/img16.jpg',
+];
 
 ---
 
@@ -66,10 +67,15 @@ const photos = [
 
   <SobreNosotrosTitle/>
 
-  <BlackWhiteContainerWithImage sectionRows={sectionRows} />
+  <BlackWhiteContainerWithImage 
+    sectionRows={sectionRows} 
+  />
 
   <MisionVision/>
 
-	<CustomGallery photos={photos} client:visible/>
+	<CustomGallery 
+    photos={photos} 
+    client:load
+  />
 
 </Layout>

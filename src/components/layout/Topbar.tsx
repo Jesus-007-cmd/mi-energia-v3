@@ -131,12 +131,12 @@ function ServicesOptions () {
       url:AppRoutes.electromovilidadRoute.route 
     },
     { 
-      label:AppRoutes.sistemaFotovoltaicoResidencialesHibridos.title,
-      url:AppRoutes.sistemaFotovoltaicoResidencialesHibridos.route 
-    },
-    { 
       label:AppRoutes.sistemaFotovoltaicoComercialEIndustrialRoute.title,
       url:AppRoutes.sistemaFotovoltaicoComercialEIndustrialRoute.route 
+    },
+    { 
+      label:AppRoutes.sistemaFotovoltaicoResidencialesHibridosEHibridos.title,
+      url:AppRoutes.sistemaFotovoltaicoResidencialesHibridosEHibridos.route 
     },
     { 
       label:AppRoutes.monitoreoRoute.title,

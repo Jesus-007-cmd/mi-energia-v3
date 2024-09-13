@@ -1,0 +1,32 @@
+---
+
+const monitoreoList = [
+  'Supervisa tu consumo y rendimiento energético en tiempo real.',
+  'Garantiza la funcionalidad y reduce el período de amortización.',
+  'Identifica y optimiza el consumo de energía.',
+  'Mantén tu instalación actualizada y ahorra dinero con extensiones individuales.',
+  'Extiende la garantía sin cargo.'
+];
+
+---
+
+<section class="p-6 lg:px-40 text-center flex flex-col gap-4 bg-gray-50">
+
+  <div class="flex flex-col">
+    <h3 class="text-2xl font-medium">Monitoreo en su instalación fotovoltaica en todo momento</h3>
+    <p>Con la herramienta de monitoreo gratuita Fronius Solar.web puede supervisar el consumo y rendimiento energético en todo momento:</p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+
+    {
+      monitoreoList.map((row, key) => (
+        <div class={`flex flex-col border rounded p-6 bg-white items-center justify-center ${key === 4 ? 'col-span-2 md:col-span-1' : 'col-span-1'}`}>
+          <p>{row}</p>
+        </div>
+      ))
+    }
+
+  </div>
+
+</section>

@@ -1,18 +1,18 @@
 export default class AppRoutes {
 
-  static sistemaFotovoltaicoResidencialesHibridos:AppRoute = {
-    route:'/fronius',
-    title:'Sistema fotovoltaico residenciales híbridos'
+  static sistemaFotovoltaicoResidencialesHibridosEHibridos:AppRoute = {
+    route:'/mi-energia#sistema-fotovoltaico-residenciales-hibridos',
+    title:'Sistema Fotovoltaico Residenciales Híbridos e Híbridos'
   }
 
   static sistemaFotovoltaicoComercialEIndustrialRoute:AppRoute = {
-    route:'/fronius',
-    title:'Sistema Fotovoltaico comercial e industrial'
+    route:'/mi-energia#disenado-lider-mercado-section',
+    title:'Sistema Fotovoltaico Comercial e Industrial'
   }
 
   static iluminariasRoute:AppRoute = {
     route:'/iluminarias',
-    title:'Iluminación de alta eficiencia'
+    title:'Iluminación de Alta Eficiencia'
   }
 
   static monitoreoRoute:AppRoute = {
@@ -47,7 +47,7 @@ export default class AppRoutes {
 
   static sobreNosotrosRoute:AppRoute = {
     route:'/sobre-nosotros',
-    title:'Sobre nosotros'
+    title:'Sobre Nosotros'
   }
 
 }

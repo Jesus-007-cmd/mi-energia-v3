@@ -28,16 +28,11 @@ export default function Footer () {
               <span className="text-xl font-medium">Contáctanos</span>
 
               <ul className="flex gap-4">
-
                 {networkList.map((row) => 
-
                   <li className='text-white cursor-pointer rounded hover:bg-neutral-800 p-2'>
-
                     <img className="h-8 invert" src={row.logo} />
-
                   </li>
                 )}
-
               </ul>            
 
             </div>
@@ -51,13 +46,9 @@ export default function Footer () {
       </div>
 
       <div className="px-6 py-4 bg-neutral-800 text-center text-white flex justify-center">
-
         <ul className="flex flex-col lg:flex-row gap-4">
-
           {footerSections.map((section, index) => <FooterLink key={index} {...section} />)}
-          
         </ul>
-
       </div>
 
     </div>

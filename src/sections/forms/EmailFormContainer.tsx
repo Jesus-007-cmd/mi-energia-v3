@@ -23,10 +23,10 @@ export default function EmailFormContainer () {
 
           <h4 className="text-2xl font-semibold text-center">Contáctanos</h4>
 
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Tempore mollitia expedita cupiditate consequatur accusamus dolores illum cumque, unde commodi, 
-            vero voluptate in, nihil reprehenderit aspernatur doloribus architecto! Reprehenderit, perspiciatis adipisci.
+          <p className='text-lg'>
+            En Mi Energía MX, estamos comprometidos a proporcionarte la
+            mejor experiencia y a resolver todas tus inquietudes sobre 
+            energía sostenible.
           </p>
 
         </div>
@@ -36,7 +36,9 @@ export default function EmailFormContainer () {
           {networkList.map((row, key) => (
 
             <a href={row.url} key={key}>
-              <CustomButton buttonClass={ButtonClass.BlueButtonClass}>{row.label}</CustomButton>
+              <CustomButton buttonClass={ButtonClass.TransparentButtonsClass('hover:bg-gray-800')}>
+                <img src={row.logo} className='h-6 w-6 invert' />
+              </CustomButton>
             </a>
 
           ))}
@@ -59,17 +61,20 @@ export default function EmailFormContainer () {
 
 function ServicioOptionsContainer () {
 
+  // States
   const [ selectedOptions, setSelectedOption ] = useState<number | null>(null);
 
+  // Toggle
   function toggleOption (id: number) {
     (selectedOptions === id) ? setSelectedOption(null) : setSelectedOption(id);
   }
 
   const options = [
-    { id: 1, name: 'Desarrollo de Software' },
-    { id: 2, name: 'Diseño Web' },
-    { id: 3, name: 'Marketing Digital' },
-    { id: 4, name: 'Otro' },
+    { id:1, name:'Sistema Fotovoltaico Residencial e Híbrido' },
+    { id:2, name:'Sistema Fotovoltaico Comercial e Industrial' },
+    { id:3, name:'Sistema BESS' },
+    { id:4, name:'Electromovilidad' },
+    { id:5, name:'Monitoreo' },
   ];
 
   return (
@@ -78,7 +83,11 @@ function ServicioOptionsContainer () {
 
       {options.map((option, key) => (
 
-        <button key={key} className='h-20 bg-gray-100 hover:bg-gray-300 border border-gray-300' onClick={() => toggleOption(key)}>
+        <button 
+          key={key} 
+          className={`h-20 bg-gray-100 hover:bg-gray-300 border border-gray-300 ${key === 4 ? 'col-span-2' : 'col-span-1'}`} 
+          onClick={() => toggleOption(key)}
+        >
 
           <h4 className='text-purple-800 font-medium text-lg'>{option.name}</h4>
 

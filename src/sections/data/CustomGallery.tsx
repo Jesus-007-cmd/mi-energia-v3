@@ -40,11 +40,11 @@ export default function CustomGallery (props:Props) {
 
       <div className='flex items-center justify-between absolute w-full px-6'>
 
-        <CustomButton buttonClass={ButtonClass.TraslucidButtonsClass()} onClick={scrollLeft}>
+        <CustomButton buttonClass={ButtonClass.TraslucidBlackButtonClass()} onClick={scrollLeft}>
           <img src='/icons/arrow-left.svg' className='h-6 w-6'/>
         </CustomButton>
 
-        <CustomButton buttonClass={ButtonClass.TraslucidButtonsClass()} onClick={scrollRight}>
+        <CustomButton buttonClass={ButtonClass.TraslucidBlackButtonClass()} onClick={scrollRight}>
           <img src='/icons/arrow-right.svg' className='h-6 w-6'/>
         </CustomButton>
 
