@@ -162,6 +162,27 @@ export default function OurLocationMap () {
     { position:{ lat:20.6390, lng:-87.0698 }},
     { position:{ lat:20.9676, lng:-89.6204 }},
 
+    // Random
+    { position:{ lat:18.120785, lng:-92.732685 }},
+    { position:{ lat:17.776079, lng:-92.086775 }},
+    { position:{ lat:18.150727, lng:-91.094279 }},
+    { position:{ lat:18.569381, lng:-90.590154 }},
+    { position:{ lat:18.205628, lng:-90.187568 }},
+    { position:{ lat:18.278393, lng:-89.666582 }},
+    { position:{ lat:18.191071, lng:-89.160920 }},
+    { position:{ lat:18.714339, lng:-89.850460 }},
+    { position:{ lat:18.772381, lng:-89.436736 }},
+    { position:{ lat:18.627239, lng:-88.839134 }},
+    { position:{ lat:20.029762, lng:-89.283504 }},
+    { position:{ lat:20.015365, lng:-89.819813 }},
+    { position:{ lat:19.741573, lng:-88.823811 }},
+    { position:{ lat:21.238389, lng:-87.401445 }},
+    { position:{ lat:21.014815, lng:-87.812333 }},
+    { position:{ lat:21.006824, lng:-88.753950 }},
+    { position:{ lat:20.422332, lng:-88.497145 }},
+    { position:{ lat:19.400197, lng:-87.983536 }},
+    { position:{ lat:19.520329, lng:-89.912790 }},
+
   ];
 
   return (

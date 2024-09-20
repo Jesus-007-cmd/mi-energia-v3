@@ -1,0 +1,57 @@
+---
+
+const items = [
+  {
+    title:'Módulos solares',
+    description:'Los módulos pueden instalarse tanto en tejados como en espacios abiertos y absorben la energía del sol para generar corriente eléctrica que posteriormente se transfiere al inversor.'
+  },
+  {
+    title:'Inversores',
+    description:'El inversor es la central de control de una instalación fotovoltaica. Convierte la corriente continua generada en corriente alterna, optimiza el rendimiento, controla los flujos de energía y comprueba el funcionamiento de la instalación.'
+  },
+  {
+    title:'Fronius Smart Meter',
+    description:'Para poder realizar un uso óptimo de la energía autogenerada, es importante poder leer todos los flujos de energía. Eso es precisamente de lo que se encarga el Fronius Smart Meter: detecta los gráficos de carga y, con estos, sienta la base para gestionar la energía de forma razonable y así aumentar el autoconsumo.'
+  }
+];
+
+---
+
+<div class='flex flex-col items-center gap-6 p-6 md:py-10 md:px-20 lg:px-40 xl:px-60 bg-gray-600'>
+
+  <h2 class="text-2xl font-semibold text-white">Así Funciona una Instalación Fotovoltaica Comercial e Industrial.</h2>
+
+  <div class="flex flex-col gap-6">
+
+    <div class="flex items-center justify-center bg-white p-6 border rounded">
+      <img src="/images/screens/fronius/img12.png" class="h-96">
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+      {
+
+        items.map((row, index) => (
+
+          <div class='bg-gray-500 flex flex-col gap-2 items-center justify-start text-center p-6 border rounded text-white'>
+
+            <div class="min-h-10 min-w-10 border rounded flex items-center justify-center">
+              <span class="text-lg font-medium text-yellow-400">{index+1}</span>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-medium">{row.title}</h3>
+              <p class="text-lg">{row.description}</p>
+            </div>
+
+          </div>
+
+        )
+
+      )}
+
+    </div>
+
+  </div>
+
+</div>

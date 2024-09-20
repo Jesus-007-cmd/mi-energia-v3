@@ -6,14 +6,17 @@ import ButtonClass from '../../../classes/ButtonClass';
 // Components
 import CustomButton from '../../../components/forms/CustomButton';
 
-// Sections
-import BackgroundWithVideo from '../../../components/custom/BackgroundWithVideo.astro';
+// Routes
 import AppRoutes from '../../../routes';
 
-const { url } = Astro.props;
+// Sections
+import BackgroundWithVideo from '../../../components/custom/BackgroundWithVideo.astro';
+
 ---
 
-<BackgroundWithVideo url={url}/>
+<BackgroundWithVideo
+  url="https://blau-app-storage.s3.amazonaws.com/consultorias/mi-energia/MiEnergia-01.mov"
+/>
 
 <!-- @TIP: Con h-0 se remueve el espacio que deja el display relative -->
 <div class="flex gap-4 justify-center relative bottom-16 h-0">

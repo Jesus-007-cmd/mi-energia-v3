@@ -3,11 +3,11 @@
 // Components
 import Layout from '../layouts/Layout.astro';
 import CustomGallery from '../sections/data/CustomGallery';
-import BackgroundWithVideo from '../components/custom/BackgroundWithVideo.astro';
-import BlackWhiteContainerWithImage from '../sections/data/BlackWhiteContainerWithImage';
 
 // Sections
+import BackgroundWithVideo from '../components/custom/BackgroundWithVideo.astro';
 import MisionVision from '../sections/screens/sobre-nosotros/MisionVision.astro';
+import BlackWhiteContainerWithImage from '../sections/data/BlackWhiteContainerWithImage';
 import SobreNosotrosTitle from '../sections/screens/sobre-nosotros/SobreNosotrosTitle.astro';
 
 // Types
@@ -61,13 +61,13 @@ const photos = [
 
 <Layout title='Sobre Nosotros'>
 
-  <BackgroundWithVideo
+  <BackgroundWithVideo 
     url="https://blau-app-storage.s3.amazonaws.com/consultorias/mi-energia/MiEnergia-02.mov"
   />
 
   <SobreNosotrosTitle/>
 
-  <BlackWhiteContainerWithImage 
+  <BlackWhiteContainerWithImage
     sectionRows={sectionRows} 
   />
 

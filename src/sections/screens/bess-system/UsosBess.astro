@@ -28,16 +28,14 @@ const usoBessList = [
 
     {usoBessList.map((row) => 
 
-      <div class="grid grid-cols-4 gap-6">
+      <div class="flex flex-col md:flex-row gap-6">
 
-        <div class="p-6 border rounded bg-white col-span-3 flex flex-col justify-center">
+        <div class="p-6 border rounded bg-white flex flex-col justify-center">
           <h3 class="font-medium text-lg">{row.title}</h3>
           <p>{row.description}</p>
         </div>
 
-        <div class="border rounded bg-white">
-          <img src={row.img} alt={row.title} class="w-full h-full rounded" />
-        </div>
+        <img src={row.img} alt={row.title} class="w-full md:w-96 rounded"/>
 
       </div>
 

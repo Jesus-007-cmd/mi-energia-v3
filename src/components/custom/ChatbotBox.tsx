@@ -20,7 +20,7 @@ export default function ChatbotBox() {
 
     <div className='bg-neutral-800 w-96 fixed right-8 top-24 p-4 flex flex-col gap-1 shadow-lg rounded'>
 
-      <h3 className='text-white text-lg font-semibold mb-2'>Hola, ¿En qué puedo ayudarte?</h3>
+      <h3 className='text-white text-lg font-medium mb-2'>Hola, ¿En qué puedo ayudarte?</h3>
 
       <div className='flex flex-col gap-1'>
 

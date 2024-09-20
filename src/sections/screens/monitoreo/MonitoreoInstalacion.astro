@@ -20,8 +20,8 @@ const monitoreoList = [
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
 
     {
-      monitoreoList.map((row, key) => (
-        <div class={`flex flex-col border rounded p-6 bg-white items-center justify-center ${key === 4 ? 'col-span-2 md:col-span-1' : 'col-span-1'}`}>
+      monitoreoList.map((row) => (
+        <div class='flex flex-col border rounded p-6 bg-white items-center justify-center'> 
           <p>{row}</p>
         </div>
       ))

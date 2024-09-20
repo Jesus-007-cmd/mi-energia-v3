@@ -4,8 +4,6 @@ import { networkList, type NetworkData } from "../../data/data";
 export const footerSections:FooterLink[] = [
   { label:'Inicio', url:'/' },
   { label:'Nosotros', url:'/sobre-nosotros' },
-  { label:'Fronius', url:'/services/fronius' },
-  { label:'Tauro', url:'/services/tauro' },
   { label:'Contáctanos', url:'/contactanos' },
 ];
 
