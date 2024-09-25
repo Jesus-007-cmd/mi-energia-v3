@@ -1,8 +1,8 @@
 export default class AppRoutes {
 
   static sistemaFotovoltaicoResidencialesHibridosEHibridos:AppRoute = {
-    route:'/mi-energia#sistema-fotovoltaico-residenciales-hibridos',
-    title:'Sistema Fotovoltaico Residenciales Híbridos e Híbridos'
+    route:'/mi-energia#sistema-fotovoltaico-residencial-hibridos',
+    title:'Sistema Fotovoltaico Residencial e Híbrido'
   }
 
   static sistemaFotovoltaicoComercialEIndustrialRoute:AppRoute = {

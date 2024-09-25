@@ -1,5 +1,5 @@
 // Modules
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 // Components
 import ButtonClass from '../../classes/ButtonClass';
@@ -14,9 +14,10 @@ export default function CustomGallery (props:Props) {
   // Props
   const { photos } = props;
 
+  const scrollAmount = 1000;
   const carouselRef = useRef<HTMLDivElement>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  const scrollAmount = 300;
 
   function scrollLeft () {
     if (carouselRef.current) {
@@ -29,6 +30,26 @@ export default function CustomGallery (props:Props) {
       carouselRef.current.scrollBy({ left:scrollAmount, behavior: 'smooth' });
     }
   }
+
+  function assignInterval () {
+    intervalRef.current = setInterval(validateCanScroll, 3000);
+  }
+
+  function validateCanScroll () {
+    if (carouselRef.current) {
+      const { scrollWidth, clientWidth, scrollLeft } = carouselRef.current;
+      if (clientWidth + scrollLeft === scrollWidth) {
+        carouselRef.current.scrollTo({ left:0, behavior: 'smooth' });
+      } else {
+        scrollRight();
+      }
+    }
+  }
+
+  useEffect(() => {
+    assignInterval();
+    return () => clearInterval(intervalRef.current!);
+  }, []);
 
   return (
 

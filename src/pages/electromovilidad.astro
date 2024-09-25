@@ -4,6 +4,7 @@
 import Layout from "../layouts/Layout.astro";
 
 // Sections
+import CustomGallery from '../sections/data/CustomGallery';
 import CargadorMQ200 from '../sections/screens/electromovilidad/CargadorMQ200.astro';
 import AdoptaEstacionCarga from '../sections/screens/electromovilidad/AdoptaEstacionCarga.astro';
 import ElectrificaTuFlotilla from '../sections/screens/electromovilidad/ElectrificaTuFlotilla.astro';
@@ -12,11 +13,31 @@ import MovilidadElectricaCamino from '../sections/screens/electromovilidad/Movil
 import ConvertirFlotaEmpresarial from '../sections/screens/electromovilidad/ConvertirFlotaEmpresarial.astro';
 import SerAnfitrionEstacionCargo from '../sections/screens/electromovilidad/SerAnfitrionEstacionCargo.astro';
 
+const photos = [
+  '/images/screens/electromovilidad/img3.jpeg',
+  '/images/screens/electromovilidad/img4.jpeg',
+  '/images/screens/electromovilidad/img5.jpeg',
+  '/images/screens/electromovilidad/img6.jpeg',
+  '/images/screens/electromovilidad/img7.jpeg',
+  '/images/screens/electromovilidad/img8.jpeg',
+  '/images/screens/electromovilidad/img9.jpeg',
+  '/images/screens/electromovilidad/img10.jpeg',
+  '/images/screens/electromovilidad/img11.jpeg',
+  '/images/screens/electromovilidad/img12.jpeg',
+  '/images/screens/electromovilidad/img13.jpeg',
+  '/images/screens/electromovilidad/img14.jpeg',
+  '/images/screens/electromovilidad/img15.jpeg',
+  '/images/screens/electromovilidad/img16.jpeg',
+];
+
 ---
 
 <Layout title="Electromovilidad">
 
-  <div class='h-screen bg-gray-700'/>
+  <CustomGallery 
+    photos={photos} 
+    client:load
+  />
 
   <SerAnfitrionEstacionCargo/>
 

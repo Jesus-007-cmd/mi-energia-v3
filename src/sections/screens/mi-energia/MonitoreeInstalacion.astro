@@ -12,7 +12,7 @@ const monitoreeSuInstalacionList = [
 
 ---
 
-<section class="bg-neutral-800 text-white text-center flex flex-col gap-4 p-6 md:py-10 md:px-20 lg:px-40 xl:px-60">
+<section class="bg-neutral-800 text-white text-center flex flex-col gap-4 p-6 md:pb-14 md:px-20 lg:px-40 xl:px-60">
 
   <h3 class="text-2xl font-semibold text-center">Monitoree su instalación fotovoltaica en todo momento</h3>
 
@@ -27,14 +27,17 @@ const monitoreeSuInstalacionList = [
 
     </div>
 
-    <ul class="bg-neutral-700 flex flex-col justify-center border rounded p-4 lg:order-3">
-      {monitoreeSuInstalacionList.map((item) => <li>{item}</li>)}
+    <ul class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      {monitoreeSuInstalacionList.map((item) => 
+        <li class="bg-neutral-700 p-4 rounded flex items-center justify-center">
+          <span>{item}</span>
+        </li>
+      )}
     </ul>
 
-    <div class="border rounded row-span-2 flex items-center justify-center bg-white col-span-2 lg:col-span-1">
-
+    <div class="border rounded py-6 bg-white flex items-center justify-center md:col-span-2">
       <img src="/images/screens/fronius/img10.jpeg">
-
     </div>
 
   </div>

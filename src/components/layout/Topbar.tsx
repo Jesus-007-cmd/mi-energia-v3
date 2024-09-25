@@ -82,7 +82,7 @@ export default function Topbar (props:Props) {
                 <div className='group/service-container' key={key}>
 
                   <CustomButton
-                    buttonClass={ButtonClass.TransparentButtonsClass(`${props.hasBackground ? '' : 'text-white group-hover/main-container:text-gray-800'}`)} 
+                    buttonClass={ButtonClass.TransparentButtonsClass(`hover:bg-gray-100 ${props.hasBackground ? '' : 'text-white group-hover/main-container:text-gray-800'}`)} 
                     onEnter={toggleIsMouseInServiceButton}
                   >{button.label}</CustomButton>
 
@@ -95,7 +95,7 @@ export default function Topbar (props:Props) {
                 <a href={button.url} key={key}>
                 
                   <CustomButton 
-                    buttonClass={ButtonClass.TransparentButtonsClass(`${props.hasBackground ? '' : 'text-white group-hover/main-container:text-gray-800'}`)} 
+                    buttonClass={ButtonClass.TransparentButtonsClass(`hover:bg-gray-100 ${props.hasBackground ? '' : 'text-white group-hover/main-container:text-gray-800'}`)} 
                     onEnter={toggleIsMouseInAnyOtherButton}
                   >{button.label}</CustomButton>
           
@@ -159,7 +159,7 @@ function ServicesOptions () {
 
           <a key={key} href={service.url}>
 
-            <CustomButton buttonClass={ButtonClass.TransparentButtonsClass()}>
+            <CustomButton buttonClass={ButtonClass.TransparentButtonsClass('hover:bg-gray-100')}>
 
               <span className='font-medium text-gray-800'>{service.label}</span>
 

@@ -8,16 +8,13 @@ import InputClass from '../../classes/InputClass';
 // Components
 import CustomButton from '../../components/forms/CustomButton';
 
-// Data
-import { networkList } from '../../data/data';
-
 export default function EmailFormContainer () {
   
   return (
 
     <div className='flex flex-col'>
 
-      <div className='p-6 pt-20 bg-gray-700 flex flex-col items-center justify-center text-white gap-4 h-96'>
+      <div className='p-6 pt-20 bg-gray-700 flex flex-col items-center justify-center text-white gap-4 h-screen'>
 
         <div className='flex flex-col gap-2 text-center md:w-1/2'>
 
@@ -28,20 +25,6 @@ export default function EmailFormContainer () {
             mejor experiencia y a resolver todas tus inquietudes sobre 
             energía sostenible.
           </p>
-
-        </div>
-
-        <div className='flex flex-wrap gap-4 justify-center'>
-
-          {networkList.map((row, key) => (
-
-            <a href={row.url} key={key}>
-              <CustomButton buttonClass={ButtonClass.TransparentButtonsClass('hover:bg-gray-800')}>
-                <img src={row.logo} className='h-6 w-6 invert' />
-              </CustomButton>
-            </a>
-
-          ))}
 
         </div>
 
@@ -107,7 +90,7 @@ function EmailForm () {
 
     <div className='flex flex-col p-6 gap-4 bg-gray-50 text-center'>
 
-      <h4 className='font-semibold text-xl'>Servicio en el que estoy interesado</h4>
+      <h4 className='font-semibold text-2xl'>Servicio en el que estoy interesado</h4>
 
       <ServicioOptionsContainer/>
 

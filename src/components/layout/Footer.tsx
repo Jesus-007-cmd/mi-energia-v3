@@ -1,5 +1,8 @@
+// Classes
+import ButtonClass from '../../classes/ButtonClass';
+
 // Data
-import { networkList, type NetworkData } from "../../data/data";
+import { networkList } from "../../data/data";
 
 export const footerSections:FooterLink[] = [
   { label:'Inicio', url:'/' },
@@ -13,29 +16,13 @@ export default function Footer () {
 
     <div className="flex flex-col">
 
-      <div className='p-6 md:px-20 lg:px-40 bg-neutral-700 flex flex-col gap-4'>
+      <div className='p-6 md:px-20 lg:px-40 bg-neutral-600 flex flex-col gap-4 text-white'>
 
         <div className="flex flex-col lg:flex-row items-center gap-4">
 
           <img className="h-10" src="/images/mi-energia-logo/logo2.png"/>
 
-          <div className="flex w-full justify-center text-white text-center items-center">
-
-            <div className="flex flex-col gap-1">
-
-              <span className="text-xl font-medium">Contáctanos</span>
-
-              <ul className="flex gap-4">
-                {networkList.map((row) => 
-                  <li className='text-white cursor-pointer rounded hover:bg-neutral-800 p-2'>
-                    <img className="h-8 invert" src={row.logo} />
-                  </li>
-                )}
-              </ul>            
-
-            </div>
-
-          </div>
+          <ContactUsContainer/>
 
           <img className="h-16" src="/images/mi-energia-logo/fronius-logo.jpeg"/>
 
@@ -43,10 +30,37 @@ export default function Footer () {
 
       </div>
 
-      <div className="px-6 py-4 bg-neutral-800 text-center text-white flex justify-center">
-        <ul className="flex flex-col lg:flex-row gap-4">
-          {footerSections.map((section, index) => <FooterLink key={index} {...section} />)}
-        </ul>
+      <FooterLinks/>
+
+    </div>
+
+  )
+
+}
+
+function ContactUsContainer () {
+
+  return (
+
+    <div className="flex w-full justify-center text-center items-center">
+
+      <div className="flex flex-col gap-4">
+
+        <span className="text-2xl font-semibold">Contáctanos</span>
+
+        <div className="flex gap-4">
+
+          {networkList.map((row, key) => 
+            <button className={ButtonClass.TransparentButtonsClass('hover:bg-neutral-700')} key={key}>
+              <div className='flex flex-col gap-2'>
+                <img className="h-8 invert" src={row.logo}/>
+                <span className='font-medium'>{row.label}</span>
+              </div>
+            </button>
+          )}
+
+        </div>            
+
       </div>
 
     </div>
@@ -55,20 +69,27 @@ export default function Footer () {
 
 }
 
-function FooterLink (props:FooterLink | NetworkData) {
+function FooterLinks () {
 
   return (
 
-    <li className='text-white cursor-pointer hover:bg-neutral-800 py-1 px-3 rounded'>
+    <div className="px-6 py-4 bg-neutral-800 text-center text-white flex justify-center">
 
-      <a href={props.url}>{props.label}</a>
+      <ul className="flex flex-col lg:flex-row gap-4">
 
-    </li>
+        {footerSections.map((row, key) => (
+          <li className='text-white cursor-pointer hover:bg-neutral-800 py-1 px-3 rounded' key={key}>
+            <a href={row.url}>{row.label}</a>
+          </li>
+        ))}
 
-  );
+      </ul>
 
+    </div>
+
+  )
+  
 }
-
 
 export type FooterLink = {
   label:string,
