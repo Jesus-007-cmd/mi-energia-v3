@@ -2,12 +2,13 @@
 import ButtonClass from '../../classes/ButtonClass';
 
 // Data
+import AppRoutes from '../../routes';
 import { networkList } from "../../data/data";
 
-export const footerSections:FooterLink[] = [
-  { label:'Inicio', url:'/' },
-  { label:'Nosotros', url:'/sobre-nosotros' },
-  { label:'Contáctanos', url:'/contactanos' },
+export const footerSections = [
+  AppRoutes.homeRoute,
+  AppRoutes.sobreNosotrosRoute,
+  AppRoutes.contactanosRoute,
 ];
 
 export default function Footer () {
@@ -16,11 +17,11 @@ export default function Footer () {
 
     <div className="flex flex-col">
 
-      <div className='p-6 md:px-20 lg:px-40 bg-neutral-600 flex flex-col gap-4 text-white'>
+      <div className='p-6 md:px-20 lg:px-40 flex flex-col gap-4'>
 
         <div className="flex flex-col lg:flex-row items-center gap-4">
 
-          <img className="h-10" src="/images/mi-energia-logo/logo2.png"/>
+          <img className="h-12" src="/images/mi-energia-logo/logo1.png"/>
 
           <ContactUsContainer/>
 
@@ -46,17 +47,21 @@ function ContactUsContainer () {
 
       <div className="flex flex-col gap-4">
 
-        <span className="text-2xl font-semibold">Contáctanos</span>
+        <span className="text-2xl font-semibold">Nuestras Redes</span>
 
         <div className="flex gap-4">
 
           {networkList.map((row, key) => 
-            <button className={ButtonClass.TransparentButtonsClass('hover:bg-neutral-700')} key={key}>
-              <div className='flex flex-col gap-2'>
-                <img className="h-8 invert" src={row.logo}/>
-                <span className='font-medium'>{row.label}</span>
-              </div>
-            </button>
+
+            <a href={row.url} target='_blank'>
+              <button className={ButtonClass.TransparentButtonsClass('hover:bg-gray-100')} key={key}>
+                <div className='flex flex-col gap-2'>
+                  <img className="h-8" src={row.logo}/>
+                  <span className='font-medium'>{row.label}</span>
+                </div>
+              </button>
+            </a>
+            
           )}
 
         </div>            
@@ -79,7 +84,7 @@ function FooterLinks () {
 
         {footerSections.map((row, key) => (
           <li className='text-white cursor-pointer hover:bg-neutral-800 py-1 px-3 rounded' key={key}>
-            <a href={row.url}>{row.label}</a>
+            <a href={row.route}>{row.title}</a>
           </li>
         ))}
 

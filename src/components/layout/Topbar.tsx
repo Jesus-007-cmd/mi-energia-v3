@@ -123,24 +123,32 @@ function ServicesOptions () {
 
   const servicesList = [
     { 
-      label:AppRoutes.batteriesRoute.title, 
-      url:AppRoutes.batteriesRoute.route 
+      label:AppRoutes.sistemaFotovoltaicoComercialEIndustrialRoute.title,
+      url:AppRoutes.sistemaFotovoltaicoComercialEIndustrialRoute.route 
+    },
+    { 
+      label:AppRoutes.sistemaFotovoltaicoResidencialEHibrido.title,
+      url:AppRoutes.sistemaFotovoltaicoResidencialEHibrido.route 
+    },
+    {
+      label:AppRoutes.montaCargas.title,
+      url:AppRoutes.montaCargas.route 
+    },
+    { 
+      label:AppRoutes.sistemaBess.title, 
+      url:AppRoutes.sistemaBess.route 
     },
     { 
       label:AppRoutes.electromovilidadRoute.title, 
       url:AppRoutes.electromovilidadRoute.route 
     },
     { 
-      label:AppRoutes.sistemaFotovoltaicoComercialEIndustrialRoute.title,
-      url:AppRoutes.sistemaFotovoltaicoComercialEIndustrialRoute.route 
-    },
-    { 
-      label:AppRoutes.sistemaFotovoltaicoResidencialesHibridosEHibridos.title,
-      url:AppRoutes.sistemaFotovoltaicoResidencialesHibridosEHibridos.route 
-    },
-    { 
       label:AppRoutes.monitoreoRoute.title,
       url:AppRoutes.monitoreoRoute.route 
+    },
+    { 
+      label:AppRoutes.iluminariasRoute.title,
+      url:AppRoutes.iluminariasRoute.route 
     },
   ];
 
@@ -158,13 +166,9 @@ function ServicesOptions () {
         {servicesList.map((service, key) => (
 
           <a key={key} href={service.url}>
-
             <CustomButton buttonClass={ButtonClass.TransparentButtonsClass('hover:bg-gray-100')}>
-
               <span className='font-medium text-gray-800'>{service.label}</span>
-
-            </CustomButton>
-                  
+            </CustomButton>       
           </a>
 
        ))}

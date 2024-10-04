@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 
 // Components
 import ButtonClass from '../../classes/ButtonClass';
-import CustomButton from '../../components/forms/CustomButton';
+import CustomButton from '../forms/CustomButton';
 
 type Props = {
   photos:string[];
@@ -22,17 +22,20 @@ export default function CustomGallery (props:Props) {
   function scrollLeft () {
     if (carouselRef.current) {
       carouselRef.current.scrollBy({ left:-scrollAmount, behavior: 'smooth' });
+      assignInterval();
     }
   }
 
   function scrollRight () {
     if (carouselRef.current) {
       carouselRef.current.scrollBy({ left:scrollAmount, behavior: 'smooth' });
+      assignInterval();
     }
   }
 
   function assignInterval () {
-    intervalRef.current = setInterval(validateCanScroll, 3000);
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(validateCanScroll, 5000);
   }
 
   function validateCanScroll () {
@@ -56,7 +59,7 @@ export default function CustomGallery (props:Props) {
     <div className='h-[50vh] bg-gray-200 overflow-x-auto flex flex-col justify-center' ref={carouselRef}>
 
       <div className='flex'>
-        {photos.map((img) => <img src={img} alt='gallery' className='h-[50vh]'/>)}
+        {photos.map((img) => <img src={img} alt='gallery' className='h-[60vh]'/>)}
       </div>
 
       <div className='flex items-center justify-between absolute w-full px-6'>

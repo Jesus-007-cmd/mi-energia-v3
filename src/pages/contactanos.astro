@@ -2,9 +2,10 @@
 
 // Components
 import Layout from "../layouts/Layout.astro"
+import EmailFormContainer from '../components/custom/EmailFormContainer'
 
 // Sections
-import EmailFormContainer from "../sections/forms/EmailFormContainer"
+import ContactanosHeader from '../sections/screens/contactanos/ContactanosHeader.astro'
 
 ---
 
@@ -12,11 +13,9 @@ import EmailFormContainer from "../sections/forms/EmailFormContainer"
 
   <div class="flex flex-col">
 
-    <section class="flex flex-col">
+    <ContactanosHeader/>
 
-      <EmailFormContainer client:load/>
-  
-    </section>
+    <EmailFormContainer client:load/>
 
   </div>
 

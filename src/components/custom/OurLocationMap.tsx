@@ -196,8 +196,7 @@ export default function OurLocationMap () {
             mapContainerStyle={{ height:"400px", width:"100%", borderRadius:"0.25rem" }}
             center={{ lat:20.9858054, lng:-89.7844126  }}
             zoom={7}
-            // Disable default UI and zoom controls
-            options={{ disableDefaultUI:true, zoomControl:true, maxZoom:7 }}
+            options={{ disableDefaultUI:true, zoomControl:true, maxZoom:7 }} // Disable default UI and zoom controls
           >{markers.map((row, index) => <MarkerF key={index} position={row.position}/>)}</GoogleMap>
         </div>
       }

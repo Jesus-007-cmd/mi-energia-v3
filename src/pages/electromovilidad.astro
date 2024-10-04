@@ -4,7 +4,6 @@
 import Layout from "../layouts/Layout.astro";
 
 // Sections
-import CustomGallery from '../sections/data/CustomGallery';
 import CargadorMQ200 from '../sections/screens/electromovilidad/CargadorMQ200.astro';
 import AdoptaEstacionCarga from '../sections/screens/electromovilidad/AdoptaEstacionCarga.astro';
 import ElectrificaTuFlotilla from '../sections/screens/electromovilidad/ElectrificaTuFlotilla.astro';
@@ -13,31 +12,9 @@ import MovilidadElectricaCamino from '../sections/screens/electromovilidad/Movil
 import ConvertirFlotaEmpresarial from '../sections/screens/electromovilidad/ConvertirFlotaEmpresarial.astro';
 import SerAnfitrionEstacionCargo from '../sections/screens/electromovilidad/SerAnfitrionEstacionCargo.astro';
 
-const photos = [
-  '/images/screens/electromovilidad/img3.jpeg',
-  '/images/screens/electromovilidad/img4.jpeg',
-  '/images/screens/electromovilidad/img5.jpeg',
-  '/images/screens/electromovilidad/img6.jpeg',
-  '/images/screens/electromovilidad/img7.jpeg',
-  '/images/screens/electromovilidad/img8.jpeg',
-  '/images/screens/electromovilidad/img9.jpeg',
-  '/images/screens/electromovilidad/img10.jpeg',
-  '/images/screens/electromovilidad/img11.jpeg',
-  '/images/screens/electromovilidad/img12.jpeg',
-  '/images/screens/electromovilidad/img13.jpeg',
-  '/images/screens/electromovilidad/img14.jpeg',
-  '/images/screens/electromovilidad/img15.jpeg',
-  '/images/screens/electromovilidad/img16.jpeg',
-];
-
 ---
 
 <Layout title="Electromovilidad">
-
-  <CustomGallery 
-    photos={photos} 
-    client:load
-  />
 
   <SerAnfitrionEstacionCargo/>
 
@@ -57,7 +34,7 @@ const photos = [
 
     <div class="p-6 md:px-20 bg-gray-700 flex items-center">
 
-      <p class="font-medium text-2xl text-white">
+      <p class="font-semibold text-2xl text-white">
         Transforma tu empresa y recarga tus vehículos eléctricos con nuestra tecnología de punta.
         Da el siguiente paso hacia el futuro de la movilidad eléctrica con Mi Energía MX.
       </p>

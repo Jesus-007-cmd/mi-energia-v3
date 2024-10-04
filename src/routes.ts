@@ -1,18 +1,23 @@
 export default class AppRoutes {
 
-  static sistemaFotovoltaicoResidencialesHibridosEHibridos:AppRoute = {
-    route:'/mi-energia#sistema-fotovoltaico-residencial-hibridos',
+  static sistemaFotovoltaicoComercialEIndustrialRoute:AppRoute = {
+    route:'/mi-energia#sistema-fotovoltaico-comercial-industrial',
+    title:'Sistema Fotovoltaico Comercial e Industrial'
+  }
+
+  static sistemaFotovoltaicoResidencialEHibrido:AppRoute = {
+    route:'/mi-energia#sistema-fotovoltaico-residencial-hibrido',
     title:'Sistema Fotovoltaico Residencial e Híbrido'
   }
 
-  static sistemaFotovoltaicoComercialEIndustrialRoute:AppRoute = {
-    route:'/mi-energia#disenado-lider-mercado-section',
-    title:'Sistema Fotovoltaico Comercial e Industrial'
+  static montaCargas:AppRoute = {
+    route:'/monta-cargas',
+    title:'Monta Cargas'
   }
 
   static iluminariasRoute:AppRoute = {
     route:'/iluminarias',
-    title:'Iluminación de Alta Eficiencia'
+    title:'Iluminación'
   }
 
   static monitoreoRoute:AppRoute = {
@@ -40,7 +45,7 @@ export default class AppRoutes {
     title:'Electromovilidad'
   }
 
-  static batteriesRoute:AppRoute = {
+  static sistemaBess:AppRoute = {
     route:'/bess-system',
     title:'Sistema BESS'
   }
@@ -48,6 +53,11 @@ export default class AppRoutes {
   static sobreNosotrosRoute:AppRoute = {
     route:'/sobre-nosotros',
     title:'Sobre Nosotros'
+  }
+
+  static homeRoute:AppRoute = {
+    route:'/',
+    title:'Inicio'
   }
 
 }

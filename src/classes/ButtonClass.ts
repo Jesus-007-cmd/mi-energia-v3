@@ -1,8 +1,8 @@
 export default class ButtonClass {
 
   private static commonButtonClass = `
-    inline-flex justify-center items-center gap-x-3 text-center py-1 px-2
-    border border-transparent font-medium text-sm rounded focus:outline-none
+    inline-flex justify-center items-center gap-x-3 text-center py-2 px-2
+    border border-transparent font-semibold text-sm rounded focus:outline-none
     transition duration-300 ease-in-out border border-2
   `;
 

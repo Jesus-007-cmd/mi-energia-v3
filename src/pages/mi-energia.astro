@@ -8,16 +8,15 @@ import Layout from "../layouts/Layout.astro";
 import Fronius2024 from '../sections/screens/mi-energia/Fronius2024.astro';
 import BajaTusCostos from '../sections/screens/mi-energia/BajaTusCostos.astro';
 import InversorRobusto from '../sections/screens/mi-energia/InversorRobusto.astro';
-import PorQueMiEnergia from '../sections/screens/mi-energia/PorQueMiEnergia.astro';
 import VentajasVistazo from '../sections/screens/mi-energia/VentajasVistazo.astro';
 import EnergiaRenovable from '../sections/screens/mi-energia/EnergiaRenovable.astro';
-import BeneficiosFronius from '../sections/screens/mi-energia/BeneficiosFronius.astro';
 import BajaTusCostosList from '../sections/screens/mi-energia/BajaTusCostosList.astro';
 import MonitoreeInstalacion from '../sections/screens/mi-energia/MonitoreeInstalacion.astro';
 import DisenadoLiderMercado from '../sections/screens/mi-energia/DisenadoLiderMercado.astro';
-import QueDiferenciaMiEnergia from '../sections/screens/mi-energia/QueDiferenciaMiEnergia.astro';
 import SustentabilidadAmbiente from '../sections/screens/mi-energia/SustentabilidadAmbiente.astro';
 import SuministroEnergiaRespaldo from '../sections/screens/mi-energia/SuministroEnergiaRespaldo.astro';
+import ConfiaEnNuestraExperiencia from '../sections/screens/mi-energia/ConfiaEnNuestraExperiencia.astro';
+import MonitoreoSistemaFotovoltaico from '../sections/screens/mi-energia/MonitoreoSistemaFotovoltaico.astro';
 import FuncionInstalacionFotovoltaica from '../sections/screens/mi-energia/FuncionInstalacionFotovoltaica.astro';
 import InstalacionFotovoltaicaComerciaIndustrial from '../sections/screens/mi-energia/InstalacionFotovoltaicaComerciaIndustrial.astro';
 
@@ -39,29 +38,11 @@ import InstalacionFotovoltaicaComerciaIndustrial from '../sections/screens/mi-en
 
 </style>
 
-<Layout title="Fronius">
+<Layout title="Fronius" hasBackground>
 
-  <section class="bg-neutral-800 text-white flex flex-col p-6 pt-24 md:px-20 lg:px-40 xl:px-60">
+  
 
-		<p class="text-2xl text-center font-semibold">
-			Impulsamos la transición energética y descarbonización de México a través de soluciones energéticas 
-			altamente rentables y eficientes que agregan valor a nuestros clientes reduciendo sus gastos fijos 
-			y huella de carbono.
-		</p>
-
-	</section>
-
-  <PorQueMiEnergia/>
-
-  <QueDiferenciaMiEnergia/>
-
-  <BeneficiosFronius/>
-
-  <section class="bg-neutral-800 text-white p-6 md:py-10 md:px-20 lg:px-40 xl:px-60" id="sistema-fotovoltaico-residencial-hibridos">
-
-    <p class="text-xl font-semibold text-center">Confía en nuestra experiencia y en la tecnología de vanguardia para tus necesidades solares.</p>
-
-  </section>
+  <ConfiaEnNuestraExperiencia/>
 
 	<DisenadoLiderMercado/>
 
@@ -73,7 +54,6 @@ import InstalacionFotovoltaicaComerciaIndustrial from '../sections/screens/mi-en
 
   <BajaTusCostosList/>
 
-  <!-- Sistema fotovoltaico residenciales híbridos -->
   <EnergiaRenovable/>
 
   <SuministroEnergiaRespaldo/>
@@ -82,16 +62,7 @@ import InstalacionFotovoltaicaComerciaIndustrial from '../sections/screens/mi-en
 
   <MonitoreeInstalacion/>
 
-  <section class="flex flex-col text-center p-6 md:py-10 md:px-20 lg:px-40 xl:px-60">
-
-    <h3 class="text-2xl font-semibold">Monitoreo del sistema fotovoltaico con Fronius Solar.web</h3>
-
-    <p class="text-lg">
-      Este monitoreo ofrece un análisis comprensivo de funciones que permiten consulta 
-      individual y optimización en curso del sistema fotovoltaico.
-    </p>
-
-  </section>
+  <MonitoreoSistemaFotovoltaico/>
 
   <VentajasVistazo/>
 
