@@ -15,21 +15,27 @@ const ventajasList = [
     Ventajas de ser anfitrión de una estación de carga
   </h3>
 
-  <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+  <div class="grid grid-cols-2 gap-6">
 
-    {ventajasList.map((row, index) => 
+    <img src='/images/screens/electromovilidad/img25.jpg' class='border rounded'/>
 
-      <div class='border rounded-sm p-6 flex flex-col gap-4 bg-white items-center'>
+    <div class='grid grid-cols-1 md:grid-cols-2 gap-6'>
 
-        <div class="h-12 w-12 border rounded flex justify-center items-center bg-gray-100">
-          <span class="text-blue-700 font-medium text-lg">{index + 1}</span>
+      {ventajasList.map((row, index) => 
+  
+        <div class='border rounded p-6 flex flex-col gap-4 bg-white items-center'>
+  
+          <div class="h-12 w-12 border rounded flex justify-center items-center bg-gray-100">
+            <span class="text-blue-700 font-semibold">{index + 1}</span>
+          </div>
+  
+          <h2>{row}</h2>
+  
         </div>
-
-        <h2>{row}</h2>
-
-      </div>
-
-    )}
+  
+      )}
+  
+    </div>
 
   </div>
 

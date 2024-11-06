@@ -14,14 +14,19 @@ const diferencialesFronius = [
 
   <h3 class="text-2xl font-semibold col-span-2">¿Qué diferencia Mi Energía MX como Fronius Solutions Partner?</h3>
 
-  <img src="/images/screens/sobre-nosotros/img23.png" class="w-56"/>
+  <div class="flex gap-12 items-center">
+    <img src="/images/screens/sobre-nosotros/img23.png" class="w-56"/>
+    <img src="/images/mi-energia-logo/fronius-logo.jpeg" class="h-20"/>
+  </div>
 
   <div class="grid gap-6 grid-cols-2 md:grid-cols-4">
 
-    {diferencialesFronius.map((item) => 
-      <div class="border rounded p-4 flex items-center bg-neutral-700">
-        <span>{item}</span>
-      </div>
+    {
+      diferencialesFronius.map((item) => (
+        <div class="border rounded p-4 flex items-center bg-neutral-700">
+          <span>{item}</span>
+        </div>
+      ) 
     )}
 
   </div>

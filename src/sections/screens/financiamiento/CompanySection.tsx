@@ -30,7 +30,7 @@ export default function CompanySection () {
             <h3 className="text-2xl font-semibold">CI Banco</h3>
           </div>
 
-          <p className='text-lg'>
+          <p>
             Para que tu empresa mejore sus finanzas, reduzca sus gastos fijos y 
             aumente sus niveles de sostenibilidad. Es posible aplicar también para tecnologías 
             sostenibles y vehículos de bajas emisiones, híbridos o eléctricos.
@@ -57,7 +57,7 @@ export default function CompanySection () {
             <h3 className="text-2xl font-semibold">Fide</h3>
           </div>
 
-          <p className='text-lg'>
+          <p>
             Este crédito ofrece apoyos financieros a proyectos y aplicación de tecnologías que demuestren un ahorro de energía y rentabilidad en sistemas y procesos de producción.
           </p>
 

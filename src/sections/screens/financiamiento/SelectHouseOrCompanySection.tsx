@@ -70,7 +70,7 @@ export default function SelectHouseOrCompanySection () {
 
           <h3 className="text-2xl font-semibold">Arrendamiento</h3>
 
-          <p className='text-lg'>
+          <p>
             Este instrumento te permite como arrendador contar con los beneficios de un sistema 
             solar sin inversión inicial y gozando de las deducciones fiscales que ofrece el esquema. 
             El arrendador mantiene la propiedad del sistema fotovoltaico hasta el término del plazo.
@@ -86,12 +86,12 @@ export default function SelectHouseOrCompanySection () {
 
           <h3 className="text-2xl font-semibold">PPA (Power Purchase Agreement)</h3>
 
-          <p className='text-lg'>
+          <p>
             Si aún no estás preparado para invertir en energía solar, 
             podemos instalar un sistema fotovoltaico en tus instalaciones a coste 0.
           </p>
 
-          <p className='text-lg'>
+          <p>
             Nosotros nos encargamos de la operación y mantenimiento, permitiendo que tu 
             empresa se beneficie de energía limpia y logre un mayor nivel de sostenibilidad.
             En este esquema se paga una renta mensual relacionado con la energía solar 

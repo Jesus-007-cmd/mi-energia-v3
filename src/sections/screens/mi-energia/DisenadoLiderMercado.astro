@@ -1,5 +1,11 @@
 ---
 
+const bgImageStyle = {
+  backgroundImage: "url('/images/screens/fronius/img5.jpg')",
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+}
+
 ---
 
 <section 
@@ -7,9 +13,7 @@
   id="sistema-fotovoltaico-comercial-industrial"
 >
 
-  <div class="flex flex-col">
-    <img src="/images/screens/fronius/img5.jpg">
-  </div>
+  <div class="flex flex-col h-96 xl:h-auto" style={bgImageStyle}/>
 
   <div class="flex flex-col justify-center gap-4 p-6 md:p-12">
 
@@ -23,43 +27,34 @@
       <tbody>
         
         <tr>
-
           <td class="p-3 border text-red-600 font-medium">
             Justo a su medida
           </td>
-
           <td class="p-3 border">
             Dimensionamos nuestro sistema mediante un análisis exhaustivo de sus necesidades energéticas, 
             instalaciones e historial de pagos electrónicos para asegurar ahorros óptimos.
           </td>
-
         </tr>
 
         <tr>
-
           <td class="p-3 border text-red-600 font-medium">
             Operación y mantenimiento
           </td>
-
           <td class="p-3 border">
             Optimiza tu empresa con nuestro servicio de operación y mantenimiento. 
             Nos encargamos del funcionamiento mientras generas ahorros con energía solar.
           </td>
-          
         </tr>
 
         <tr>
-          
           <td class="p-3 border text-red-600 font-medium">
             Monitoreo 24h
           </td>
-
           <td class="p-3 border">
             Se realiza un monitoreo las 24 horas a través de Fronius Solar Web para asegurar 
             el funcionamiento óptimo del sistema. Sin preocupaciones por fallos, 
             con tiempos de respuesta excelentes.
           </td>
-
         </tr>
 
       </thead>

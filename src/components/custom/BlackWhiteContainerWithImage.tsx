@@ -39,7 +39,7 @@ export default function BlackWhiteContainerWithImage (props:Props) {
 							<div className="flex flex-col">	
 								<h4 className="text-sm">{row.subtitle}</h4>
 								<h3 className="text-2xl font-semibold pb-1">{row.title}</h3>
-								<p className="text-lg">{row.description}</p>
+								<p>{row.description}</p>
 							</div>
 						</div>
 

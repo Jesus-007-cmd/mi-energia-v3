@@ -1,3 +1,12 @@
+---
+
+const bgImgStyle = {
+  background: 'url(https://www.fronius.com/~/protected-media/international/solar-energy-2-0/residential-endcustomers/product-pages/gen24-vielseitigkeit-169.jpg?26658)',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+}
+
+---
 <section class="bg-neutral-800 grid grid-cols-1 md:grid-cols-2">
 
   <div class="flex flex-col justify-center gap-1 text-white p-6 md:p-12">
@@ -7,12 +16,12 @@
       <h3 class="text-2xl font-semibold">Reduce tus costos</h3>
     </div>
 
-    <p class="text-lg">
+    <p>
       Con un proyecto fotovoltaico de Fronius, tu empresa puede reducir significativamente los costos de energía al aprovechar el abundante recurso de la radiación solar.
     </p>
 
   </div>
 
-  <img src="https://www.fronius.com/~/protected-media/international/solar-energy-2-0/residential-endcustomers/product-pages/gen24-vielseitigkeit-169.jpg?26658"/>
+  <div class="h-96" style={bgImgStyle}/>
 
 </section>

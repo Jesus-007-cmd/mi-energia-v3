@@ -1,0 +1,43 @@
+---
+
+// Components
+import Layout from '../layouts/Layout.astro';
+
+// Sections
+import BackgroundWithVideo from '../components/custom/BackgroundWithVideo.astro';
+import MontaCargasPortada from '../sections/screens/monta-cargas/MontaCargasPortada.astro';
+import MontaCargasReduceCostos from '../sections/screens/monta-cargas/MontaCargasReduceCostos.astro';
+import MontaCargasBalanceCarga from '../sections/screens/monta-cargas/MontaCargasBalanceCarga.astro';
+import MontaCargasPicosCorriente from '../sections/screens/monta-cargas/MontaCargasPicosCorriente.astro';
+import MontaCargasConsumoEnergia from '../sections/screens/monta-cargas/MontaCargasConsumoEnergia.astro';
+import MontaCargasIndividualFacil from '../sections/screens/monta-cargas/MontaCargasIndividualFacil.astro';
+import MontaCargasChargeAndConnect from '../sections/screens/monta-cargas/MontaCargasChargeAndConnect.astro';
+import MontaCargasSolucionInteligente from '../sections/screens/monta-cargas/MontaCargasSolucionInteligente.astro';
+
+---
+
+<Layout title="Fronius" hasBackground>
+
+  <MontaCargasPortada/>
+
+  <MontaCargasConsumoEnergia/>
+
+  <MontaCargasReduceCostos/>
+
+  <BackgroundWithVideo />
+
+  <MontaCargasChargeAndConnect/>
+
+  <BackgroundWithVideo />
+
+  <MontaCargasPicosCorriente/>
+
+  <MontaCargasBalanceCarga/>
+
+  <BackgroundWithVideo />
+
+  <MontaCargasIndividualFacil/>
+
+  <MontaCargasSolucionInteligente/>
+
+</Layout>

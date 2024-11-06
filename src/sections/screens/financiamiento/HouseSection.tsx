@@ -26,7 +26,7 @@ export default function HouseSection () {
             <h3 className="text-2xl font-medium">Para casas</h3>
           </div>
 
-          <p className='text-lg'>
+          <p>
             CI Banco, ofrecen créditos sin complicaciones con un trámite sencillo y ágil. 
             Este banco está dedicado a brindarte una gran atención asegurándote de que obtengas el crédito que necesitas en el menor tiempo posible. 
             CI Banco, te brindará una experiencia financiera sin estrés y alcanzando tus metas con facilidad.
@@ -51,7 +51,7 @@ export default function HouseSection () {
 
         <div className="flex flex-col p-6 gap-1 order-1 md:order-2 justify-center">
 
-          <p className='text-lg'>
+          <p>
             Logra el mejoramiento sustentable en tu vivienda mediante la aplicación de Ecotecnologías que contribuyan a reducir el consumo y gasto de electricidad.
           </p>
 
