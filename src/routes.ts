@@ -20,7 +20,7 @@ export default class AppRoutes {
   }
 
   static montaCargas:AppRoute = {
-    route:'/monta-cargas',
+    route:'/perfect-charging',
     title:'Perfect Charging'
   }
 
