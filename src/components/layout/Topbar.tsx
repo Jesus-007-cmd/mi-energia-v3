@@ -123,8 +123,8 @@ function ServicesOptions () {
 
   const servicesList = [
     { 
-      label:AppRoutes.sistemaFotovoltaicoComercialEIndustrialRoute.title,
-      url:AppRoutes.sistemaFotovoltaicoComercialEIndustrialRoute.route 
+      label:AppRoutes.sistemaFotovoltaicoComercialEIndustrial.title,
+      url:AppRoutes.sistemaFotovoltaicoComercialEIndustrial.route 
     },
     { 
       label:AppRoutes.sistemaFotovoltaicoResidencialEHibrido.title,

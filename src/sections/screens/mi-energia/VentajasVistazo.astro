@@ -8,26 +8,26 @@ const ventajasAUnSoloVistazo = [
 
 ---
 
-<section class="bg-neutral-800 text-white gap-4 flex flex-col text-center p-6 md:pb-14 md:px-20 lg:px-40 xl:px-60">
+<section class="bg-neutral-800 text-white gap-4 flex flex-col text-center pt-10 px-6 md:pb-8 md:px-20 lg:px-40 xl:px-60">
 
-  <h3 class="text-2xl font-semibold">Ventajas a un solo vistazo</h3>
+  <h3 class="text-2xl font-semibold pb-8">Ventajas a un solo vistazo</h3>
 
-  <div class="gap-6 grid grid-cols-1 md:grid-cols-3">
+  <div class="gap-[20px] grid grid-cols-1 md:grid-cols-3">
 
     {ventajasAUnSoloVistazo.map((row, index) => 
 
       <div class="border rounded p-4 flex flex-col gap-2 items-center bg-neutral-700">
 
-        <div class="border rounded h-12 w-12 flex items-center justify-center bg-neutral-800">
-          <span class="font-semibold text-red-600">{index + 1}</span>
+        <div class="border rounded h-12 w-12 flex items-center justify-center  bg-neutral-800">
+          <span class="font-semibold text-red-600 ">{index + 1}</span>
         </div>
 
-        <p>{row}</p>
+       <p class="text-center">{row}</p>
 
       </div>
-
+    
     )}
 
   </div>
-
+<div class="mb-1"/>
 </section>

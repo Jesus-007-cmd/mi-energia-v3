@@ -1,0 +1,46 @@
+---
+// Modules
+import { YouTube } from 'astro-embed';
+
+// Components
+import Layout from "../layouts/Layout.astro";
+import EnergiaRenovable from '../sections/screens/mi-energia/EnergiaRenovable.astro';
+import SuministroEnergiaRespaldo from '../sections/screens/mi-energia/SuministroEnergiaRespaldo.astro';
+import FuncionInstalacionFotovoltaica from '../sections/screens/mi-energia/FuncionInstalacionFotovoltaica.astro';
+import VentajasVistazo from '../sections/screens/mi-energia/VentajasVistazo.astro';
+
+import MonitoreeInstalacion from '../sections/screens/mi-energia/MonitoreeInstalacion.astro';
+import MonitoreoSistemaFotovoltaico from '../sections/screens/mi-energia/MonitoreoSistemaFotovoltaico.astro';
+import Fronius2024 from '../sections/screens/mi-energia/Fronius2024.astro';
+---
+
+<Layout title="Sistema Fotovoltaico Residenciales Híbridos" hasBackground={true}>
+  
+  
+  <section style="padding-top: 20px;">
+    <EnergiaRenovable/> 
+
+    <SuministroEnergiaRespaldo/>
+
+    <FuncionInstalacionFotovoltaica/>
+
+    <MonitoreeInstalacion/>
+
+    <MonitoreoSistemaFotovoltaico/>
+    
+    <VentajasVistazo/>
+
+    <section class="flex flex-col">
+      <YouTube 
+        id="https://www.youtube.com/watch?v=mRim7E7y4ow&ab_channel=FroniusSolarEnergy"
+        class="w-full max-w-full"
+        title="Fronius Tauro"
+      />
+    </section>
+    
+    <Fronius2024/>    
+  </section>
+</Layout>
+
+
+
