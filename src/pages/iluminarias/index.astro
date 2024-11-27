@@ -4,6 +4,8 @@ import Layout from "../../layouts/Layout.astro";
 import ButtonClass from "../../classes/ButtonClass";
 import CustomButton from "../../components/forms/CustomButton";
 
+import VideoPortada from '../../sections/screens/iluminarias/VideoPortada.astro';
+
 const iluminaria1 = {
   title:'PROYECTOR LED PARA GRANDES ALTURAS',
   potencias:'150W a 1250W',
@@ -104,7 +106,7 @@ const imageList = [
 
 <Layout title="Iluminiarias">
 
-  <div class="h-screen bg-gray-700"/>
+  <VideoPortada/>
 
   <section class="flex flex-col lg:grid lg:grid-cols-2">
 
@@ -128,7 +130,7 @@ const imageList = [
 
   <section class="bg-neutral-700 text-center text-white">
 
-    <div class="p-6 md:px-20 lg:px-40 xl:px-60">
+    <div class="px-6 py-14 md:px-20 lg:px-40 xl:px-60">
 
       <h3 class="text-2xl font-semibold">
         Ideales para vialidades, parques, jardines, túneles, aeropuertos, canchas deportivas, naves industriales, entre otros.
@@ -164,7 +166,7 @@ const imageList = [
 
   <section class="text-center flex flex-col">
 
-    <div class="flex flex-col gap-1 p-6 md:px-20 lg:px-40 xl:px-60">
+    <div class="flex flex-col gap-1 px-6 py-14 md:px-20 lg:px-40 xl:px-60">
 
       <h3 class="text-2xl font-semibold">
         Realizamos proyectos personalizados para cada aplicación, garantizando óptimos resultados.
