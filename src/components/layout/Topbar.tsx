@@ -17,6 +17,7 @@ export default function Topbar (props:Props) {
   // States
   const [ isMouseInTopBar, setIsMouseInTopBar ] = useState(false);
   const [ isMouseInServiceButton, setIsMouseInServiceButton ] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const headerButtons = [
     { label:AppRoutes.serviciosRoute.title },
@@ -29,7 +30,7 @@ export default function Topbar (props:Props) {
   const navStyle = `
     px-4 md:px-8 h-20 flex justify-between items-center gap-4 absolute z-10 w-full 
     ${props.hasBackground ? 'bg-white' : ''} transition duration-500 ease-in-out group-hover/main-container:bg-white
-  `;
+  `; 
 
   // Toggle
   function toggleIsMouseInTopBar () {
@@ -110,7 +111,22 @@ export default function Topbar (props:Props) {
         </div>
 
         <div/>
+        <div className="md:hidden">
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-2xl focus:outline-none">
+            ☰
+          </button>
+        </div>
+        {/* Menú móvil */}
+        {isMobileMenuOpen && (
+          <MobileMenu
+            headerButtons={headerButtons}
+            isMouseInServiceButton={isMouseInServiceButton}
+            setIsMouseInServiceButton={setIsMouseInServiceButton}
+          />
+        )}
 
+
+        
       </nav>
 
     </div>
@@ -179,4 +195,86 @@ function ServicesOptions () {
 
   )
 
+}
+
+function MobileMenu({ headerButtons, isMouseInServiceButton, setIsMouseInServiceButton }: any) {
+  const servicesList = [
+    {
+      label: AppRoutes.sistemaFotovoltaicoComercialEIndustrial.title,
+      url: AppRoutes.sistemaFotovoltaicoComercialEIndustrial.route,
+      icon: "fas fa-solar-panel", // Ejemplo con Font Awesome
+    },
+    {
+      label: AppRoutes.sistemaFotovoltaicoResidencialEHibrido.title,
+      url: AppRoutes.sistemaFotovoltaicoResidencialEHibrido.route,
+      icon: "fas fa-home",
+    },
+    {
+      label: AppRoutes.montaCargas.title,
+      url: AppRoutes.montaCargas.route,
+      icon: "fas fa-truck-loading",
+    },
+    {
+      label: AppRoutes.sistemaBess.title,
+      url: AppRoutes.sistemaBess.route,
+      icon: "fas fa-battery-full",
+    },
+    {
+      label: AppRoutes.electromovilidadRoute.title,
+      url: AppRoutes.electromovilidadRoute.route,
+      icon: "fas fa-car",
+    },
+    {
+      label: AppRoutes.monitoreoRoute.title,
+      url: AppRoutes.monitoreoRoute.route,
+      icon: "fas fa-chart-line",
+    },
+    {
+      label: AppRoutes.iluminariasRoute.title,
+      url: AppRoutes.iluminariasRoute.route,
+      icon: "fas fa-lightbulb",
+    },
+  ];
+
+  return (
+    <div className="absolute top-20 left-0 w-full bg-white flex flex-col items-center p-4 z-50 shadow-lg">
+      {headerButtons.map((button: any, key: number) =>
+        button.url ? (
+          <a
+            key={key}
+            href={button.url}
+            className="py-3 px-4 text-gray-800 hover:bg-gray-100 w-full text-center rounded-lg transition duration-300 ease-in-out"
+          >
+            {button.label}
+          </a>
+        ) : (
+          <div key={key} className="relative w-full text-center">
+            {/* Botón de "Servicios" */}
+            <button
+              onClick={() => setIsMouseInServiceButton(!isMouseInServiceButton)}
+              className="py-3 px-4 text-gray-800 hover:bg-gray-1000 w-full text-center rounded-lg font-medium transition duration-300 ease-in-out"
+            >
+              {button.label}
+            </button>
+
+            {/* Submenú de servicios */}
+            {isMouseInServiceButton && (
+              <div className="grid grid-cols-1 items-center justify-center gap-4 bg-gray-50 mt-2 p-4 rounded-md shadow-md w-full border border-gray-200">
+                {servicesList.map((service, index) => (
+                  <a
+                    key={index}
+                    href={service.url}
+                    className="flex items-center items-center justify-center py-2 px-3 bg-white rounded-lg shadow hover:bg-gray-100 transition duration-300 ease-in-out"
+                  >
+                    <i className={`${service.icon} text-blue-500 text-lg mr-3`} />
+                    <span className="text-gray-700 font-medium">{service.label}</span>
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        )
+      )}
+    </div>
+  );
 }
