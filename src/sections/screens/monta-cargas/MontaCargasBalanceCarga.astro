@@ -2,19 +2,34 @@
 
 const backgroundStyle = {
   backgroundImage: 'url("/images/screens/monta-cargas/img4.jpg")',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
+  backgroundSize: 'cover', // Ajusta la imagen para cubrir el contenedor
+  backgroundPosition: 'center', // Centra la imagen
 }
 
 ---
 
+<!-- Código para pantallas grandes -->
+<div class="hidden md:grid grid-cols-2">
 
-<div class="grid grid-cols-2">
-
+  <!-- Texto -->
   <h2 class="p-6 flex items-center text-3xl font-semibold bg-neutral-200">
     Balance de carga. Ahorro de costos energéticos de manera eficiente, fácil y flexible.
   </h2>
 
-  <div style={backgroundStyle} class="h-96"/>
+  <!-- Imagen -->
+  <div style={backgroundStyle} class="h-96"></div>
+
+</div>
+
+<!-- Código para pantallas móviles -->
+<div class="grid md:hidden grid-cols-1 gap-0">
+
+  <!-- Texto -->
+  <h2 class="p-6 flex items-center text-2xl font-semibold bg-neutral-200">
+    Balance de carga. Ahorro de costos energéticos de manera eficiente, fácil y flexible.
+  </h2>
+
+  <!-- Imagen -->
+  <div style={backgroundStyle} class="h-64 w-full"></div>
 
 </div>

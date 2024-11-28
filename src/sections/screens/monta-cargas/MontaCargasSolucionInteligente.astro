@@ -2,26 +2,43 @@
 
 const backgroundStyle = {
   backgroundImage: 'url("/images/screens/monta-cargas/img6.jpg")',
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover', // Asegura que la imagen cubra el contenedor
+  backgroundPosition: 'center', // Centra la imagen
+  backgroundRepeat: 'no-repeat', // Evita la repetición
 }
 
 ---
 
-<div class="grid grid-cols-2">
+<!-- Código para pantallas grandes -->
+<div class="hidden md:grid grid-cols-2">
 
-  <div style={backgroundStyle} class="h-96"/>
+  <!-- Imagen -->
+  <div style={backgroundStyle} class="h-96"></div>
 
+  <!-- Texto -->
   <div class="p-6 h-full flex flex-col justify-center bg-gray-200">
-
     <h2 class="text-2xl font-semibold">Solución inteligente</h2>
-  
+    <p class="text-xl">
+      Nuestra tecnología se basa en un algoritmo de carga inteligente que analiza constantemente 
+      tu infraestructura de carga según los parámetros establecidos.
+    </p>
+  </div>
+
+</div>
+
+<!-- Código para pantallas móviles -->
+<div class="grid md:hidden grid-cols-1 gap-0">
+
+  <!-- Texto -->
+  <div class="p-6 h-full flex flex-col justify-center bg-gray-200">
+    <h2 class="text-2xl font-semibold">Solución inteligente</h2>
     <p>
       Nuestra tecnología se basa en un algoritmo de carga inteligente que analiza constantemente 
       tu infraestructura de carga según los parámetros establecidos.
     </p>
-  
   </div>
+
+  <!-- Imagen -->
+  <div style={backgroundStyle} class="h-64  w-full"></div>
 
 </div>
