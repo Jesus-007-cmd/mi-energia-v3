@@ -138,22 +138,24 @@ export default function Topbar (props:Props) {
 function ServicesOptions () {
 
   const servicesList = [
+
+    { 
+      label:AppRoutes.sistemaFotovoltaicoResidencialEHibrido.title,
+      url:AppRoutes.sistemaFotovoltaicoResidencialEHibrido.route 
+    },
     { 
       label:AppRoutes.sistemaFotovoltaicoComercialEIndustrial.title,
       url:AppRoutes.sistemaFotovoltaicoComercialEIndustrial.route 
     },
-    { 
-      label:AppRoutes.sistemaFotovoltaicoResidencialEHibrido.title,
-      url:AppRoutes.sistemaFotovoltaicoResidencialEHibrido.route 
+     { 
+      label:AppRoutes.sistemaBess.title, 
+      url:AppRoutes.sistemaBess.route 
     },
     {
       label:AppRoutes.montaCargas.title,
       url:AppRoutes.montaCargas.route 
     },
-    { 
-      label:AppRoutes.sistemaBess.title, 
-      url:AppRoutes.sistemaBess.route 
-    },
+  
     { 
       label:AppRoutes.electromovilidadRoute.title, 
       url:AppRoutes.electromovilidadRoute.route 
