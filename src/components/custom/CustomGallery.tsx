@@ -50,14 +50,14 @@ export default function CustomGallery(props: Props) {
 
   return (
     <div className="relative bg-gray-200 overflow-hidden">
-      {/* Botón Flecha Izquierda */}
+      {/* Botón Flecha Izquierda 
       <button
         onClick={scrollLeft}
         className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full shadow-lg hover:bg-blue-700 z-10"
       >
         &#9664;
       </button>
-
+*/}
       {/* Contenedor de Carrusel */}
       <div
         className="flex overflow-hidden scroll-snap-x scroll-snap-mandatory no-scrollbar"
@@ -68,18 +68,19 @@ export default function CustomGallery(props: Props) {
             key={index}
             src={img}
             alt={`gallery-${index}`}
-            className="h-[50vh] w-auto flex-shrink-0 scroll-snap-start"
+            className="h-[35rem] w-[45rem] flex-shrink-0 scroll-snap-start"
           />
         ))}
       </div>
 
-      {/* Botón Flecha Derecha */}
+      {/* Botón Flecha Derecha 
       <button
         onClick={scrollRight}
         className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full shadow-lg hover:bg-blue-700 z-10"
       >
         &#9654;
       </button>
+      */}
     </div>
   );
 }
