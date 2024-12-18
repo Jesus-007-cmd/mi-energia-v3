@@ -1,4 +1,3 @@
-// Modules
 import { useEffect, useRef } from 'react';
 
 type Props = {
@@ -6,39 +5,38 @@ type Props = {
 };
 
 export default function CustomGallery(props: Props) {
-  // Props
   const { photos } = props;
 
-  const scrollAmount = 1000;
-  const carouselRef = useRef<HTMLDivElement>(null);
+  const scrollAmount = 1000; // Cantidad de desplazamiento
+  const pcCarouselRef = useRef<HTMLDivElement>(null);
+  const mobileCarouselRef = useRef<HTMLDivElement>(null);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  function scrollLeft() {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-      assignInterval();
+  // Función para desplazarse hacia la derecha
+  function scrollRight(ref: React.RefObject<HTMLDivElement>) {
+    if (ref.current) {
+      ref.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
   }
 
-  function scrollRight() {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-      assignInterval();
-    }
-  }
-
+  // Función para reiniciar el intervalo
   function assignInterval() {
     if (intervalRef.current) clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(validateCanScroll, 5000);
+    intervalRef.current = setInterval(() => {
+      // Desplazamiento automático para ambas galerías
+      validateCanScroll(pcCarouselRef);
+      validateCanScroll(mobileCarouselRef);
+    }, 3000); // Cada 3 segundos
   }
 
-  function validateCanScroll() {
-    if (carouselRef.current) {
-      const { scrollWidth, clientWidth, scrollLeft } = carouselRef.current;
+  // Validación de reinicio de la galería
+  function validateCanScroll(ref: React.RefObject<HTMLDivElement>) {
+    if (ref.current) {
+      const { scrollWidth, clientWidth, scrollLeft } = ref.current;
       if (clientWidth + scrollLeft >= scrollWidth) {
-        carouselRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+        ref.current.scrollTo({ left: 0, behavior: 'smooth' });
       } else {
-        scrollRight();
+        scrollRight(ref);
       }
     }
   }
@@ -50,37 +48,39 @@ export default function CustomGallery(props: Props) {
 
   return (
     <div className="relative bg-gray-200 overflow-hidden">
-      {/* Botón Flecha Izquierda 
-      <button
-        onClick={scrollLeft}
-        className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full shadow-lg hover:bg-blue-700 z-10"
-      >
-        &#9664;
-      </button>
-*/}
-      {/* Contenedor de Carrusel */}
-      <div
-        className="flex overflow-hidden scroll-snap-x scroll-snap-mandatory no-scrollbar"
-        ref={carouselRef}
-      >
-        {photos.map((img, index) => (
-          <img
-            key={index}
-            src={img}
-            alt={`gallery-${index}`}
-            className="h-[35rem] w-[45rem] flex-shrink-0 scroll-snap-start"
-          />
-        ))}
+      {/* Galería para computadoras */}
+      <div className="hidden md:block">
+        <div
+          className="flex overflow-hidden scroll-snap-x scroll-snap-mandatory no-scrollbar"
+          ref={pcCarouselRef}
+        >
+          {photos.map((img, index) => (
+            <img
+              key={index}
+              src={img}
+              alt={`gallery-${index}`}
+              className="h-[35rem] w-[45rem] flex-shrink-0 scroll-snap-start object-cover"
+            />
+          ))}
+        </div>
       </div>
 
-      {/* Botón Flecha Derecha 
-      <button
-        onClick={scrollRight}
-        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-blue-500 text-white p-2 rounded-full shadow-lg hover:bg-blue-700 z-10"
-      >
-        &#9654;
-      </button>
-      */}
+      {/* Galería para móviles */}
+      <div className="md:hidden">
+        <div
+          className="flex overflow-hidden no-scrollbar"
+          ref={mobileCarouselRef}
+        >
+          {photos.map((img, index) => (
+            <img
+              key={index}
+              src={img}
+              alt={`mobile-gallery-${index}`}
+              className="w-full h-[18rem] flex-shrink-0 object-cover scroll-snap-start"
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

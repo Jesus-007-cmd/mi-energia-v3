@@ -4,9 +4,7 @@ const whyFronius = [
 	{
 		title: "Experiencia de calidad",
 		description: `
-			Con más de 30 años de experiencia en el mercado, en el sector de la construcción, brindando servicios de alta calidad. 
-      Confía en nuestra experiencia para diseñar un sistema 
-      fotovoltaico adaptado a tus necesidades.
+			Con más de 30 años de experiencia en el mercado, en el sector de la construcción, brindando servicios de alta calidad.
 		`,
 	},
 	{
@@ -20,7 +18,7 @@ const whyFronius = [
 	{
 		title: "Servicio excepcional",
 		description: `
-			Asegura el funcionamiento continuo 
+			Asegura el funcionamiento continúo 
       y eficiente de tu sistema solar 
       con Mi Energía MX. 
 		`,
@@ -29,29 +27,48 @@ const whyFronius = [
 
 ---
 
-<section class="bg-neutral-100 px-6 py-14 pb-16 md:px-20 lg:px-40 xl:px-60 flex flex-col gap-4 text-center">
+<section class="bg-neutral-100 px-6 py-14 pb-16 md:px-20 lg:px-40 xl:px-60 flex flex-col gap-8 text-center">
 
-  <h3 class="text-2xl font-semibold">¿Por qué elegir Mi Energía MX?</h3>
+  <!-- Título principal -->
+  <h3 class="text-2xl font-semibold text-gray-800">¿Por qué elegir Mi Energía MX?</h3>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
+  <!-- Diseño para computadora -->
+  <div class="hidden md:grid grid-cols-3 gap-6">
     {whyFronius.map((row, index) => 
-
-      <div class="text-center p-6 gap-4 flex flex-col items-center bg-white border rounded">
-
+      <div class="text-center p-6 gap-4 flex flex-col items-center bg-white border rounded shadow-sm">
         <div class="border h-12 w-12 flex justify-center items-center rounded bg-gray-100">
-          <span class="text-blue-700 font-semibold">{index+1}</span>
+          <span class="text-blue-700 font-semibold">{index + 1}</span>
         </div>
-
         <div>
           <p class="font-semibold">{row.title}</p>
           <p>{row.description}</p>
         </div>
+      </div>
+    )}
+  </div>
+
+ <!-- Diseño para móvil -->
+  <div class="md:hidden flex flex-col gap-6">
+    {whyFronius.map((row, index) => 
+      <div class="bg-white rounded-lg shadow-md p-4 flex gap-4">
+
+        <!-- Primera columna: Número y Título -->
+        <div class="flex flex-col items-center gap-2 w-1/3">
+          <!-- Número en un cuadrado -->
+          <div class="h-12 w-12 flex justify-center items-center bg-blue-700 text-white font-bold rounded-md">
+            {index + 1}
+          </div>
+          <!-- Título -->
+          <p class="text-sm font-semibold text-gray-800 text-center">{row.title}</p>
+        </div>
+
+        <!-- Segunda columna: Descripción -->
+        <div class="flex-1 flex items-center text-left">
+          <p class="text-gray-600 text-sm leading-relaxed">{row.description}</p>
+        </div>
 
       </div>
-  
     )}
-
   </div>
 
 </section>

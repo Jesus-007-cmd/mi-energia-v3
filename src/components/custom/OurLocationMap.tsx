@@ -1,13 +1,24 @@
 // Components
 import { GoogleMap, useJsApiLoader, MarkerF } from '@react-google-maps/api';
+import { useEffect, useRef, useState } from 'react';
 
-export default function OurLocationMap () {
+export default function OurLocationMap() {
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyAUwJ1TLf3hpbdEhi0euPG7bSZr6ouxRCw"
-  })
+  });
 
+  const [isMobile, setIsMobile] = useState(false);
+  const mapRef = useRef(null);
+
+  // Detecta si la pantalla es móvil
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile(); // Ejecuta la detección inicial
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   const markers = [
 
     // Super Willys
@@ -185,25 +196,42 @@ export default function OurLocationMap () {
 
   ];
 
+  // Centrar todos los puntos en el mapa
+  const fitBounds = (map) => {
+    if (!map) return;
+    
+    const bounds = new window.google.maps.LatLngBounds(
+      { lat: 21.1606, lng: -86.8475 }, // Esquina suroeste de Cancún
+      { lat: 21.1700, lng: -86.8470 }  // Esquina noreste de Cancún
+    );
+    
+    markers.forEach(marker => bounds.extend(marker.position));
+    map.fitBounds(bounds, { top: 30, right: 1, bottom: 10, left: 1 }); 
+  };
+
+  // Configura el mapa para mostrar todos los marcadores
+  const onLoad = (map) => {
+    mapRef.current = map;
+    fitBounds(map);
+  };
+
   return (
-
     <div className='flex flex-col gap-6'>
-
-      {
-        isLoaded && 
-        <div className='border rounded'>
+      { isLoaded && 
+        <div className={`border rounded ${isMobile ? 'h-64' : 'h-96'}`}>
           <GoogleMap
-            mapContainerStyle={{ height:"400px", width:"100%", borderRadius:"0.25rem" }}
-            center={{ lat:20.9858054, lng:-89.7844126  }}
+            mapContainerStyle={{ height: isMobile ? "256px" : "400px", width: "100%", borderRadius: "0.25rem" }}
+            center={{ lat: 19.9858054, lng: -88.7844126 }}
             zoom={7}
-            options={{ disableDefaultUI:true, zoomControl:true, maxZoom:7 }} // Disable default UI and zoom controls
-          >{markers.map((row, index) => <MarkerF key={index} position={row.position}/>)}</GoogleMap>
+            onLoad={onLoad}
+            options={{ disableDefaultUI: true, zoomControl: true, maxZoom: 9 }}
+          >
+            {markers.map((marker, index) => (
+              <MarkerF key={index} position={marker.position} />
+            ))}
+          </GoogleMap>
         </div>
       }
-
     </div>
-
-  )
-
+  );
 }
-

@@ -11,56 +11,78 @@ const tauroList = [
 
 <section class="p-6 md:px-20 lg:px-40 flex flex-col gap-6">
 
-  <div class='grid grid-cols-1 lg:grid-cols-2 items-center'>
-
+  <!-- Versión para computadoras -->
+  <div class="hidden lg:grid grid-cols-1 lg:grid-cols-2 items-center">
     <div class="flex flex-col">
-
       <div class="flex justify-center">
-
         <img 
           src="/images/screens/fronius/img2.jpg" 
           alt="Fronius Tauro"
           class="h-[340px]"
         />
-
       </div>
 
       <div class="flex flex-col items-center">
-
         <div class="w-1/4 bg-neutral-800 h-[2px] mb-4"/>
-
         <h4 class="font-semibold text-xl">Fronius Tauro ECO 208-220</h4>
-
         <ul class="flex flex-col items-center">
-
           <li>Rango de Potencia: 50 kW</li>
-
           <li>Ideal para países con clase de tensión 208 - 220V</li>
-
         </ul>
-
       </div>
-
     </div>
 
     <div class="flex flex-col p-6 text-center lg:text-left gap-2">
-
       <div>
-
-        <h3 class="font-semibold text-2xl">El inversor robusto Fronius Tauro impresiona por sus mínimos costos de funcionamiento del sistema.</h3>
-  
+        <h3 class="font-semibold text-2xl">
+          El inversor robusto Fronius Tauro impresiona por sus mínimos costos de funcionamiento del sistema.
+        </h3>
         <p>Para los proyectos hace que las instalaciones fotovoltaicas comerciales a gran escala sean rentables.</p>
-  
       </div>
-  
       <ul class="flex flex-col">
-  
         {tauroList.map((item) => <li>{item}</li>)}
-  
       </ul>
+    </div>
+  </div>
 
+  <!-- Versión para móviles -->
+  <div class="lg:hidden flex flex-col gap-6">
+
+    <!-- Imagen ajustada -->
+    <div class="flex justify-center">
+      <img 
+        src="/images/screens/fronius/img2.jpg" 
+        alt="Fronius Tauro"
+        class="w-full aspect-[16/9] object-contain"
+      />
     </div>
 
+    <!-- Contenido del título e información -->
+    <div class="flex flex-col items-center text-center gap-4 px-4">
+      <div class="w-1/4 bg-neutral-800 h-[2px] mb-2"/>
+      <h4 class="font-semibold text-lg">Fronius Tauro ECO 208-220</h4>
+      <ul class="flex flex-col gap-1">
+        <li>Rango de Potencia: 50 kW</li>
+        <li>Ideal para países con clase de tensión 208 - 220V</li>
+      </ul>
+    </div>
+
+    <!-- Descripción y lista de características -->
+    <div class="text-center px-4">
+      <h3 class="font-semibold text-xl mb-2">
+        El inversor robusto Fronius Tauro impresiona por sus mínimos costos de funcionamiento del sistema.
+      </h3>
+      <p class="text-gray-600 mb-4">
+        Para los proyectos hace que las instalaciones fotovoltaicas comerciales a gran escala sean rentables.
+      </p>
+      <ul class="flex flex-col items-start gap-2">
+        {tauroList.map((item) => (
+          <li class="flex items-start">
+            <span class="text-blue-700 font-bold mr-2">•</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   </div>
-<div class="pb-1">
 </section>
