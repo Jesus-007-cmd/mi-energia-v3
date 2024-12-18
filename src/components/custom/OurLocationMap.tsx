@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from 'react';
 import type { MutableRefObject } from 'react';
 
 
-const mapRef: MutableRefObject<google.maps.Map | null> = useRef(null);
+const mapRef: MutableRefObject<google.maps.Map | null> = { current: null };
+
 export default function OurLocationMap() {
 
   const { isLoaded } = useJsApiLoader({
