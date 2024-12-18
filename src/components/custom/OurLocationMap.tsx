@@ -1,7 +1,10 @@
 // Components
 import { GoogleMap, useJsApiLoader, MarkerF } from '@react-google-maps/api';
 import { useEffect, useRef, useState } from 'react';
+import type { MutableRefObject } from 'react';
 
+
+const mapRef: MutableRefObject<google.maps.Map | null> = useRef(null);
 export default function OurLocationMap() {
 
   const { isLoaded } = useJsApiLoader({
@@ -10,7 +13,7 @@ export default function OurLocationMap() {
   });
 
   const [isMobile, setIsMobile] = useState(false);
-  const mapRef = useRef(null);
+  
 
   // Detecta si la pantalla es móvil
   useEffect(() => {
@@ -197,7 +200,7 @@ export default function OurLocationMap() {
   ];
 
   // Centrar todos los puntos en el mapa
-  const fitBounds = (map) => {
+  const fitBounds = (map: google.maps.Map) => {
     if (!map) return;
     
     const bounds = new window.google.maps.LatLngBounds(
@@ -210,9 +213,9 @@ export default function OurLocationMap() {
   };
 
   // Configura el mapa para mostrar todos los marcadores
-  const onLoad = (map) => {
+  const onLoad = (map: google.maps.Map) => {
     mapRef.current = map;
-    fitBounds(map);
+  fitBounds(map);
   };
 
   return (
