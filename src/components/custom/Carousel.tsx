@@ -153,13 +153,16 @@ const Carousel: React.FC = () => {
         }
 
         .text-item h3 {
-          font-size: 0.9em;
+          font-size: 0.85em;
           font-weight: bold;
           margin-bottom: 0;
+          line-height: 1.4; /* Reducir interlineado para párrafos */
         }
 
         .text-item p {
-          font-size: 0.85em;
+          font-size: 0.8em;
+          
+  line-height: 1.4; /* Reducir interlineado para párrafos */
         }
 
         hr {
