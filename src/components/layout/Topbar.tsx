@@ -202,24 +202,25 @@ function ServicesOptions () {
 function MobileMenu({ headerButtons, isMouseInServiceButton, setIsMouseInServiceButton }: any) {
   const servicesList = [
     {
-      label: AppRoutes.sistemaFotovoltaicoComercialEIndustrial.title,
-      url: AppRoutes.sistemaFotovoltaicoComercialEIndustrial.route,
-      icon: "fas fa-solar-panel", // Ejemplo con Font Awesome
-    },
-    {
       label: AppRoutes.sistemaFotovoltaicoResidencialEHibrido.title,
       url: AppRoutes.sistemaFotovoltaicoResidencialEHibrido.route,
       icon: "fas fa-home",
     },
     {
-      label: AppRoutes.montaCargas.title,
-      url: AppRoutes.montaCargas.route,
-      icon: "fas fa-truck-loading",
+      label: AppRoutes.sistemaFotovoltaicoComercialEIndustrial.title,
+      url: AppRoutes.sistemaFotovoltaicoComercialEIndustrial.route,
+      icon: "fas fa-solar-panel", // Ejemplo con Font Awesome
     },
     {
       label: AppRoutes.sistemaBess.title,
       url: AppRoutes.sistemaBess.route,
       icon: "fas fa-battery-full",
+    },
+    
+    {
+      label: AppRoutes.montaCargas.title,
+      url: AppRoutes.montaCargas.route,
+      icon: "fas fa-truck-loading",
     },
     {
       label: AppRoutes.electromovilidadRoute.title,

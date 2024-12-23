@@ -1,82 +1,100 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from "react"; 
 
 type Props = {
   photos: string[];
 };
 
-export default function CustomGallery(props: Props) {
-  const { photos } = props;
-
-  const scrollAmount = 1000; // Cantidad de desplazamiento
+export default function CustomGallery({ photos }: Props) {
   const pcCarouselRef = useRef<HTMLDivElement>(null);
-  const mobileCarouselRef = useRef<HTMLDivElement>(null);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const mobileCarouselRef = useRef<HTMLDivElement>(null); // Agregado para móviles
+  const [scrollAmount, setScrollAmount] = useState(0);
 
-  // Función para desplazarse hacia la derecha
-  function scrollRight(ref: React.RefObject<HTMLDivElement>) {
-    if (ref.current) {
-      ref.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  // Calcular ancho dinámico al cargar y redimensionar
+  useEffect(() => {
+    function updateScrollAmount() {
+      if (pcCarouselRef.current) {
+        const containerWidth = pcCarouselRef.current.clientWidth;
+        setScrollAmount(containerWidth / 2); // El ancho para desplazar es la mitad del contenedor
+      }
     }
-  }
 
-  // Función para reiniciar el intervalo
-  function assignInterval() {
-    if (intervalRef.current) clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(() => {
-      // Desplazamiento automático para ambas galerías
-      validateCanScroll(pcCarouselRef);
-      validateCanScroll(mobileCarouselRef);
-    }, 3000); // Cada 3 segundos
-  }
+    updateScrollAmount();
+    window.addEventListener("resize", updateScrollAmount);
 
-  // Validación de reinicio de la galería
-  function validateCanScroll(ref: React.RefObject<HTMLDivElement>) {
-    if (ref.current) {
-      const { scrollWidth, clientWidth, scrollLeft } = ref.current;
-      if (clientWidth + scrollLeft >= scrollWidth) {
-        ref.current.scrollTo({ left: 0, behavior: 'smooth' });
+    return () => window.removeEventListener("resize", updateScrollAmount);
+  }, []);
+
+  // Desplazamiento automático para escritorio
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (pcCarouselRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = pcCarouselRef.current;
+        if (scrollLeft + clientWidth >= scrollWidth) {
+          pcCarouselRef.current.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          pcCarouselRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        }
+      }
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [scrollAmount]);
+
+  // Función para desplazarse a la derecha (Móviles)
+  function scrollMobileCarousel() {
+    if (mobileCarouselRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = mobileCarouselRef.current;
+
+      if (scrollLeft + clientWidth >= scrollWidth) {
+        // Si llega al final, vuelve al inicio
+        mobileCarouselRef.current.scrollTo({ left: 0, behavior: "smooth" });
       } else {
-        scrollRight(ref);
+        // Desplaza una imagen (ancho del contenedor)
+        mobileCarouselRef.current.scrollBy({ left: clientWidth, behavior: "smooth" });
       }
     }
   }
 
+  // Efecto para movimiento automático (Móviles)
   useEffect(() => {
-    assignInterval();
-    return () => clearInterval(intervalRef.current!);
+    const mobileInterval = setInterval(scrollMobileCarousel, 3000); // Cada 3 segundos
+    return () => clearInterval(mobileInterval); // Limpia el intervalo al desmontar
   }, []);
 
   return (
     <div className="relative bg-gray-200 overflow-hidden">
-      {/* Galería para computadoras */}
-      <div className="hidden md:block">
-        <div
-          className="flex overflow-hidden scroll-snap-x scroll-snap-mandatory no-scrollbar"
-          ref={pcCarouselRef}
-        >
-          {photos.map((img, index) => (
-            <img
-              key={index}
-              src={img}
-              alt={`gallery-${index}`}
-              className="h-[35rem] w-[45rem] flex-shrink-0 scroll-snap-start object-cover"
-            />
-          ))}
-        </div>
+      {/* Galería de escritorio */}
+      <div
+        className="hidden md:flex overflow-hidden no-scrollbar"
+        ref={pcCarouselRef}
+      >
+        {photos.map((photo, index) => (
+          <img
+            key={index}
+            src={photo}
+            alt={`gallery-${index}`}
+            className="object-cover flex-shrink-0"
+            style={{
+              width: "50%", // Cada imagen ocupa exactamente la mitad del contenedor
+              height: "35rem", // Altura fija para mantener proporciones
+            }}
+          />
+        ))}
       </div>
 
-      {/* Galería para móviles */}
+      {/* Galería de móviles */}
       <div className="md:hidden">
-        <div
-          className="flex overflow-hidden no-scrollbar"
-          ref={mobileCarouselRef}
-        >
-          {photos.map((img, index) => (
+        <div className="flex overflow-hidden no-scrollbar" ref={mobileCarouselRef}>
+          {photos.map((photo, index) => (
             <img
               key={index}
-              src={img}
+              src={photo}
               alt={`mobile-gallery-${index}`}
-              className="w-full h-[18rem] flex-shrink-0 object-cover scroll-snap-start"
+              className="object-cover flex-shrink-0"
+              style={{
+                width: "100%", // Ocupa todo el ancho de la pantalla
+                height: "18rem",
+              }}
             />
           ))}
         </div>
