@@ -98,7 +98,8 @@ const Carousel: React.FC = () => {
         .carousel-container {
            text-align: center;
             width: 100%;
-            max-width: 85.5%;
+            
+            max-width: 68.5%;
             margin: auto;
             z-index: 1; 
         }
@@ -106,7 +107,7 @@ const Carousel: React.FC = () => {
         .carousel {
           position: relative;
           width: 100%;
-          height: 600px;
+          height: 700px;
           overflow: hidden;
         }
 
@@ -114,11 +115,12 @@ const Carousel: React.FC = () => {
           display: flex;
           transition: transform 1s ease-in-out;
           width: 100%;
+          height: 100%;
         }
 
         .slide {
           flex: 0 0 100%;
-          height: 600px;
+          height: 100%;
           background-size: cover;
           background-position: center;
         }
@@ -140,10 +142,14 @@ const Carousel: React.FC = () => {
           transition: color 0.3s ease;
         }
 
-        .text-item.active h3,
-        .text-item.active p {
+        .text-item.active hr,
+        .text-item.active h3 {
           color: black;
           font-weight: bold;
+        }
+          .text-item.active p {
+          color: black;
+          
         }
 
         .text-item h3 {
