@@ -57,51 +57,94 @@ const Carousel: React.FC = () => {
   };
 
   return (
-    <div className="carousel-container">
-      {/* Carrusel */}
-      <div className="carousel">
-        <div
-          className="slides"
-          style={{
-            transform: `translateX(-${activeIndex * 100}%)`,
-          }}
-        >
-          {slides.map((slide, index) => (
-            <div
+    <>
+      {/* Versión para pantallas más grandes */}
+      <div className="hidden md:block carousel-container">
+        <div className="carousel">
+          <div
+            className="slides"
+            style={{
+              transform: `translateX(-${activeIndex * 100}%)`,
+            }}
+          >
+            {slides.map((slide, index) => (
+              <div
+                key={index}
+                className="slide"
+                style={{
+                  backgroundImage: `url(${slide})`,
+                }}
+              ></div>
+            ))}
+          </div>
+        </div>
+
+        <div className="carousel-text">
+          {texts.map((text, index) => (
+            <label
               key={index}
-              className="slide"
-              style={{
-                backgroundImage: `url(${slide})`,
-              }}
-            ></div>
+              className={`text-item ${index === activeIndex ? "active" : ""}`}
+              onClick={() => handleSlideChange(index)}
+            >
+              <hr className="mb-1" />
+              <h3>{text.title}</h3>
+              <p>{text.description}</p>
+            </label>
           ))}
         </div>
       </div>
 
-      {/* Texto alineado debajo */}
-      <div className="carousel-text">
-        {texts.map((text, index) => (
-          <label
-            key={index}
-            className={`text-item ${index === activeIndex ? "active" : ""}`}
-            onClick={() => handleSlideChange(index)}
-          >
-            <hr className="mb-1" />
-            <h3>{text.title}</h3>
-            <p>{text.description}</p>
-          </label>
-        ))}
-      </div>
+      {/* Versión para móviles */}
+      <div className="block md:hidden">
+  {/* Contenedor del carrusel */}
+  <div className="relative w-full h-[50vh] overflow-hidden">
+    {/* Contenedor deslizante para las imágenes */}
+    <div
+      className="flex w-full h-full transition-transform duration-700"
+      style={{
+        transform: `translateX(-${activeIndex * 100}%)`,
+      }}
+    >
+      {slides.map((slide, index) => (
+        <div
+          key={index}
+          className="flex-shrink-0 w-full h-full bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${slide})`,
+          }}
+        ></div>
+      ))}
+    </div>
 
-      {/* Estilos en línea */}
+    {/* Texto sobre la imagen activa */}
+    <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-75 text-white p-4">
+      <h3 className="text-lg font-semibold">{texts[activeIndex].title}</h3>
+      <p className="text-xs mt-2">{texts[activeIndex].description}</p>
+    </div>
+  </div>
+
+  {/* Indicadores (puntos) */}
+  <div className="flex justify-center mt-2">
+    {slides.map((_, index) => (
+      <button
+        key={index}
+        onClick={() => handleSlideChange(index)}
+        className={`h-2 w-2 rounded-full mx-1 transition-colors duration-300 ${
+          index === activeIndex ? "bg-white" : "bg-gray-400"
+        }`}
+      ></button>
+    ))}
+  </div>
+</div>
+
+
+      {/* Estilos generales */}
       <style>{`
         .carousel-container {
-           text-align: center;
-            width: 100%;
-            
-            max-width: 68.5%;
-            margin: auto;
-            z-index: 1; 
+          text-align: center;
+          width: 100%;
+          max-width: 68.5%;
+          margin: auto;
         }
 
         .carousel {
@@ -147,22 +190,21 @@ const Carousel: React.FC = () => {
           color: black;
           font-weight: bold;
         }
-          .text-item.active p {
+
+        .text-item.active p {
           color: black;
-          
         }
 
         .text-item h3 {
           font-size: 0.85em;
           font-weight: bold;
           margin-bottom: 0;
-          line-height: 1.4; /* Reducir interlineado para párrafos */
+           line-height: 1.0
         }
 
         .text-item p {
           font-size: 0.8em;
-          
-  line-height: 1.4; /* Reducir interlineado para párrafos */
+           line-height: 1.0
         }
 
         hr {
@@ -174,7 +216,7 @@ const Carousel: React.FC = () => {
           border-top: 2px solid black;
         }
       `}</style>
-    </div>
+    </>
   );
 };
 
