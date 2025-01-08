@@ -204,20 +204,17 @@ const imageList = [
 </Layout>
 
 <script>
-  // Carousel para móviles
-  let currentIndex = 0;
-  const carouselSlides = document.querySelectorAll('#mobile-carousel .carousel-slide');
-  const slide = document.querySelector('.carousel-slide') as HTMLElement;
-if (slide) {
-    slide.style.transform = `translateX(${index * 100}%)`;
-}
+  if (typeof window !== "undefined") {
+    let currentIndex = 0;
+    const carouselSlides = document.querySelectorAll('#mobile-carousel .carousel-slide');
 
-  if (carouselSlides.length > 0) {
-    setInterval(() => {
-      carouselSlides.forEach((slide, index) => {
-        slide.style.transform = `translateX(${(index - currentIndex) * 100}%)`;
-      });
-      currentIndex = (currentIndex + 1) % carouselSlides.length;
-    }, 5000);
+    if (carouselSlides.length > 0) {
+      setInterval(() => {
+        carouselSlides.forEach((slide, index) => {
+          (slide as HTMLElement).style.transform = `translateX(${(index - currentIndex) * 100}%)`;
+        });
+        currentIndex = (currentIndex + 1) % carouselSlides.length;
+      }, 5000);
+    }
   }
 </script>
