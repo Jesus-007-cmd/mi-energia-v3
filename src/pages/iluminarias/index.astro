@@ -5,7 +5,7 @@ import ButtonClass from "../../classes/ButtonClass";
 import CustomButton from "../../components/forms/CustomButton";
 
 import VideoPortada from '../../sections/screens/iluminarias/VideoPortada.astro';
-const slide = element as HTMLElement;
+
 
 const iluminaria1 = {
   title:'PROYECTOR LED PARA GRANDES ALTURAS',
@@ -207,6 +207,10 @@ const imageList = [
   // Carousel para móviles
   let currentIndex = 0;
   const carouselSlides = document.querySelectorAll('#mobile-carousel .carousel-slide');
+  const slide = document.querySelector('.carousel-slide') as HTMLElement;
+if (slide) {
+    slide.style.transform = `translateX(${index * 100}%)`;
+}
 
   if (carouselSlides.length > 0) {
     setInterval(() => {
