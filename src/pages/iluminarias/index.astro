@@ -142,7 +142,7 @@ const imageList = [
 
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-4">
+    <div class="grid grid-cols-1 md:grid-cols-4">
 
       {iluminarias.map((row, index) => 
 
@@ -179,12 +179,40 @@ const imageList = [
 
     </div>
 
-    <div class="grid grid-cols-4">
+      <!-- Pantallas grandes -->
+    <div class="hidden md:grid grid-cols-4">
+      {imageList.map((row) => <div class={`h-[75vh] ${row} carousel-slide`} />)}
+    </div>
 
-      {imageList.map((row) => <div class={`h-[75vh] ${row}`} />)}
-
+    <!-- Pantallas móviles -->
+    <div class="block md:hidden relative">
+      <div class="relative h-[50vh] overflow-hidden" id="mobile-carousel">
+        {imageList.map((row, index) => (
+          <div
+            class={`absolute inset-0 ${row} carousel-slide`}
+            style={{
+              transform: `translateX(${index * 100}%)`,
+            }}
+          ></div>
+        ))}
+      </div>
     </div>
 
   </section>
 
 </Layout>
+
+<script>
+  // Carousel para móviles
+  let currentIndex = 0;
+  const carouselSlides = document.querySelectorAll('#mobile-carousel .carousel-slide');
+
+  if (carouselSlides.length > 0) {
+    setInterval(() => {
+      carouselSlides.forEach((slide, index) => {
+        slide.style.transform = `translateX(${(index - currentIndex) * 100}%)`;
+      });
+      currentIndex = (currentIndex + 1) % carouselSlides.length;
+    }, 5000);
+  }
+</script>
