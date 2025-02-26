@@ -20,11 +20,12 @@ export default function Topbar (props:Props) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const headerButtons = [
-    { label:AppRoutes.casosdeexito.title, url:AppRoutes.casosdeexito.route },
+    
     { label:AppRoutes.serviciosRoute.title },
     { label:AppRoutes.sobreNosotrosRoute.title, url:AppRoutes.sobreNosotrosRoute.route },
     { label:AppRoutes.financiamientoRoute.title, url:AppRoutes.financiamientoRoute.route },
-    { label:AppRoutes.contactanosRoute.title, url:AppRoutes.contactanosRoute.route }
+    { label:AppRoutes.contactanosRoute.title, url:AppRoutes.contactanosRoute.route },
+    { label:AppRoutes.casosdeexito.title, url:AppRoutes.casosdeexito.route }
   ];
 
   // Styles
@@ -75,37 +76,33 @@ export default function Topbar (props:Props) {
 
           <div className="hidden md:flex gap-4">
 
-            { 
-              
-              headerButtons.map((button, key) => (button.url == undefined)
-              
-                ? 
-                
-                <div className='group/service-container' key={key}>
+          {
+  headerButtons.map((button, key) => {
+    const extraSpacing = button.label === AppRoutes.casosdeexito.title ? 'ml-8' : ''; // Agrega un margen a la derecha solo para "Casos de Éxito"
 
-                  <CustomButton
-                    buttonClass={ButtonClass.TransparentButtonsClass(`hover:bg-gray-100 ${props.hasBackground ? '' : 'text-white group-hover/main-container:text-gray-800'}`)} 
-                    onEnter={toggleIsMouseInServiceButton}
-                  >{button.label}</CustomButton>
+    return button.url == undefined ? (
+      <div className={`group/service-container ${extraSpacing}`} key={key}>
+        <CustomButton
+          buttonClass={ButtonClass.TransparentButtonsClass(`hover:bg-gray-100 ${props.hasBackground ? '' : 'text-white group-hover/main-container:text-gray-800'}`)}
+          onEnter={toggleIsMouseInServiceButton}
+        >
+          {button.label}
+        </CustomButton>
+        {isMouseInServiceButton && <ServicesOptions />}
+      </div>
+    ) : (
+      <a href={button.url} key={key} className={extraSpacing}>
+        <CustomButton
+          buttonClass={ButtonClass.TransparentButtonsClass(`hover:bg-gray-100 ${props.hasBackground ? '' : 'text-white group-hover/main-container:text-gray-800'}`)}
+          onEnter={toggleIsMouseInAnyOtherButton}
+        >
+          {button.label}
+        </CustomButton>
+      </a>
+    );
+  })
+}
 
-                  {isMouseInServiceButton && <ServicesOptions/>}
-
-                </div>
-
-                :
-
-                <a href={button.url} key={key}>
-                
-                  <CustomButton 
-                    buttonClass={ButtonClass.TransparentButtonsClass(`hover:bg-gray-100 ${props.hasBackground ? '' : 'text-white group-hover/main-container:text-gray-800'}`)} 
-                    onEnter={toggleIsMouseInAnyOtherButton}
-                  >{button.label}</CustomButton>
-          
-                </a>
-
-              )
-
-            }
 
           </div>
 
