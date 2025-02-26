@@ -20,6 +20,7 @@ export default function Topbar (props:Props) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const headerButtons = [
+    { label:AppRoutes.casosdeexito.title },
     { label:AppRoutes.serviciosRoute.title },
     { label:AppRoutes.sobreNosotrosRoute.title, url:AppRoutes.sobreNosotrosRoute.route },
     { label:AppRoutes.financiamientoRoute.title, url:AppRoutes.financiamientoRoute.route },
@@ -138,10 +139,7 @@ export default function Topbar (props:Props) {
 function ServicesOptions () {
 
   const servicesList = [
-    { 
-      label:AppRoutes.casosdeexito.title,
-      url:AppRoutes.casosdeexito.route 
-    },
+    
     { 
       label:AppRoutes.sistemaFotovoltaicoResidencialEHibrido.title,
       url:AppRoutes.sistemaFotovoltaicoResidencialEHibrido.route 
@@ -206,11 +204,7 @@ function ServicesOptions () {
 
 function MobileMenu({ headerButtons, isMouseInServiceButton, setIsMouseInServiceButton }: any) {
   const servicesList = [
-    {
-      label: AppRoutes.casosdeexito.title,
-      url: AppRoutes.casosdeexito.route,
-      icon: "fas fa-lightbulb",
-    },
+    
     {
       label: AppRoutes.sistemaFotovoltaicoResidencialEHibrido.title,
       url: AppRoutes.sistemaFotovoltaicoResidencialEHibrido.route,
