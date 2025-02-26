@@ -9,6 +9,7 @@ export const footerSections = [
   AppRoutes.homeRoute,
   AppRoutes.sobreNosotrosRoute,
   AppRoutes.contactanosRoute,
+  AppRoutes.casosdeexito
 ];
 
 export default function Footer () {

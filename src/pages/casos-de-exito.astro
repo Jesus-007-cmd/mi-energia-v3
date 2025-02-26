@@ -1,0 +1,53 @@
+---
+
+import Layout from '../layouts/Layout.astro';
+import BackgroundWithVideo from '../components/custom/BackgroundWithVideo.astro';
+import BlackWhiteContainerWithImage from '../components/custom/BlackWhiteContainerWithImage';
+
+// Definir casos de éxito
+const successCases = [
+  {
+    subtitle: 'Caso de Éxito',
+    title: 'Reducción de Costos Energéticos',
+    description: `
+      Implementamos un sistema fotovoltaico de última generación en una empresa manufacturera, logrando
+      reducir sus costos de electricidad en un 40% y mejorando su eficiencia operativa.
+    `,
+    image: '/images/screens/casos-de-exito/caso1.jpeg',
+  },
+  {
+    subtitle: 'Caso de Éxito',
+    title: 'Energía Sustentable en el Sector Residencial',
+    description: `
+      Una familia logró independencia energética con nuestra solución de paneles solares, reduciendo su
+      huella de carbono y asegurando energía limpia para el futuro.
+    `,
+    image: '/images/screens/casos-de-exito/caso2.jpeg',
+  }
+];
+
+---
+
+<Layout title='Casos de Éxito'>
+
+  <!-- Título e introducción principal -->
+  <section class="text-center py-16 px-6 bg-gradient-to-b from-neutral-800 to-gray-900 text-white flex flex-col items-center justify-center">
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Casos de Éxito</h1>
+    <p class="text-lg md:text-xl max-w-3xl text-gray-300">
+      Descubre cómo nuestros clientes han logrado reducir costos y mejorar su eficiencia energética con nuestras soluciones innovadoras.
+    </p>
+  </section>
+
+  <!-- Video de introducción ocupando todo el ancho -->
+  <div class="w-full py-10">
+    <BackgroundWithVideo url="/videos/SUPERWILLYS_compress.mp4" />
+  </div>
+
+  <!-- Lista de casos de éxito (comentado temporalmente) -->
+  <!--
+  <BlackWhiteContainerWithImage 
+    sectionRows={successCases} 
+  />
+  -->
+
+</Layout>

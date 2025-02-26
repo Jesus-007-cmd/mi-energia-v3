@@ -68,6 +68,11 @@ export default class AppRoutes {
     route:'/',
     title:'Inicio'
   }
+  static casosdeexito: AppRoute = {
+    route: '/casos-de-exito',
+    title: 'Casos de Éxito'
+  }
+  
 
 }
 
