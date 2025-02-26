@@ -20,7 +20,7 @@ export default function Topbar (props:Props) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const headerButtons = [
-    { label:AppRoutes.casosdeexito.title },
+    { label:AppRoutes.casosdeexito.title, url:AppRoutes.casosdeexito.route },
     { label:AppRoutes.serviciosRoute.title },
     { label:AppRoutes.sobreNosotrosRoute.title, url:AppRoutes.sobreNosotrosRoute.route },
     { label:AppRoutes.financiamientoRoute.title, url:AppRoutes.financiamientoRoute.route },
