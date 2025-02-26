@@ -138,7 +138,10 @@ export default function Topbar (props:Props) {
 function ServicesOptions () {
 
   const servicesList = [
-
+    { 
+      label:AppRoutes.casosdeexito.title,
+      url:AppRoutes.casosdeexito.route 
+    },
     { 
       label:AppRoutes.sistemaFotovoltaicoResidencialEHibrido.title,
       url:AppRoutes.sistemaFotovoltaicoResidencialEHibrido.route 
@@ -168,6 +171,8 @@ function ServicesOptions () {
       label:AppRoutes.iluminariasRoute.title,
       url:AppRoutes.iluminariasRoute.route 
     },
+  
+    
   ];
 
   return (
@@ -201,6 +206,11 @@ function ServicesOptions () {
 
 function MobileMenu({ headerButtons, isMouseInServiceButton, setIsMouseInServiceButton }: any) {
   const servicesList = [
+    {
+      label: AppRoutes.casosdeexito.title,
+      url: AppRoutes.casosdeexito.route,
+      icon: "fas fa-lightbulb",
+    },
     {
       label: AppRoutes.sistemaFotovoltaicoResidencialEHibrido.title,
       url: AppRoutes.sistemaFotovoltaicoResidencialEHibrido.route,
@@ -237,6 +247,7 @@ function MobileMenu({ headerButtons, isMouseInServiceButton, setIsMouseInService
       url: AppRoutes.iluminariasRoute.route,
       icon: "fas fa-lightbulb",
     },
+   
   ];
 
   return (
