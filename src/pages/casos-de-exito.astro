@@ -1,8 +1,7 @@
 ---
-
 import Layout from '../layouts/Layout.astro';
 
-// Definir casos de éxito
+// Lista de casos de éxito con imagen, título y descripción
 const successCases = [
   {
     subtitle: 'Caso de Éxito',
@@ -23,34 +22,38 @@ const successCases = [
     image: '/images/screens/casos-de-exito/caso2.jpeg',
   }
 ];
+
+// Lista de videos (algunos están "próximamente")
 const videos = [
   { title: 'VIDEO 1', url: 'https://www.youtube.com/embed/r7yLiOunSv4' },
   { title: 'VIDEO 2', url: '', comingSoon: true },
   { title: 'VIDEO 3', url: '', comingSoon: true }
 ];
+
 const bgImage = '/images/screens/casos-de-exito/portada canal casos de exito.jpg';
 ---
 
 <Layout title='Casos de Éxito'>
 
-  <!-- Título e introducción principal -->
-  <section class="text-center py-16 px-6 bg-gradient-to-b from-neutral-800 to-gray-900 text-white flex flex-col items-center justify-center">
-    <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Casos de Éxito</h1>
-    <p class="text-lg md:text-xl max-w-3xl text-gray-300">
+  <!-- Sección de introducción con fondo degradado -->
+  <section 
+    class="text-center pt-24 pb-16 px-6 bg-gradient-to-b from-neutral-800 to-gray-900 text-white flex flex-col items-center justify-center"
+  >
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">
+      Casos de Éxito
+    </h1>
+    <p class="text-base sm:text-lg md:text-xl max-w-3xl text-gray-300">
       Descubre cómo nuestros clientes han logrado reducir costos y mejorar su eficiencia energética con nuestras soluciones innovadoras.
     </p>
   </section>
-  <section class=" my-8">
-    </section>
- 
-<section >
 
-    <div class="flex justify-center py-10" >
-
-
+  <!-- Sección de videos responsiva -->
+  <section class="py-10 px-4 sm:px-6 lg:px-20 bg-gray-100 dark:bg-gray-800">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {videos.map(video => (
-        <div class="w-full flex justify-center">
-          <div class="w-80 h-64 bg-white border-4 border-gray-700 rounded-md shadow-lg flex justify-center items-center">
+        <div class="flex justify-center">
+          <!-- Contenedor del video o mensaje de "Próximamente" -->
+          <div class="w-full max-w-xs sm:max-w-sm md:max-w-md h-64 bg-white dark:bg-gray-900 border-4 border-gray-700 rounded-md shadow-lg flex justify-center items-center">
             {video.comingSoon ? (
               <span class="text-lg text-blue-500 font-bold">PRÓXIMAMENTE</span>
             ) : (
@@ -69,7 +72,19 @@ const bgImage = '/images/screens/casos-de-exito/portada canal casos de exito.jpg
         </div>
       ))}
     </div>
-
   </section>
+  <!-- Botón para consultar aviso de privacidad -->
+<div class="flex justify-center py-20  bg-gradient-to-b from-neutral-800 to-gray-900">
+  <a 
+    href="/docs/aviso-de-privacidad.pdf" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    class="border border-white text-white bg-transparent hover:bg-white hover:text-black font-semibold py-2 px-4 rounded transition-all duration-300"
+>
+  >
+    Consulta nuestro aviso de privacidad
+  </a>
+</div>
+
 
 </Layout>
