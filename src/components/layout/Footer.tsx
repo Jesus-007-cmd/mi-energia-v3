@@ -77,39 +77,42 @@ function ContactUsContainer() {
 
 function FooterLinks() {
   return (
-    <div className="flex items-center w-full px-6 py-4 bg-neutral-800 text-white">
+    <div className="px-6 py-4 bg-neutral-800 text-white flex flex-col lg:flex-row items-center justify-between w-full gap-4">
+      
+      {/* 🟦 Espacio izquierdo igual al ancho del aviso (solo para mantener el centro real del menú en desktop) */}
+      <div className="hidden lg:block w-[180px]" />
 
-  {/* 🟦 Espacio izquierdo que ocupa el mismo ancho que el Aviso */}
-  <div className="hidden lg:block w-[180px]" />
+      {/* 🔵 Menú central */}
+      <ul className="flex flex-col lg:flex-row gap-4 justify-center items-center text-center">
 
-  {/* 🔵 Menú central */}
-  <ul className="flex flex-col lg:flex-row gap-4 justify-center mx-auto">
-    {footerSections.map((row, key) => (
-      <li
+        {footerSections.map((row, key) => (
+        <li
         key={key}
         className="text-white cursor-pointer hover:bg-neutral-800 py-1 px-3 rounded"
       >
         <a href={row.route}>{row.title}</a>
       </li>
-    ))}
-  </ul>
+      
+        ))}
+      </ul>
 
-  {/* 🟥 Aviso de Privacidad con ancho fijo */}
-  <div className="hidden lg:flex justify-end w-[180px]">
-    <a
-      href="/docs/Aviso%20de%20Privacidad_Mi%20energía.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-white cursor-pointer hover:bg-neutral-800 py-1 px-3 rounded"
-    >
-      Aviso de Privacidad
-    </a>
-  </div>
+      {/* 🟥 Aviso de Privacidad */}
+      <div className="flex justify-center lg:justify-end w-full lg:w-[180px] mt-4 lg:mt-0">
+      <a
+  href="/docs/Aviso%20de%20Privacidad_Mi%20energía.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="text-white text-sm text-center cursor-pointer hover:bg-neutral-800 py-1 px-3 rounded"
+>
+  Aviso de Privacidad
+</a>
 
-</div>
+      </div>
 
+    </div>
   );
 }
+
 
 
 export type FooterLink = {
