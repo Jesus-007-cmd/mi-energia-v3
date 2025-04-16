@@ -12,7 +12,7 @@ export const footerSections = [
   AppRoutes.casosdeexito
 ];
 
-export default function Footer () {
+export default function Footer() {
 
   return (
 
@@ -22,17 +22,17 @@ export default function Footer () {
 
         <div className="flex flex-col lg:flex-row items-center gap-4">
 
-          <img className="h-12" src="/images/mi-energia-logo/logo1.png"/>
+          <img className="h-12" src="/images/mi-energia-logo/logo1.png" />
 
-          <ContactUsContainer/>
+          <ContactUsContainer />
 
-          <img className="h-16" src="/images/mi-energia-logo/fronius-logo.jpeg"/>
+          <img className="h-16" src="/images/mi-energia-logo/fronius-logo.jpeg" />
 
         </div>
 
       </div>
 
-      <FooterLinks/>
+      <FooterLinks />
 
     </div>
 
@@ -40,7 +40,7 @@ export default function Footer () {
 
 }
 
-function ContactUsContainer () {
+function ContactUsContainer() {
 
   return (
 
@@ -52,20 +52,20 @@ function ContactUsContainer () {
 
         <div className="flex gap-4">
 
-          {networkList.map((row, key) => 
+          {networkList.map((row, key) =>
 
             <a href={row.url} target='_blank'>
               <button className={ButtonClass.TransparentButtonsClass('hover:bg-gray-100')} key={key}>
                 <div className='flex flex-col gap-2'>
-                  <img className="h-8" src={row.logo}/>
+                  <img className="h-8" src={row.logo} />
                   <span className='font-medium'>{row.label}</span>
                 </div>
               </button>
             </a>
-            
+
           )}
 
-        </div>            
+        </div>
 
       </div>
 
@@ -75,29 +75,39 @@ function ContactUsContainer () {
 
 }
 
-function FooterLinks () {
-
+function FooterLinks() {
   return (
+    <div className="px-6 py-4 bg-neutral-800 text-white flex items-center justify-between w-full">
 
-    <div className="px-6 py-4 bg-neutral-800 text-center text-white flex justify-center">
+      {/* Espacio izquierdo (puede ir vacío o con logo si quisieras) */}
+      <div className="w-1/6 hidden lg:block" />
 
-      <ul className="flex flex-col lg:flex-row gap-4">
-
+      {/* Menú central */}
+      <ul className="flex flex-col lg:flex-row gap-4 justify-center mx-auto">
         {footerSections.map((row, key) => (
-          <li className='text-white cursor-pointer hover:bg-neutral-800 py-1 px-3 rounded' key={key}>
+          <li
+            key={key}
+            className="text-white cursor-pointer hover:bg-neutral-800 py-1 px-3 rounded"
+          >
             <a href={row.route}>{row.title}</a>
           </li>
         ))}
-
       </ul>
 
+      {/* Aviso a la derecha */}
+      <a
+        href="/docs/Aviso%20de%20Privacidad_Mi%20energía.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-white cursor-pointer hover:bg-neutral-800 py-1 px-3 rounded hidden lg:block"
+      >
+        Aviso de Privacidad
+      </a>
     </div>
-
-  )
-  
+  );
 }
 
 export type FooterLink = {
-  label:string,
-  url:string,
+  label: string,
+  url: string,
 }
