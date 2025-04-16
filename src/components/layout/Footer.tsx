@@ -77,35 +77,40 @@ function ContactUsContainer() {
 
 function FooterLinks() {
   return (
-    <div className="px-6 py-4 bg-neutral-800 text-white flex items-center justify-between w-full">
+    <div className="flex items-center w-full px-6 py-4 bg-neutral-800 text-white">
 
-      {/* Espacio izquierdo (puede ir vacío o con logo si quisieras) */}
-      <div className="w-1/6 hidden lg:block" />
+  {/* 🟦 Espacio izquierdo que ocupa el mismo ancho que el Aviso */}
+  <div className="hidden lg:block w-[180px]" />
 
-      {/* Menú central */}
-      <ul className="flex flex-col lg:flex-row gap-4 justify-center mx-auto">
-        {footerSections.map((row, key) => (
-          <li
-            key={key}
-            className="text-white cursor-pointer hover:bg-neutral-800 py-1 px-3 rounded"
-          >
-            <a href={row.route}>{row.title}</a>
-          </li>
-        ))}
-      </ul>
-
-      {/* Aviso a la derecha */}
-      <a
-        href="/docs/Aviso%20de%20Privacidad_Mi%20energía.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-white cursor-pointer hover:bg-neutral-800 py-1 px-3 rounded hidden lg:block"
+  {/* 🔵 Menú central */}
+  <ul className="flex flex-col lg:flex-row gap-4 justify-center mx-auto">
+    {footerSections.map((row, key) => (
+      <li
+        key={key}
+        className="text-white cursor-pointer hover:bg-neutral-800 py-1 px-3 rounded"
       >
-        Aviso de Privacidad
-      </a>
-    </div>
+        <a href={row.route}>{row.title}</a>
+      </li>
+    ))}
+  </ul>
+
+  {/* 🟥 Aviso de Privacidad con ancho fijo */}
+  <div className="hidden lg:flex justify-end w-[180px]">
+    <a
+      href="/docs/Aviso%20de%20Privacidad_Mi%20energía.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-white cursor-pointer hover:bg-neutral-800 py-1 px-3 rounded"
+    >
+      Aviso de Privacidad
+    </a>
+  </div>
+
+</div>
+
   );
 }
+
 
 export type FooterLink = {
   label: string,
